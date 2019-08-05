@@ -594,12 +594,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 234615277}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5846615, y: 0.8298, z: 7.869996}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.21, z: -3.76}
   m_LocalScale: {x: 0.50093997, y: 1.8968801, z: 0.91764015}
   m_Children: []
-  m_Father: {fileID: 1396663763}
-  m_RootOrder: 4
+  m_Father: {fileID: 1375808139}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!81 &234615279
 AudioListener:
@@ -715,6 +715,8 @@ MonoBehaviour:
   throwCamera: {fileID: 0}
   walkCamera: {fileID: 0}
   camSwitchSpeed: 4
+  currentRotation: {x: 0, y: 0, z: 0}
+  rotationSmoothTime: 0.1
 --- !u!4 &274111518 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 559765836090566559, guid: c875de8c6e27ebd419cb7753387c0083,
@@ -3142,6 +3144,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 174336d8e1ed84d45af06cff0c85be4e, type: 3}
+--- !u!1 &1375808138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1375808139}
+  - component: {fileID: 1375808140}
+  m_Layer: 0
+  m_Name: Camera Rotator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1375808139
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375808138}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.23, z: 0.06}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 234615278}
+  m_Father: {fileID: 1396663763}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1375808140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375808138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 979a3ec6b3cb17848a852689f756c743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1393838128
 GameObject:
   m_ObjectHideFlags: 0
@@ -3401,6 +3447,8 @@ MonoBehaviour:
   throwCamera: {fileID: 2006827662}
   walkCamera: {fileID: 65890892}
   camSwitchSpeed: 4
+  currentRotation: {x: 0, y: 0, z: 0}
+  rotationSmoothTime: 0.1
 --- !u!1 &1404582691
 GameObject:
   m_ObjectHideFlags: 0

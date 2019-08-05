@@ -47,7 +47,6 @@ public class Cam : MonoBehaviour
 
             currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(pitch, yaw), ref rotationSmoothVelocity, rotationSmoothTime);
             transform.eulerAngles = currentRotation;
-
             transform.position = walkMode.position - transform.forward * dstFromTarget;
         }
         else

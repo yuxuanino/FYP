@@ -45,6 +45,9 @@ public class PlayerTPS : PlayerAbilities
     public GameObject throwCamera;      //Camera Position when throwing.
     public GameObject walkCamera;       //Camera Position when walking !throwing.
     public float camSwitchSpeed = 4;    //Speed which camera changes from Throw to Walk mode.
+    public Vector3 currentRotation;
+    private Vector3 rotationSmoothVelocity;
+    public float rotationSmoothTime = 0.1f;
   
 
     // Start is called before the first frame update
@@ -157,7 +160,7 @@ public class PlayerTPS : PlayerAbilities
         //Camera
         if (!throwMode)
         {
-            mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, walkCamera.transform.position, camSwitchSpeed * Time.deltaTime);
+            //mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, walkCamera.transform.position, camSwitchSpeed * Time.deltaTime);
         }
         else
         {
@@ -166,11 +169,14 @@ public class PlayerTPS : PlayerAbilities
 
         yaw += speedH * Input.GetAxis("Mouse X");
         pitch -= speedV * Input.GetAxis("Mouse Y");
-
         pitch = Mathf.Clamp(pitch, cameraMinY, cameraMaxY);
+        
 
-        transform.eulerAngles = new Vector3(0, yaw, 0);
+        transform.eulerAngles = new Vector3(0, yaw, 0);                         //Player's Y Rotation
         mainCamera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
+
+        CameraRotator.RotateCameraRotator(mainCamera.transform.eulerAngles.x, 0f, 0f);
+        
 
         //Animations
         inputH = Input.GetAxis("Horizontal");
