@@ -918,6 +918,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100138, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100140, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400022, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -85.86435
@@ -1761,14 +1769,6 @@ PrefabInstance:
     - target: {fileID: 13700020, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[3]
       value: 13.277343
-      objectReference: {fileID: 0}
-    - target: {fileID: 100138, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100140, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
@@ -5340,16 +5340,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cube (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 559765836090566531, guid: c875de8c6e27ebd419cb7753387c0083,
-        type: 3}
-      propertyPath: m_TagString
-      value: Box
-      objectReference: {fileID: 0}
-    - target: {fileID: 559765836090566531, guid: c875de8c6e27ebd419cb7753387c0083,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 559765836090566559, guid: c875de8c6e27ebd419cb7753387c0083,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5405,27 +5395,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 559765836090566559, guid: c875de8c6e27ebd419cb7753387c0083,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.1060089
-      objectReference: {fileID: 0}
-    - target: {fileID: 559765836090566559, guid: c875de8c6e27ebd419cb7753387c0083,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.1060089
-      objectReference: {fileID: 0}
-    - target: {fileID: 559765836090566559, guid: c875de8c6e27ebd419cb7753387c0083,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.1060089
-      objectReference: {fileID: 0}
-    - target: {fileID: 559765836090566553, guid: c875de8c6e27ebd419cb7753387c0083,
-        type: 3}
-      propertyPath: stasisEffect
-      value: 
-      objectReference: {fileID: 4378559356745288887, guid: bdc676ed007484c4ab7ff16b700adacf,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c875de8c6e27ebd419cb7753387c0083, type: 3}
 --- !u!4 &2101568660 stripped
