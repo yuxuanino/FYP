@@ -90,7 +90,11 @@ public class Player360Movement : PlayerAbilities
             {
                 throwMode = false;
                 currentHoldDistance = holdDistance;
-                if (carrying) DropObject();
+                if (carrying)
+                {
+                    carriedObject.GetComponent<Pickupable>().Transparency(false);
+                    DropObject();
+                }
 
                 else Pickup();
             }
@@ -102,8 +106,8 @@ public class Player360Movement : PlayerAbilities
                 {
                     if (!throwMode)
                     {
+                        carriedObject.GetComponent<Pickupable>().Transparency(true);
                         throwMode = true;
-
                         /*
                         transform.rotation = Quaternion.LookRotation(mainCamera.transform.forward);
 
@@ -123,6 +127,7 @@ public class Player360Movement : PlayerAbilities
                 }
                 else if (Input.GetButtonUp("Throw"))
                 {
+                    carriedObject.GetComponent<Pickupable>().Transparency(false);
                     throwMode = false;
                     if (currentChargeTime >= 1f)
                     {

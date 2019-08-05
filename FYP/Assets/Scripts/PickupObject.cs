@@ -81,7 +81,7 @@ public class PickupObject : MonoBehaviour {
                 if (p)
                 {
                     p.isStasis = false;
-                    p.myRB.isKinematic = false;
+                    p.GetComponent<Rigidbody>().isKinematic = false;
                     if (p != null)
                     {
                         carrying = true;

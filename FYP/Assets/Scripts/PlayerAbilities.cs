@@ -131,7 +131,6 @@ public class PlayerAbilities : MonoBehaviour
                 carriedObject = p.gameObject;
                 outline = carriedObject.GetComponent<Outline>();
                 outline.enabled = true;
-                //p.gameObject.GetComponent<Rigidbody>().isKinematic = true;
                 p.gameObject.GetComponent<Rigidbody>().useGravity = false;
                 Physics.IgnoreCollision(GetComponentInParent<Collider>(), carriedObject.GetComponent<Collider>(), true);
 
@@ -159,7 +158,8 @@ public class PlayerAbilities : MonoBehaviour
     //Drops the carriedObject.
     protected void DropObject()
     {
-        carriedObject.gameObject.GetComponent<Rigidbody>().useGravity = true;
+        carriedObject.GetComponent<Pickupable>().Transparency(false);
+        carriedObject.GetComponent<Rigidbody>().useGravity = true;
         //carriedObject.gameObject.GetComponent<Rigidbody>().isKinematic = false;
         Physics.IgnoreCollision(GetComponentInParent<Collider>(), carriedObject.GetComponent<Collider>(), false);
         outline.enabled = false;
