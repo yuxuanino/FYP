@@ -90,11 +90,7 @@ public class Player360Movement : PlayerAbilities
             {
                 throwMode = false;
                 currentHoldDistance = holdDistance;
-                if (carrying)
-                {
-                    carriedObject.GetComponent<Pickupable>().Transparency(false);
-                    DropObject();
-                }
+                if (carrying) DropObject();
 
                 else Pickup();
             }
