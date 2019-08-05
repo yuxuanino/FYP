@@ -123,11 +123,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  myRB: {fileID: 0}
   thrust: 0
   isStasis: 0
-  stasisEffect: {fileID: 0}
+  stasisEffect: {fileID: 4378559356745288887, guid: bdc676ed007484c4ab7ff16b700adacf,
+    type: 3}
   currentPosition: {x: 0, y: 0, z: 0}
+  fadeMaterial: {fileID: 2100000, guid: 7085baa5bbf2d3448a874f35f2c580ff, type: 2}
 --- !u!114 &4670910206704881012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,8 +142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 1
-  outlineColor: {r: 0, g: 0.99010324, b: 1, a: 1}
-  outlineWidth: 5
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 4
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []

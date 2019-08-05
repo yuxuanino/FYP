@@ -5,26 +5,31 @@ public class Pickupable : MonoBehaviour {
 
     public float speed;
     Transform position;
-    public Rigidbody myRB;
+    Rigidbody myRB;
 
     public float thrust;
     Vector3 tVelocity;
 
     public bool isStasis;
+    bool hideCube;
 
     public GameObject stasisEffect;
     public Vector3 currentPosition;
 
+    public Material baseMaterial;
+    public Material fadeMaterial;
+
     public Coroutine stasisCoroutine;
 
     // Use this for initialization
-    void Start () {
+    void Start() {
         myRB = GetComponent<Rigidbody>();
+        baseMaterial = GetComponent<Renderer>().material;
     }
-	
 
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
 
         if (isStasis == false)
         {
@@ -34,7 +39,7 @@ public class Pickupable : MonoBehaviour {
                 tVelocity = Vector3.zero;
                 myRB.isKinematic = false;
             }
-        } else { 
+        } else {
             if (tVelocity == Vector3.zero)
             {
                 tVelocity = myRB.velocity;
@@ -67,6 +72,17 @@ public class Pickupable : MonoBehaviour {
         StopCoroutine("StasisEnum");
         stasisCoroutine = null;
     }
+
+    public void Transparency(bool pickedUp){
+        Renderer cR = GetComponent<Renderer>();
+
+        if (pickedUp == true)
+        {
+            cR.material = fadeMaterial;
+        }
+
+        else if (pickedUp == false) cR.material = baseMaterial;
+        }
 
     IEnumerator StasisEnum(float duration)
     {
