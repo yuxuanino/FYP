@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 559765836090566531}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.3447536, y: -14.306779, z: -8.639995}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -128,6 +128,7 @@ MonoBehaviour:
   stasisEffect: {fileID: 4378559356745288887, guid: bdc676ed007484c4ab7ff16b700adacf,
     type: 3}
   currentPosition: {x: 0, y: 0, z: 0}
+  baseMaterial: {fileID: 0}
   fadeMaterial: {fileID: 2100000, guid: 7085baa5bbf2d3448a874f35f2c580ff, type: 2}
 --- !u!114 &4670910206704881012
 MonoBehaviour:

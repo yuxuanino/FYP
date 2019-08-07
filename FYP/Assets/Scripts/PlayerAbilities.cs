@@ -18,6 +18,7 @@ public class PlayerAbilities : MonoBehaviour
     float previousUp;
     Quaternion offset;
     Player360Movement thePlayer;
+    PlayerTPS thePlayerTPS;
     Outline outline;
 
     // Start is called before the first frame update
@@ -28,13 +29,14 @@ public class PlayerAbilities : MonoBehaviour
     public void Start()
     {
         thePlayer = gameObject.GetComponent<Player360Movement>();
+        thePlayerTPS = gameObject.GetComponent<PlayerTPS>();
     }
 
     protected void CastStasis()
     {
         int x = Screen.width / 2;
         int y = Screen.height / 2;
-
+        
         //Sends out a raycast from the main camera.
         Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
         RaycastHit hit;
@@ -71,7 +73,7 @@ public class PlayerAbilities : MonoBehaviour
 
     protected void Carry(GameObject o)
     {
-        if (!thePlayer.throwMode)
+        if (!thePlayerTPS.throwMode)
         {
             o.transform.position = Vector3.Lerp(o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * currentHoldDistance, Time.deltaTime * smooth);
 
@@ -145,14 +147,14 @@ public class PlayerAbilities : MonoBehaviour
     {
         carriedObject.gameObject.GetComponent<Rigidbody>().useGravity = true;
         //carriedObject.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-        carriedObject.GetComponent<Rigidbody>().AddForce(mainCamera.transform.forward * (thePlayer.currentChargeTime * throwForce), ForceMode.Impulse);
+        carriedObject.GetComponent<Rigidbody>().AddForce(mainCamera.transform.forward * (thePlayerTPS.currentChargeTime * throwForce), ForceMode.Impulse);
         Physics.IgnoreCollision(GetComponentInParent<Collider>(), carriedObject.GetComponent<Collider>(), false);
         outline.enabled = false;
         outline = null;
         carriedObject = null;
         carrying = false;
-        thePlayer.throwMode = false;
-        thePlayer.currentChargeTime = 0;
+        thePlayerTPS.throwMode = false;
+        thePlayerTPS.currentChargeTime = 0;
     }
 
     //Drops the carriedObject.
@@ -166,6 +168,6 @@ public class PlayerAbilities : MonoBehaviour
         outline = null;
         carriedObject = null;
         carrying = false;
-        thePlayer.currentChargeTime = 0f;
+        thePlayerTPS.currentChargeTime = 0f;
     }
 }
