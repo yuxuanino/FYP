@@ -122,6 +122,7 @@ public class PlayerTPS : PlayerAbilities
                 }
                 else if (Input.GetButtonUp("Throw"))
                 {
+                    carriedObject.GetComponent<Pickupable>().Transparency(false);
                     throwMode = false;
                     if (currentChargeTime >= 1f)
                     {
