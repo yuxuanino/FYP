@@ -66,6 +66,7 @@ public class PlayerAbilities : MonoBehaviour
         }
     }
 
+    //Keeps the carried object in a fixed rotation when the player turns around.
     protected void rotateObject()
     {
         carriedObject.transform.Rotate(5, 10, 15);
@@ -125,14 +126,18 @@ public class PlayerAbilities : MonoBehaviour
             //p.myRB.isKinematic = false;
             if (p != null)
             {
+                //Cancel stasis when the stasis coroutine is cancelled.
                 if (p.stasisCoroutine != null)
                 {
                     p.CancelStasis();
                 }
+                //Highlights object when it is picked up.
                 carrying = true;
                 carriedObject = p.gameObject;
                 outline = carriedObject.GetComponent<Outline>();
                 outline.enabled = true;
+
+                //Turns off gravity for carried object.
                 p.gameObject.GetComponent<Rigidbody>().useGravity = false;
                 Physics.IgnoreCollision(GetComponentInParent<Collider>(), carriedObject.GetComponent<Collider>(), true);
 
@@ -145,6 +150,7 @@ public class PlayerAbilities : MonoBehaviour
     //Applies a force to the carriedObject and throws it.
     protected void ThrowObject()
     {
+        //Turn gravity on again.
         carriedObject.gameObject.GetComponent<Rigidbody>().useGravity = true;
         //carriedObject.gameObject.GetComponent<Rigidbody>().isKinematic = false;
         carriedObject.GetComponent<Rigidbody>().AddForce(mainCamera.transform.forward * (thePlayerTPS.currentChargeTime * throwForce), ForceMode.Impulse);
