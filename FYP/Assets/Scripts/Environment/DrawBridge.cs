@@ -14,15 +14,6 @@ public class DrawBridge : MonoBehaviour
 
     public Animator anim;
 
-    //Moving point.
-    public GameObject point1;
-    public GameObject point2;
-
-    //Stasis.
-    private float time = 3f;
-    public bool isStasis = false;
-    public GameObject stasisEffect;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -35,13 +26,11 @@ public class DrawBridge : MonoBehaviour
 
         if (allPressurePlateTriggered() && allLaser())
         {
-            //anim.SetBool("bridgeDraw", true);
-            transform.position = Vector3.MoveTowards(transform.position, point2.transform.position, Time.deltaTime * time);
+            anim.SetBool("bridgeDraw", true);
         }
         else
         {
-            //anim.SetBool("bridgeDraw", false);
-            transform.position = Vector3.MoveTowards(transform.position, point1.transform.position, Time.deltaTime * time);
+            anim.SetBool("bridgeDraw", false);
         }
     }
 
