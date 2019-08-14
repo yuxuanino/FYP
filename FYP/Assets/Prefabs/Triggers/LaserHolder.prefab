@@ -43,7 +43,7 @@ ParticleSystem:
   lengthInSec: 0.3
   simulationSpeed: 1
   stopAction: 0
-  cullingMode: 0
+  cullingMode: 1
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
@@ -2622,11 +2622,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   NoiseModule:
-    enabled: 0
+    enabled: 1
     strength:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2783,16 +2783,16 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     separateAxes: 0
-    frequency: 0.5
+    frequency: 5
     damping: 1
-    octaves: 1
+    octaves: 4
     octaveMultiplier: 0.5
     octaveScale: 2
     quality: 2
     scrollSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 2
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -3940,7 +3940,7 @@ ParticleSystem:
     worldSpace: 0
     dieWithParticles: 1
     sizeAffectsWidth: 1
-    sizeAffectsLifetime: 0
+    sizeAffectsLifetime: 1
     inheritParticleColor: 1
     generateLightingData: 0
     splitSubEmitterRibbons: 0
@@ -4775,7 +4775,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 266121918475486830}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -55.42, y: 14.540222, z: -25.015648}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

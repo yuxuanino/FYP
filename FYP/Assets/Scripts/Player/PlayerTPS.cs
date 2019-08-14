@@ -195,7 +195,6 @@ public class PlayerTPS : PlayerAbilities
         {
             if (grounded)
             {
-                // Calculate how fast we should be moving
                 Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
                 targetVelocity = transform.TransformDirection(targetVelocity);
                 targetVelocity *= speed;
@@ -218,7 +217,7 @@ public class PlayerTPS : PlayerAbilities
 
             else
             {
-                Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal") / airSpeedPenalty, 0, Input.GetAxis("Vertical") / airSpeedPenalty);
+                Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
                 targetVelocity = transform.TransformDirection(targetVelocity);
                 targetVelocity *= speed;
 
