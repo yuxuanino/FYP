@@ -58,16 +58,23 @@ public class PlayerAbilities : MonoBehaviour
             {
                 hit.collider.GetComponent<MovingPlatform>().SetStasis(5f);
             }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 00cb3fabc230cd29b00bc5b51c9ce9682faccb1a
             if(hit.collider.GetComponent<RotatingInteractable>() != null)
             {
                 hit.collider.GetComponent<RotatingInteractable>().SetStasis(5f);
             }
+<<<<<<< HEAD
             if(hit.collider.GetComponent<DrawBridge>() != null)
             {
                 print("wat");
                 Debug.Log("Hit = " + hit.transform.name);
                 hit.collider.GetComponent<DrawBridge>().SetStasis(5f);
             }
+=======
+>>>>>>> 00cb3fabc230cd29b00bc5b51c9ce9682faccb1a
         }
     }
 
