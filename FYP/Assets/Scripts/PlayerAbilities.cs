@@ -44,29 +44,25 @@ public class PlayerAbilities : MonoBehaviour
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, layer_mask))
         {
             //Object must have this component to be Stasis.
-            if (hit.collider.GetComponent<Pickupable>() != null)
+                if (hit.collider.GetComponent<Pickupable>() != null)
             {
-
+                
                 hit.collider.GetComponent<Pickupable>().SetStasis(5f);
                 if (carrying)
-                {
-                    DropObject();
-                }
+                    {
+                        DropObject();
+                    } 
             }
 
-            if (hit.collider.GetComponent<MovingPlatform>() != null)
+            if(hit.collider.GetComponent<MovingPlatform>() != null)
             {
                 hit.collider.GetComponent<MovingPlatform>().SetStasis(5f);
             }
-            else if (hit.collider.GetComponent<RotatingInteractable>() != null)
+
+            if(hit.collider.GetComponent<RotatingInteractable>() != null)
             {
                 hit.collider.GetComponent<RotatingInteractable>().SetStasis(5f);
             }
-           /* else if (hit.collider.GetComponent<DrawBridge>() != null)
-            {
-                
-            }*/
-
         }
     }
 
