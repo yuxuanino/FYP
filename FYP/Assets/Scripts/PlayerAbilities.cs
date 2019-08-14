@@ -40,7 +40,7 @@ public class PlayerAbilities : MonoBehaviour
         //Sends out a raycast from the main camera.
         Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
         RaycastHit hit;
-        int layer_mask = 1 << 11;
+        int layer_mask = 1 << 8;
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, layer_mask))
         {
             //Object must have this component to be Stasis.
@@ -58,10 +58,15 @@ public class PlayerAbilities : MonoBehaviour
             {
                 hit.collider.GetComponent<MovingPlatform>().SetStasis(5f);
             }
-
             if(hit.collider.GetComponent<RotatingInteractable>() != null)
             {
                 hit.collider.GetComponent<RotatingInteractable>().SetStasis(5f);
+            }
+            if(hit.collider.GetComponent<DrawBridge>() != null)
+            {
+                print("wat");
+                Debug.Log("Hit = " + hit.transform.name);
+                hit.collider.GetComponent<DrawBridge>().SetStasis(5f);
             }
         }
     }
@@ -117,7 +122,7 @@ public class PlayerAbilities : MonoBehaviour
         Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
         Debug.DrawRay(transform.position, forward, Color.green);
 
-        int layer_mask = 1 << 11;
+        int layer_mask = 1 << 8;
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, layer_mask))
         {
             //Object must have this component to be picked up.
