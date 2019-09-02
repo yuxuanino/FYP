@@ -9,9 +9,11 @@ public class PlayerTPS : PlayerAbilities
     public float maxVelocityChange = 10.0f;
     public bool canJump = true;
     public float jumpHeight = 1.3f;
-    public float airSpeedPenalty;
+    public float groundCheckDistance = 0.1f;
+
     private bool grounded = false;
     public bool canMove;
+    private Collider pCollider;
 
     //Player direction
     public float turnSmoothTime = 0.2f;
@@ -53,7 +55,7 @@ public class PlayerTPS : PlayerAbilities
     // Start is called before the first frame update
     void Start()
     {
-        base.Start();
+        base.Init();
         canMove = true;
         Cursor.lockState = cursorMode = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -68,10 +70,22 @@ public class PlayerTPS : PlayerAbilities
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         rb.useGravity = false;
+        pCollider = GetComponent<Collider>();
     }
 
     void Update()
     {
+        if (Physics.Raycast(pCollider.transform.position, Vector3.down, groundCheckDistance))
+        {
+            grounded = true;
+            jump = false;
+        }
+
+        else
+        {
+            grounded = false;
+        }
+
         //Increase or decrease of Telekinesis Hold distance
         if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
         {
@@ -237,11 +251,13 @@ public class PlayerTPS : PlayerAbilities
         }
     }
 
+    /*
     void OnCollisionStay()
     {
         jump = false;
         grounded = true;
     }
+    */
 
     float CalculateJumpVerticalSpeed()
     {
