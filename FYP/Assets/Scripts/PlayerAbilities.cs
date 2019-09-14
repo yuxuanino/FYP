@@ -26,7 +26,7 @@ public class PlayerAbilities : MonoBehaviour
     {
         
     }
-    public void Start()
+    public void Init()
     {
         thePlayer = gameObject.GetComponent<Player360Movement>();
         thePlayerTPS = gameObject.GetComponent<PlayerTPS>();

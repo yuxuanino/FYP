@@ -44,7 +44,7 @@ public class Player360Movement : PlayerAbilities
 
     void Start()
     {
-        base.Start();
+        base.Init();
         canMove = true;
         Cursor.lockState = cursorMode = CursorLockMode.Locked;
         Cursor.visible = false;
