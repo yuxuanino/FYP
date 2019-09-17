@@ -245,7 +245,8 @@ MonoBehaviour:
   - Hi my name is jeff;asdkfh eiawuofhiasojdbfajsbfhabwhefbihabhfbaiufkjae
   - No my name is jeff
   typingSpeed: 0.02
-  continueButton: {fileID: 0}
+  continueButton: {fileID: 1895936464}
+  anim: {fileID: 0}
 --- !u!4 &423408606
 Transform:
   m_ObjectHideFlags: 0
@@ -354,6 +355,7 @@ GameObject:
   - component: {fileID: 925982706}
   - component: {fileID: 925982705}
   - component: {fileID: 925982704}
+  - component: {fileID: 925982707}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -422,6 +424,25 @@ RectTransform:
   m_AnchoredPosition: {x: -0.9, y: -213}
   m_SizeDelta: {x: 1048.7, y: 138.5}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &925982707
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925982703}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 878ebba991afa89489413229d349ae5e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1264629796
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,7 +715,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1895936465
 RectTransform:
   m_ObjectHideFlags: 0
@@ -757,7 +778,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1895936467}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 423408605}
+        m_MethodName: NextSentence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1895936467

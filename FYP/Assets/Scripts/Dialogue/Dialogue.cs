@@ -11,6 +11,7 @@ public class Dialogue : MonoBehaviour
     public float typingSpeed;
 
     public GameObject continueButton;
+    //public Animator anim;
 
     void Start()
     {
@@ -30,13 +31,19 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    IEnumerator Type()
+     IEnumerator Type()
     {
-        foreach(char letter in sentences[index].ToCharArray())
+        foreach (char letter in sentences[index].ToCharArray())
         {
             textDisplay.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
+
+        /*if (Input.GetMouseButtonDown(0))
+        {
+            textDisplay.text = sentences[index];
+        }
+        Debug.Log(Input.GetMouseButtonDown(0));*/
     }
 
     public void NextSentence()  //Continue to next sentence of dialogue
