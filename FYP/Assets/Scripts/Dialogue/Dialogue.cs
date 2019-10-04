@@ -11,6 +11,7 @@ public class Dialogue : MonoBehaviour
     public float typingSpeed;
 
     public GameObject continueButton;
+    public GameObject skipDialogueButton;
     //public Animator anim;
 
     void Start()
