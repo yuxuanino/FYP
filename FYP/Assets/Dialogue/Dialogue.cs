@@ -11,7 +11,8 @@ public class Dialogue : MonoBehaviour
     public float typingSpeed;
 
     public GameObject continueButton;
-    public GameObject skipDialogueButton;
+    //public GameObject skipDialogueButton;
+    private bool continueDialogue;  //For skipping dialogue
     //public Animator anim;
 
     void Start()
@@ -30,10 +31,25 @@ public class Dialogue : MonoBehaviour
         {
             continueButton.SetActive(true);
         }
+
+        if(continueDialogue == true)
+        {
+            StopCoroutine(Type());
+        }
     }
 
      IEnumerator Type()
     {
+        bool continueDialogue = false;
+
+        while (!continueDialogue)
+        {
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                continueDialogue = true;
+            }
+        }
+
         foreach (char letter in sentences[index].ToCharArray())
         {
             textDisplay.text += letter;
