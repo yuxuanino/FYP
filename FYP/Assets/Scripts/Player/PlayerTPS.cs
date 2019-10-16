@@ -75,17 +75,6 @@ public class PlayerTPS : PlayerAbilities
 
     void Update()
     {
-        if (Physics.Raycast(pCollider.transform.position, Vector3.down, groundCheckDistance))
-        {
-            grounded = true;
-            jump = false;
-        }
-
-        else
-        {
-            grounded = false;
-        }
-
         //Increase or decrease of Telekinesis Hold distance
         if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
         {
@@ -205,6 +194,17 @@ public class PlayerTPS : PlayerAbilities
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (Physics.Raycast(pCollider.transform.position, Vector3.down, groundCheckDistance))
+        {
+            grounded = true;
+            jump = false;
+        }
+
+        else
+        {
+            grounded = false;
+        }
+
         if (canMove)
         {
             if (grounded)
