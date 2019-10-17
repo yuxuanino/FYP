@@ -5577,7 +5577,7 @@ GameObject:
   - component: {fileID: 4193145011174859905}
   - component: {fileID: 4193145011174859906}
   m_Layer: 0
-  m_Name: unitychan
+  m_Name: unitychan (1)
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5711,7 +5711,7 @@ MonoBehaviour:
   maxVelocityChange: 10
   canJump: 1
   jumpHeight: 2
-  groundCheckDistance: 0.1
+  groundCheckDistance: 0.01
   canMove: 0
   turnSmoothTime: 0.1
   speedH: 2
