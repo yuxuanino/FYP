@@ -11,9 +11,13 @@ public class PlayerTPS : PlayerAbilities
     public float jumpHeight = 1.3f;
     public float groundCheckDistance = 0.1f;
 
-    private bool grounded = false;
+    bool isGrounded;
     public bool canMove;
     private Collider pCollider;
+    Vector3 colliderPosition;
+    float colliderRadius;
+
+    LayerMask playerLayer;
 
     //Player direction
     public float turnSmoothTime = 0.2f;
@@ -60,6 +64,9 @@ public class PlayerTPS : PlayerAbilities
         Cursor.lockState = cursorMode = CursorLockMode.Locked;
         Cursor.visible = false;
 
+        playerLayer = 1 << 9;
+        playerLayer = ~playerLayer;
+
         mainCamera = GameObject.FindWithTag("MainCamera");
         cameraT = Camera.main.transform;
         throwMode = false;
@@ -71,21 +78,12 @@ public class PlayerTPS : PlayerAbilities
         rb.freezeRotation = true;
         rb.useGravity = false;
         pCollider = GetComponent<Collider>();
+        float radius = GetComponent<CapsuleCollider>().radius * 0.9f;
+        colliderPosition = transform.position + Vector3.up * (radius * 0.9f);
     }
 
     void Update()
     {
-        if (Physics.Raycast(pCollider.transform.position, Vector3.down, groundCheckDistance))
-        {
-            grounded = true;
-            jump = false;
-        }
-
-        else
-        {
-            grounded = false;
-        }
-
         //Increase or decrease of Telekinesis Hold distance
         if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
         {
@@ -205,9 +203,11 @@ public class PlayerTPS : PlayerAbilities
     // Update is called once per frame
     void FixedUpdate()
     {
+        GroundCheck();
+
         if (canMove)
         {
-            if (grounded)
+            if (isGrounded)
             {
                 Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
                 targetVelocity = transform.TransformDirection(targetVelocity);
@@ -246,16 +246,21 @@ public class PlayerTPS : PlayerAbilities
 
             // We apply gravity manually for more tuning control
             rb.AddForce(new Vector3(0, -gravity * rb.mass, 0));
-
-            grounded = false;
         }
     }
 
+    void GroundCheck()
+    {
+        RaycastHit hit;
+        Vector3 dir = new Vector3(0, -1);
+
+        isGrounded = Physics.Raycast(transform.position, dir, out hit, groundCheckDistance);
+    }
     /*
     void OnCollisionStay()
     {
         jump = false;
-        grounded = true;
+        IsGrounded = true;
     }
     */
 
