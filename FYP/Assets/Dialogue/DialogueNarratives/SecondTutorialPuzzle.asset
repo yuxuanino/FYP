@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2797fd7df100ca4dad57346503e4e28, type: 3}
+  m_Name: SecondTutorialPuzzle
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - myName: Leica
+    portrait: {fileID: 0}
+    myText: These cubes are strange... Whoever made them must not have heard of a
+      lock and key.
+  - myName: Leica
+    portrait: {fileID: 0}
+    myText: At least they've made it big enough for me to stand on.
+  - myName: Leica
+    portrait: {fileID: 0}
+    myText: Must be a pain lugging this around just to open a gate.
+  - myName: Leica
+    portrait: {fileID: 0}
+    myText: Imagine dragging this around at the end of the day just to unlock your
+      front door!
+  - myName: Leica
+    portrait: {fileID: 0}
+    myText: I think I'd rather leave it open and hope for the best. Heh.

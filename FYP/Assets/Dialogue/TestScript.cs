@@ -11,20 +11,20 @@ public class TestScript : MonoBehaviour
         DialogueManager.instance.EnqueueDialogue(dialogue);
     }
 
-    /*private void Update()
+    private void Update()
     {
         //Change this to trigger instead of GetKeyDown
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             TriggerDialogue();
         }
-    }*/
+    }
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
             TriggerDialogue();
         }
-    }
+    }*/
 }
