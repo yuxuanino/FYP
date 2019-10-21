@@ -173,6 +173,7 @@ public class PlayerAbilities : MonoBehaviour
     {
         carriedObject.GetComponent<Pickupable>().Transparency(false);
         carriedObject.GetComponent<Rigidbody>().useGravity = true;
+        carriedObject.GetComponent<Rigidbody>().velocity = new Vector3 (0, 0, 0);
         //carriedObject.gameObject.GetComponent<Rigidbody>().isKinematic = false;
         Physics.IgnoreCollision(GetComponentInParent<Collider>(), carriedObject.GetComponent<Collider>(), false);
         outline.enabled = false;
