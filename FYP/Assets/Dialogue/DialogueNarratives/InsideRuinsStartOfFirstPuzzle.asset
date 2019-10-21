@@ -16,30 +16,99 @@ MonoBehaviour:
   - myName: Leica
     portrait: {fileID: 0}
     myText: Oh, nevermind. Poor souls, look like they've been here a long time.
+  - myName: '?'
+    portrait: {fileID: 0}
+    myText: Who goes there?!
   - myName: Leica
     portrait: {fileID: 0}
-    myText: 
+    myText: What in the...?! A floating mirror? I hope it fetches a good price.
   - myName: 
     portrait: {fileID: 0}
-    myText: 
+    myText: Leica jumps and tries to grab it, but the mirror was too fast.
+  - myName: Leica
+    portrait: {fileID: 0}
+    myText: Maybe I could just...
   - myName: 
     portrait: {fileID: 0}
-    myText: 
+    myText: She focused her magic through her arms and an electric blue tendril shot
+      from her palm.
   - myName: 
     portrait: {fileID: 0}
-    myText: 
+    myText: It struck the mirror, but she could not pull it towards her. There was
+      a spark, and Leica's magic dissipated harmlessly.
+  - myName: '?'
+    portrait: {fileID: 0}
+    myText: Get your slimy hands off me! I'll have you know, my magic resistance is
+      S rank!
+  - myName: Leica
+    portrait: {fileID: 0}
+    myText: Ow, that gave me a jolt! If I can't grab you, I'll just take you down!
   - myName: 
     portrait: {fileID: 0}
-    myText: 
+    myText: Leica grabbed a pot from the corner and began hurling objects at the mirror.
+      It zigged and zagged to dodge the projectiles.
+  - myName: '?'
+    portrait: {fileID: 0}
+    myText: Why you!? Stop this at once!
+  - myName: '?'
+    portrait: {fileID: 0}
+    myText: Insolent! I saw the way you've navigated the courtyard, your powers are
+      problematic, be gone this instant, or I'll be forced to turn you into dust!
+  - myName: '?'
+    portrait: {fileID: 0}
+    myText: The mirror glowed a fainted blue, and directed its light on Leica.
+  - myName: Leica
+    portrait: {fileID: 0}
+    myText: Wait! Don't point that thing at me, it's dangerous!
+  - myName: Leica
+    portrait: {fileID: 0}
+    myText: I can tell you, I have no interest in becoming one of those skeletons
+      over there.
+  - myName: '?'
+    portrait: {fileID: 0}
+    myText: Then be gone from this place!
+  - myName: Leica
+    portrait: {fileID: 0}
+    myText: I'm looking for a chalice! I'll go once I get it!
+  - myName: '?'
+    portrait: {fileID: 0}
+    myText: Huh? You're the same as the others, coming and thinking you can steal
+      from this sacred place!
+  - myName: '?'
+    portrait: {fileID: 0}
+    myText: All you can ever think of is gold and treasures and riches. This place
+      was once a city filled with culture and I'm never letting anyone in!
+  - myName: Leica
+    portrait: {fileID: 0}
+    myText: I'm not here to destroy this place. Many of your artifacts hold immeasurable
+      value, we just wished to preserve it and study it.
+  - myName: Leica
+    portrait: {fileID: 0}
+    myText: I'm not here to steal anything! I just want to preserve the history of
+      this place. (And to get that VIP card.)
+  - myName: '?'
+    portrait: {fileID: 0}
+    myText: I am this city's guardian! I forbid anyone from removing its treasures!
+      This place is filled with traps. If you seek death, then continue onward!
+  - myName: Leica
+    portrait: {fileID: 0}
+    myText: What if I survive?
+  - myName: '?'
+    portrait: {fileID: 0}
+    myText: Uh... Um... Then, I'll just destroy you myself! Fool!
   - myName: 
     portrait: {fileID: 0}
-    myText: 
-  - myName: 
+    myText: The floating mirror zips away through a hold in the wall.
+  - myName: Leica
     portrait: {fileID: 0}
-    myText: 
-  - myName: 
+    myText: What was that? A talking mirror? It seems she has done good work, this
+      place is in better condition if I've ever seen one. And the skeletons...
+  - myName: Leica
     portrait: {fileID: 0}
-    myText: 
-  - myName: 
+    myText: Let's not think about that.
+  - myName: Leica
     portrait: {fileID: 0}
-    myText: 
+    myText: I, Leica, have a zero per cent death rate!
+  - myName: Leica
+    portrait: {fileID: 0}
+    myText: Although... I'd hate to reach the end only to get zapped in the face.
