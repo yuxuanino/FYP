@@ -21,6 +21,11 @@ public class Pickupable : MonoBehaviour {
 
     public Coroutine stasisCoroutine;
 
+
+    //Object gravity - prevent it being floaty.
+    public float gravity = 20f;
+    public bool isObjectGravity = false;
+
     // Use this for initialization
     void Start() {
         myRB = GetComponent<Rigidbody>();
@@ -46,6 +51,11 @@ public class Pickupable : MonoBehaviour {
             }
             myRB.velocity = Vector3.zero;
             myRB.isKinematic = true;
+        }
+
+        if (isObjectGravity)
+        {
+           myRB.AddForce(new Vector3(0, -gravity * myRB.mass, 0));
         }
     }
 

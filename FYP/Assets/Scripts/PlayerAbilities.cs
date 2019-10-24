@@ -143,6 +143,7 @@ public class PlayerAbilities : MonoBehaviour
                 outline.enabled = true;
 
                 //Turns off gravity for carried object.
+                p.isObjectGravity = false;
                 p.gameObject.GetComponent<Rigidbody>().useGravity = false;
                 Physics.IgnoreCollision(GetComponentInParent<Collider>(), carriedObject.GetComponent<Collider>(), true);
 
@@ -156,6 +157,7 @@ public class PlayerAbilities : MonoBehaviour
     protected void ThrowObject()
     {
         //Turn gravity on again.
+        carriedObject.gameObject.GetComponent<Pickupable>().isObjectGravity = true;
         carriedObject.gameObject.GetComponent<Rigidbody>().useGravity = true;
         //carriedObject.gameObject.GetComponent<Rigidbody>().isKinematic = false;
         carriedObject.GetComponent<Rigidbody>().AddForce(mainCamera.transform.forward * (thePlayerTPS.currentChargeTime * throwForce), ForceMode.Impulse);
