@@ -23,8 +23,8 @@ public class Cam : MonoBehaviour
     //Throw Mode camera setting.
     public float speedH = 2.0f;
     public float speedV = 2.0f;
-    private float yawThrow = 0.0f;
-    private float pitchThrow = 0.0f;
+    //private float yawThrow = 0.0f;
+    //private float pitchThrow = 0.0f;
     public float cameraMaxY = 90f;
     public float cameraMinY = -90f;
 

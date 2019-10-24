@@ -209,6 +209,7 @@ public class PlayerTPS : PlayerAbilities
         {
             if (isGrounded)
             {
+                jump = false;
                 Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
                 targetVelocity = transform.TransformDirection(targetVelocity);
                 targetVelocity *= speed;

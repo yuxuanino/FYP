@@ -7,7 +7,7 @@ public class RotatingInteractable : MonoBehaviour
     public float RotationSpeed;
     private Rigidbody rb;
 
-    private float time = 3f;
+    //private float time = 3f;
     public bool atPoint1 = true;
     public bool isStasis = false;
     public GameObject stasisEffect;
