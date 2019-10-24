@@ -11,9 +11,10 @@ public class PlayerTPS : PlayerAbilities
     public float jumpHeight = 1.3f;
     public float groundCheckDistance = 0.1f;
 
+    [SerializeField]
     bool isGrounded;
     public bool canMove;
-    private Collider pCollider;
+    private CapsuleCollider pCollider;
     Vector3 colliderPosition;
     float colliderRadius;
 
@@ -77,7 +78,7 @@ public class PlayerTPS : PlayerAbilities
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         rb.useGravity = false;
-        pCollider = GetComponent<Collider>();
+        pCollider = GetComponent<CapsuleCollider>();
         float radius = GetComponent<CapsuleCollider>().radius * 0.9f;
         colliderPosition = transform.position + Vector3.up * (radius * 0.9f);
     }
@@ -255,7 +256,7 @@ public class PlayerTPS : PlayerAbilities
         RaycastHit hit;
         Vector3 dir = new Vector3(0, -1);
 
-        isGrounded = Physics.Raycast(transform.position, dir, out hit, groundCheckDistance);
+        isGrounded = Physics.SphereCast(pCollider.transform.position + pCollider.center + (Vector3.up * 0.1f), pCollider.height / 2, Vector3.down, out hit, groundCheckDistance);
     }
     /*
     void OnCollisionStay()
