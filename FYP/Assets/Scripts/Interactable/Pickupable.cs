@@ -10,11 +10,16 @@ public class Pickupable : MonoBehaviour {
     public float thrust;
     Vector3 tVelocity;
 
+    public bool carryable = true;
     public bool isStasis;
     bool hideCube;
 
     public GameObject stasisEffect;
     public Vector3 currentPosition;
+    Vector3 startPosition;
+
+    public float resetHeight = -200f;
+    public float resetDelay = 1.5f;
 
     public Material baseMaterial;
     public Material fadeMaterial;
@@ -28,6 +33,7 @@ public class Pickupable : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
+        startPosition = transform.position;
         myRB = GetComponent<Rigidbody>();
         baseMaterial = GetComponent<Renderer>().material;
     }
@@ -56,6 +62,11 @@ public class Pickupable : MonoBehaviour {
         if (isObjectGravity)
         {
            myRB.AddForce(new Vector3(0, -gravity * myRB.mass, 0));
+        }
+
+        if (transform.position.y <= -200)
+        {
+            transform.position = startPosition;
         }
     }
 
@@ -99,5 +110,29 @@ public class Pickupable : MonoBehaviour {
         isStasis = true;
         yield return new WaitForSeconds(duration);
         isStasis = false;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Reset")
+        {
+            StartCoroutine("Reset");
+        }
+    }
+
+    IEnumerator Reset()
+    {
+        carryable = false;
+        CancelStasis();
+        myRB.useGravity = false;
+        myRB.velocity = Vector3.zero;
+        GetComponent<Renderer>().material = fadeMaterial;
+
+        yield return new WaitForSeconds(resetDelay);
+
+        carryable = true;
+        transform.position = startPosition;
+        myRB.useGravity = true;
+        GetComponent<Renderer>().material = baseMaterial;
     }
 }
