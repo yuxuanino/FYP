@@ -7,7 +7,6 @@ TagManager:
   - Box
   - PressurePlate
   - PlatformPoint
-  - Reset
   layers:
   - Default
   - TransparentFX

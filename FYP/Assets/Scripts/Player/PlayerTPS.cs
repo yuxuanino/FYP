@@ -148,7 +148,6 @@ public class PlayerTPS : PlayerAbilities
                         mainCamera.GetComponent<Cam>().currentRotation = new Vector3(pitch, yaw);
                     }
                 }
-                               
             }
 
             if (Input.GetKeyDown(KeyCode.F))
