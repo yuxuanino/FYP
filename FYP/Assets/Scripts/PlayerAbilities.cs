@@ -100,11 +100,6 @@ public class PlayerAbilities : MonoBehaviour
             o.transform.position = Vector3.Lerp(o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * throwHoldDistance, Time.deltaTime * smooth);
         }
 
-        if (!carriedObject.GetComponent<Pickupable>().carryable)
-        {
-            DropObject();
-        }
-
         o.transform.rotation = Quaternion.identity;
            
         deltaRotation = previousUp - mainCamera.transform.eulerAngles.y;
@@ -134,7 +129,7 @@ public class PlayerAbilities : MonoBehaviour
             Pickupable p = hit.collider.GetComponent<Pickupable>();
             //p.isStasis = false;
             //p.myRB.isKinematic = false;
-            if (p != null && p.carryable)
+            if (p != null)
             {
                 //Cancel stasis when the stasis coroutine is cancelled.
                 if (p.stasisCoroutine != null)
