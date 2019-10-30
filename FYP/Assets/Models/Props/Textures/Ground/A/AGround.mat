@@ -400,12 +400,12 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _HdrpVersion: 2
-    - _HeightAmplitude: 5
+    - _HeightAmplitude: 4
     - _HeightAmplitude0: 0.02
     - _HeightAmplitude1: 0.02
     - _HeightAmplitude2: 0.02
     - _HeightAmplitude3: 0.02
-    - _HeightCenter: 0.244
+    - _HeightCenter: 0.384
     - _HeightCenter0: 0.5
     - _HeightCenter1: 0.5
     - _HeightCenter2: 0.5
@@ -435,12 +435,12 @@ Material:
     - _HeightPoMAmplitude1: 2
     - _HeightPoMAmplitude2: 2
     - _HeightPoMAmplitude3: 2
-    - _HeightTessAmplitude: 500
+    - _HeightTessAmplitude: 400
     - _HeightTessAmplitude0: 2
     - _HeightTessAmplitude1: 2
     - _HeightTessAmplitude2: 2
     - _HeightTessAmplitude3: 2
-    - _HeightTessCenter: 0.244
+    - _HeightTessCenter: 0.384
     - _HeightTessCenter0: 0.5
     - _HeightTessCenter1: 0.5
     - _HeightTessCenter2: 0.5
@@ -540,11 +540,11 @@ Material:
     - _SurfaceType: 0
     - _TessellationBackFaceCullEpsilon: -0.2
     - _TessellationFactor: 15
-    - _TessellationFactorMaxDistance: 50
-    - _TessellationFactorMinDistance: 10
+    - _TessellationFactorMaxDistance: 500
+    - _TessellationFactorMinDistance: 500
     - _TessellationFactorTriangleSize: 50
     - _TessellationMode: 1
-    - _TessellationShapeFactor: 0.71
+    - _TessellationShapeFactor: 0.785
     - _TexWorldScale: 1
     - _TexWorldScale0: 1
     - _TexWorldScale1: 1
