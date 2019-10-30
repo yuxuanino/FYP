@@ -203,14 +203,14 @@ Material:
     - _GlossyReflections: 1
     - _HdrpVersion: 2
     - _HeightAmplitude: 2
-    - _HeightCenter: 0.209
+    - _HeightCenter: 0.19
     - _HeightMapParametrization: 1
     - _HeightMax: 1
     - _HeightMin: -1
     - _HeightOffset: 0
     - _HeightPoMAmplitude: 0.0206
     - _HeightTessAmplitude: 200
-    - _HeightTessCenter: 0.209
+    - _HeightTessCenter: 0.19
     - _InvTilingScale: 1
     - _Ior: 1
     - _IridescenceMask: 1
@@ -252,13 +252,13 @@ Material:
     - _SubsurfaceMask: 1
     - _SupportDecals: 1
     - _SurfaceType: 0
-    - _TessellationBackFaceCullEpsilon: -0.27
+    - _TessellationBackFaceCullEpsilon: -0.221
     - _TessellationFactor: 15
-    - _TessellationFactorMaxDistance: 10
+    - _TessellationFactorMaxDistance: 100
     - _TessellationFactorMinDistance: 0
     - _TessellationFactorTriangleSize: 100
     - _TessellationMode: 1
-    - _TessellationShapeFactor: 0.75
+    - _TessellationShapeFactor: 0.082
     - _TexWorldScale: 1
     - _TexWorldScaleEmissive: 1
     - _Thickness: 1

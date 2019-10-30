@@ -257,7 +257,7 @@ Material:
     - _TessellationFactorMinDistance: 10
     - _TessellationFactorTriangleSize: 100
     - _TessellationMode: 1
-    - _TessellationShapeFactor: 0.75
+    - _TessellationShapeFactor: 0.082
     - _TexWorldScale: 1
     - _TexWorldScaleEmissive: 1
     - _Thickness: 1
