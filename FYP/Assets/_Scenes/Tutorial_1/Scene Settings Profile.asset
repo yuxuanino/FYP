@@ -16,7 +16,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   rotation:
     m_OverrideState: 1
-    m_Value: 163
+    m_Value: 206
     min: 0
     max: 360
   skyIntensityMode:
@@ -24,10 +24,10 @@ MonoBehaviour:
     m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   multiplier:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.3
     min: 0
   upperHemisphereLuxValue:
     m_OverrideState: 1
@@ -278,34 +278,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9008a067f4d626c4d8bc4bc48f04bb89, type: 3}
   m_Name: AmbientOcclusion
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.13
+    m_Value: 1.25
     min: 0
     max: 4
   stepCount:
-    m_OverrideState: 0
-    m_Value: 6
+    m_OverrideState: 1
+    m_Value: 26
     min: 2
     max: 32
   radius:
-    m_OverrideState: 0
-    m_Value: 2
+    m_OverrideState: 1
+    m_Value: 0.89
     min: 0.25
     max: 5
   fullResolution:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
   maximumRadiusInPixels:
-    m_OverrideState: 0
-    m_Value: 40
+    m_OverrideState: 1
+    m_Value: 34
     min: 16
     max: 256
   directLightingStrength:
     m_OverrideState: 1
-    m_Value: 0.073
+    m_Value: 0.266
     min: 0
     max: 1
   enableRaytracing:
@@ -406,3 +406,49 @@ MonoBehaviour:
   - {fileID: -6925853016821512424}
   - {fileID: -9076185072260762567}
   - {fileID: -4189027074999436442}
+  - {fileID: 5734695142979784280}
+--- !u!114 &5734695142979784280
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b145d2b9ee1ac4f846968484e7485a, type: 3}
+  m_Name: ContactShadows
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  length:
+    m_OverrideState: 1
+    m_Value: 0.461
+    min: 0
+    max: 1
+  opacity:
+    m_OverrideState: 1
+    m_Value: 0.741
+    min: 0
+    max: 1
+  distanceScaleFactor:
+    m_OverrideState: 1
+    m_Value: 0.5
+    min: 0
+    max: 1
+  maxDistance:
+    m_OverrideState: 1
+    m_Value: 50
+    min: 0
+  fadeDistance:
+    m_OverrideState: 1
+    m_Value: 5
+    min: 0
+  sampleCount:
+    m_OverrideState: 1
+    m_Value: 24
+    min: 4
+    max: 64
