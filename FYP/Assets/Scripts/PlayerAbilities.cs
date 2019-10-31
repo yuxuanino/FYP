@@ -87,8 +87,9 @@ public class PlayerAbilities : MonoBehaviour
             RaycastHit hit;
             Debug.DrawRay(o.transform.position,-o.transform.up, Color.red);
             if (Physics.Raycast(o.transform.position, -o.transform.up, out hit))
-            {
-                PressurePlate p = hit.collider.GetComponent<PressurePlate>(); 
+            {  
+                PressurePlate p = hit.collider.GetComponent<PressurePlate>();
+                Debug.Log(p);
                 if (p != null)
                 {
                     p.hoverAbove = 0.2f;
