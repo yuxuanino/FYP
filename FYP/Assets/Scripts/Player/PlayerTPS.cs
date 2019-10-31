@@ -293,7 +293,7 @@ public class PlayerTPS : PlayerAbilities
             safeSpot = hit.point + new Vector3(0, 1f, 0);
         }
 
-        else return;
+        else return;    
     }
 }
 
