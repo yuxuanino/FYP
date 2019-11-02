@@ -269,13 +269,11 @@ public class PlayerTPS : PlayerAbilities
 
         isGrounded = Physics.SphereCast(pCollider.transform.position + pCollider.center + (Vector3.up * 0.1f), pCollider.height / 2, Vector3.down, out hit, groundCheckDistance);
     }
-    /*
-    void OnCollisionStay()
+
+    void OnTriggerEnter(Collider other)
     {
-        jump = false;
-        IsGrounded = true;
+        if (other.tag == "Hazard") transform.position = safeSpot;
     }
-    */
 
     float CalculateJumpVerticalSpeed()
     {
