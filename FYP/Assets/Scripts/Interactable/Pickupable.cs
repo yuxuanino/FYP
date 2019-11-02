@@ -42,6 +42,11 @@ public class Pickupable : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
+        if (transform.localPosition.y <= resetHeight)
+        {
+            transform.position = startPosition;
+        }
+
         if (isStasis == false)
         {
             if (tVelocity != Vector3.zero)
