@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Pitfall : MonoBehaviour
 {
+    public GameObject resetPoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,7 @@ public class Pitfall : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            other.transform.position = resetPoint.transform.position;
             print("PLayer fell");
         }
     }

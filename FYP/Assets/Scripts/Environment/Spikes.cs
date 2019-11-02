@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spikes : MonoBehaviour
 {
-    public float speed = 10f;
+    public float speed = 25f;
     
 
     // Start is called before the first frame update
@@ -16,7 +16,8 @@ public class Spikes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position -= transform.forward * Time.deltaTime * speed;
+        transform.position -= transform.parent.transform.right * Time.deltaTime * speed;
+        transform.rotation = transform.parent.transform.rotation;
     }
     
     public void OnTriggerEnter(Collider other)
