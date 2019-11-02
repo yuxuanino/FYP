@@ -291,7 +291,7 @@ public class PlayerTPS : PlayerAbilities
             safeSpot = hit.point + new Vector3(0, 1f, 0);
         }
 
-        else if (hit.collider.tag != "Ground") return;    
+        else return;    
     }
 }
 
