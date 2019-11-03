@@ -47,7 +47,7 @@ public class PlayerAbilities : MonoBehaviour
                 if (hit.collider.GetComponent<Pickupable>() != null)
             {
                 
-                hit.collider.GetComponent<Pickupable>().SetStasis(5f);
+                hit.collider.GetComponent<Pickupable>().SetStasis(60f);
                 if (carrying)
                     {
                         DropObject();
