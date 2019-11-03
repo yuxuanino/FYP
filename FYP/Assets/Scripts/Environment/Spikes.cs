@@ -22,11 +22,13 @@ public class Spikes : MonoBehaviour
     
     public void OnTriggerEnter(Collider other)
     {
+        /*
         if(other.tag == "Player")
         {
             print("Hit player");
             Destroy(gameObject);
         }
+        */
 
         if(other.tag == "Box")
         {
