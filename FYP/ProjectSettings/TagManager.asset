@@ -8,6 +8,11 @@ TagManager:
   - PressurePlate
   - PlatformPoint
   - Reset
+  - OtherButton
+  - StartButton
+  - ControlsButton
+  - SoundButton
+  - GraphicsButton
   layers:
   - Default
   - TransparentFX

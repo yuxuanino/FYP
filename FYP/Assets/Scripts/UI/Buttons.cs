@@ -5,6 +5,9 @@ using UnityEngine.UI;
 public class Buttons : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public GameObject textShade;
+    public Sprite controlsWhite;
+    public Sprite soundWhite;
+    public Sprite graphicsWhite;
 
     //Detect if the Cursor starts to pass over the GameObject
     public void OnPointerEnter(PointerEventData pointerEventData)
@@ -12,6 +15,7 @@ public class Buttons : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         //Output to console the GameObject's name and the following message
         //Debug.Log("Cursor Entering" + level + "GameObject");
 
+        //Main Menu
         if (this.tag == "StartButton")
         {
             textShade.SetActive(true);
@@ -22,6 +26,27 @@ public class Buttons : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             textShade.SetActive(true);
             //transform.localScale += new Vector3(0.1f, 0.1f, 0);
+        }
+
+        //Settings
+        if (this.tag == "ControlsButton")
+        {
+            //Change sprites
+            this.GetComponent<SpriteRenderer>().sprite = controlsWhite;
+            //Move position
+            //transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+
+            //Debug.Log("helloooo");
+        }
+
+        if (this.tag == "SoundButton")
+        {
+            this.GetComponent<SpriteRenderer>().sprite = soundWhite;
+        }
+
+        if (this.tag == "GraphicsButton")
+        {
+            this.GetComponent<SpriteRenderer>().sprite = graphicsWhite;
         }
     }
 
