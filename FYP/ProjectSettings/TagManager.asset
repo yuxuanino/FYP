@@ -10,9 +10,6 @@ TagManager:
   - Reset
   - OtherButton
   - StartButton
-  - ControlsButton
-  - SoundButton
-  - GraphicsButton
   layers:
   - Default
   - TransparentFX
