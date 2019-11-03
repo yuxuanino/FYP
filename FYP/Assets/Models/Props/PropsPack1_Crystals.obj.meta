@@ -3,7 +3,37 @@ guid: 73515044cdb448043b50296b432f5548
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalA008Mat
+    second: {fileID: 2100000, guid: 22e94f22019364d4da74b1db85d94c81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalB034Mat
+    second: {fileID: 2100000, guid: 22e94f22019364d4da74b1db85d94c81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalC074Mat
+    second: {fileID: 2100000, guid: 22e94f22019364d4da74b1db85d94c81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalD144Mat
+    second: {fileID: 2100000, guid: 22e94f22019364d4da74b1db85d94c81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalE001Mat
+    second: {fileID: 2100000, guid: 22e94f22019364d4da74b1db85d94c81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalF001Mat
+    second: {fileID: 2100000, guid: 22e94f22019364d4da74b1db85d94c81, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

@@ -24,10 +24,10 @@ MonoBehaviour:
     m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 1
   multiplier:
     m_OverrideState: 1
-    m_Value: 0.4
+    m_Value: 0.2
     min: 0
   upperHemisphereLuxValue:
     m_OverrideState: 1
@@ -305,7 +305,7 @@ MonoBehaviour:
     max: 256
   directLightingStrength:
     m_OverrideState: 1
-    m_Value: 0.266
+    m_Value: 0.351
     min: 0
     max: 1
   enableRaytracing:
