@@ -17,7 +17,7 @@ MonoBehaviour:
   m_RenderPipelineRayTracingResources: {fileID: 0}
   m_RenderingPathDefaultCameraFrameSettings:
     bitDatas:
-      data1: 69456063627037
+      data1: 69456063627036
       data2: 4539628424389459968
     lodBias: 1
     lodBiasMode: 0
@@ -43,7 +43,7 @@ MonoBehaviour:
     supportShadowMask: 1
     supportSSR: 0
     supportSSAO: 1
-    supportSubsurfaceScattering: 1
+    supportSubsurfaceScattering: 0
     increaseSssSampleCount: 0
     supportVolumetrics: 1
     increaseResolutionOfVolumetrics: 0
@@ -53,7 +53,7 @@ MonoBehaviour:
     supportTransparentDepthPrepass: 1
     supportTransparentDepthPostpass: 1
     colorBufferFormat: 74
-    supportedLitShaderMode: 2
+    supportedLitShaderMode: 3
     supportDecals: 1
     msaaSampleCount: 1
     supportMotionVectors: 1
@@ -102,10 +102,10 @@ MonoBehaviour:
       atlasHeight: 4096
       perChannelMask: 0
     postProcessSettings:
-      m_LutSize: 32
+      m_LutSize: 16
       lutFormat: 48
     dynamicResolutionSettings:
-      enabled: 0
+      enabled: 1
       maxPercentage: 100
       minPercentage: 100
       dynResType: 1
@@ -118,7 +118,7 @@ MonoBehaviour:
       upsampleType: 1
   allowShaderVariantStripping: 1
   enableSRPBatcher: 1
-  shaderVariantLogLevel: 0
+  shaderVariantLogLevel: 2
   diffusionProfileSettings: {fileID: 0}
   diffusionProfileSettingsList: []
   m_Version: 6

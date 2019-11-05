@@ -17,6 +17,9 @@ public class PlayerTPS : PlayerAbilities
     private CapsuleCollider pCollider;
     Vector3 colliderPosition;
     float colliderRadius;
+    Vector3 safeSpot;
+    public float sUpdateInterval = 3f;
+    public float resetHeight = 15600f;
 
     LayerMask playerLayer;
 
@@ -81,6 +84,8 @@ public class PlayerTPS : PlayerAbilities
         pCollider = GetComponent<CapsuleCollider>();
         float radius = GetComponent<CapsuleCollider>().radius * 0.9f;
         colliderPosition = transform.position + Vector3.up * (radius * 0.9f);
+        safeSpot = transform.position;
+        InvokeRepeating("UpdateSafeSpot", 0, sUpdateInterval);
     }
 
     void Update()
@@ -183,6 +188,11 @@ public class PlayerTPS : PlayerAbilities
             mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, throwCamera.transform.position, camSwitchSpeed * Time.deltaTime);
         }
 
+        if (transform.position.y < resetHeight)
+        {
+            transform.position = safeSpot;
+        }
+
         yaw += speedH * Input.GetAxis("Mouse X");
         pitch -= speedV * Input.GetAxis("Mouse Y");
         pitch = Mathf.Clamp(pitch, cameraMinY, cameraMaxY);
@@ -259,19 +269,29 @@ public class PlayerTPS : PlayerAbilities
 
         isGrounded = Physics.SphereCast(pCollider.transform.position + pCollider.center + (Vector3.up * 0.1f), pCollider.height / 2, Vector3.down, out hit, groundCheckDistance);
     }
-    /*
-    void OnCollisionStay()
+
+    void OnTriggerEnter(Collider other)
     {
-        jump = false;
-        IsGrounded = true;
+        if (other.tag == "Hazard") transform.position = safeSpot;
     }
-    */
 
     float CalculateJumpVerticalSpeed()
     {
         // From the jump height and gravity we deduce the upwards speed 
         // for the character to reach at the apex.
         return Mathf.Sqrt(2 * jumpHeight * gravity);
+    }
+
+    void UpdateSafeSpot()
+    {
+        RaycastHit hit;
+        Physics.Raycast(transform.position, Vector3.down, out hit, 1f);
+        if (hit.collider.tag == "Ground")
+        {
+            safeSpot = hit.point + new Vector3(0, 1f, 0);
+        }
+
+        else if (hit.collider.tag != "Ground") return;    
     }
 }
 

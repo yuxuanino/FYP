@@ -8,8 +8,8 @@ TagManager:
   - PressurePlate
   - PlatformPoint
   - Reset
-  - OtherButton
-  - StartButton
+  - Ground
+  - Hazard
   layers:
   - Default
   - TransparentFX
