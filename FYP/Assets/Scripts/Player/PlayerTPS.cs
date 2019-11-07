@@ -36,8 +36,8 @@ public class PlayerTPS : PlayerAbilities
     public float speedV = 2.0f;
     private float yaw = 0.0f;
     private float pitch = 0.0f;
-    public float cameraMaxY = 90f;
-    public float cameraMinY = -25f;
+    public float cameraMaxY = 90f;      //Camera highest angle.
+    public float cameraMinY = -25f;     //Camera lowest angle.
 
     //Switch between default or ThrowMode. Default when walking around. Throw mode for when tossing object.
     public bool throwMode;
@@ -53,10 +53,13 @@ public class PlayerTPS : PlayerAbilities
     //Camera
     public GameObject throwCamera;      //Camera Position when throwing.
     public GameObject walkCamera;       //Camera Position when walking !throwing.
+    public GameObject zoomInCamera;     //Camera Position when it hits a wall. (Prevent seeing through walls/floor)
+    public GameObject camReverseCheck;  //Check from this position to walkCamera Position if there is any object in between.(Prevent seeing through walls/floor)
     public float camSwitchSpeed = 4;    //Speed which camera changes from Throw to Walk mode.
     public Vector3 currentRotation;
     private Vector3 rotationSmoothVelocity;
     public float rotationSmoothTime = 0.1f;
+    private bool cameraBlocked;
 
   
 
@@ -179,13 +182,27 @@ public class PlayerTPS : PlayerAbilities
         }
 
         //Camera=====================================
-        if (!throwMode)
+        if (!cameraBlocked)
         {
-            mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, walkCamera.transform.position, camSwitchSpeed * Time.deltaTime);
+            if (!throwMode)
+            {
+                mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, walkCamera.transform.position, camSwitchSpeed * Time.deltaTime);
+            }
+            else
+            {
+                mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, throwCamera.transform.position, camSwitchSpeed * Time.deltaTime);
+            }
         }
         else
         {
-            mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, throwCamera.transform.position, camSwitchSpeed * Time.deltaTime);
+            if (!throwMode)
+            {
+                mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, zoomInCamera.transform.position, camSwitchSpeed * Time.deltaTime);
+            }
+            else
+            {
+                mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, throwCamera.transform.position, camSwitchSpeed * Time.deltaTime);
+            }
         }
 
         if (transform.position.y < resetHeight)
@@ -201,11 +218,40 @@ public class PlayerTPS : PlayerAbilities
         mainCamera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
 
         CameraRotator.RotateCameraRotator(mainCamera.transform.eulerAngles.x, 0f, 0f);
-        
-        
 
-        //Animations===================================
-        inputH = Input.GetAxis("Horizontal");
+        Vector3 targetDir = walkCamera.transform.position - camReverseCheck.transform.position;
+        Vector3 newDir = Vector3.RotateTowards(-transform.forward, targetDir, 1f, 0.0f);
+        camReverseCheck.transform.rotation = Quaternion.LookRotation(newDir);
+
+        //Camera Raycast.
+        RaycastHit hit;     //Check forward to see if there is object blocking camera view.
+        if (Physics.Raycast(walkCamera.transform.position, walkCamera.transform.forward, out hit))
+        {
+            
+            if (hit.transform.tag != "Player")
+            {
+                cameraBlocked = true;
+            }
+            else
+            {
+                cameraBlocked = false;
+            }
+        }
+        RaycastHit hit2;    //Reverse Check to see if there is object blocking camera view. (Due to camera does not render object if it is in it.)
+        if (Physics.Raycast(camReverseCheck.transform.position, camReverseCheck.transform.forward, out hit2))
+        {
+            if(hit2.transform.tag != "Player")
+            {
+                cameraBlocked = true;
+            }
+            else
+            {
+                cameraBlocked = false;
+            }
+        }
+
+            //Animations===================================
+            inputH = Input.GetAxis("Horizontal");
         inputV = Input.GetAxis("Vertical");
         anim.SetFloat("inputV", inputV);
         anim.SetFloat("inputH", inputH);
