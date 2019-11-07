@@ -8,15 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Rock
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: _DETAIL_MAP _HEIGHTMAP _MASKMAP _METALLICSPECGLOSSMAP _NORMALMAP
-    _NORMALMAP_TANGENT_SPACE _OCCLUSIONMAP
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _DETAIL_MAP _DETAIL_MULX2 _HEIGHTMAP _MASKMAP _METALLICGLOSSMAP
+    _METALLICSPECGLOSSMAP _NORMALMAP _NORMALMAP_TANGENT_SPACE _OCCLUSIONMAP _PARALLAXMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2050
-  stringTagMap:
-    RenderType: Opaque
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses:
   - DistortionVectors
   - MOTIONVECTORS
@@ -47,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 6baab0dd4c4e77c4c9a034e3b9a70b52, type: 3}
+        m_Texture: {fileID: 2800000, guid: b39c86133ed8c5a45a570681c6939735, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CoatMaskMap:
@@ -55,7 +54,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
-        m_Texture: {fileID: 2800000, guid: e121c4dd02c5c8f4284482b4aaa22dff, type: 3}
+        m_Texture: {fileID: 2800000, guid: ef2617d9a95d83846be8c58c9fe8b57b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailMap:
@@ -67,7 +66,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailNormalMap:
-        m_Texture: {fileID: 2800000, guid: cabe2b0fd0b36aa4aba96158b7c326d4, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0dda2abbcb31f56438250e1a02efb469, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DistortionVectorMap:
@@ -167,7 +166,7 @@ Material:
     - _Anisotropy: 0
     - _Blend: 0
     - _BlendMode: 0
-    - _BumpScale: 1
+    - _BumpScale: 0.46
     - _CoatMask: 0
     - _Cull: 2
     - _CullMode: 2
@@ -175,7 +174,7 @@ Material:
     - _Cutoff: 0.5
     - _DepthOffsetEnable: 0
     - _DetailAlbedoScale: 0.14
-    - _DetailNormalMapScale: 1
+    - _DetailNormalMapScale: 0.71
     - _DetailNormalScale: 0.16
     - _DetailSmoothnessScale: 0.44
     - _DiffusionProfile: 0
@@ -210,7 +209,7 @@ Material:
     - _EnableSpecularOcclusion: 0
     - _EnergyConservingSpecularColor: 1
     - _EnvironmentReflections: 1
-    - _GlossMapScale: 0.983
+    - _GlossMapScale: 0.166
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _HdrpVersion: 2
@@ -233,7 +232,7 @@ Material:
     - _Mode: 0
     - _NormalMapSpace: 0
     - _NormalScale: 0.21
-    - _OcclusionStrength: 1
+    - _OcclusionStrength: 0.722
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
     - _PPDMinSamples: 5
@@ -300,7 +299,7 @@ Material:
     m_Colors:
     - _BaseColor: {r: 0.5711552, g: 0.8018868, b: 0.76804614, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0.5711552, g: 0.8018868, b: 0.76804614, a: 1}
+    - _Color: {r: 0.34242612, g: 0.35737994, b: 0.4245283, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
