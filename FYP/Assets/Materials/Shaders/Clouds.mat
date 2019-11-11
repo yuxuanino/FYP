@@ -10,14 +10,13 @@ Material:
   m_Name: Clouds
   m_Shader: {fileID: -6465566751694194690, guid: 6ba5cfeed488c3c439bf16d83d18cc33,
     type: 3}
-  m_ShaderKeywords: _BLENDMODE_ALPHA _DOUBLESIDED_ON _SURFACE_TYPE_TRANSPARENT
+  m_ShaderKeywords: _BLENDMODE_ALPHA _DOUBLESIDED_ON _EMISSION _SURFACE_TYPE_TRANSPARENT
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 1
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: -1
   stringTagMap:
     MotionVector: User
-    RenderType: Transparent
   disabledShaderPasses:
   - TransparentBackface
   m_SavedProperties:
@@ -105,7 +104,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DoubleSidedEnable: 1
     - _DoubleSidedNormalMode: 2
-    - _DstBlend: 10
+    - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
