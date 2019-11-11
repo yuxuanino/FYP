@@ -26,6 +26,8 @@ public class Pickupable : MonoBehaviour {
 
     public Coroutine stasisCoroutine;
 
+    public bool isCarried;
+    public bool collided;
 
     //Object gravity - prevent it being floaty.
     public float gravity = 20f;
@@ -41,7 +43,6 @@ public class Pickupable : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-
         if (transform.localPosition.y <= resetHeight)
         {
             transform.position = startPosition;
@@ -124,6 +125,18 @@ public class Pickupable : MonoBehaviour {
             StartCoroutine("Reset");
         }
     }
+    void OnTriggerStay(Collider other)
+    {
+        if(other.tag != "Player" && other.tag != "Spikes" && other.tag != "PressurePlate")
+        {
+            collided = true;
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        collided = false;
+    }
+    
 
     IEnumerator Reset()
     {
@@ -140,4 +153,5 @@ public class Pickupable : MonoBehaviour {
         myRB.useGravity = true;
         GetComponent<Renderer>().material = baseMaterial;
     }
+
 }

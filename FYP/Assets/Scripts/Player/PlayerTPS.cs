@@ -93,20 +93,31 @@ public class PlayerTPS : PlayerAbilities
 
     void Update()
     {
-        //Increase or decrease of Telekinesis Hold distance
-        if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
+        //If box collide with other object, you wont be able to scroll and increase/decrease hold distance
+        if (carriedObject != null)
         {
-            currentHoldDistance += 1.0f;
-        }
-        else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0f)
-        {
-            if (currentHoldDistance > holdDistance)
+            if (!carriedObject.GetComponent<Pickupable>().collided)
             {
-                currentHoldDistance -= 1.0f;
-            }
-        }
-
-
+                //Increase or decrease of Telekinesis Hold distance
+                if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
+                {
+                    currentHoldDistance += 1.0f;
+                }
+                else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0f)
+                {
+                    if (currentHoldDistance > holdDistance)
+                    {
+                        currentHoldDistance -= 1.0f;
+                    }
+                }
+            }else{
+                if (currentHoldDistance >= holdDistance)
+                {
+                    currentHoldDistance -= 0.2f;
+                }
+            }     
+        }else{}
+ 
         if (!throwMode)
         {
             currentChargeTime = 0f;

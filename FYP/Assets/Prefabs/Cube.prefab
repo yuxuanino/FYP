@@ -2774,7 +2774,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 559765836090566531}
   m_Material: {fileID: 13400000, guid: 3a8a6ecf440d9064480a50be201b3ae2, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -2856,6 +2856,8 @@ MonoBehaviour:
   resetDelay: 1.5
   baseMaterial: {fileID: 0}
   fadeMaterial: {fileID: 2100000, guid: 7085baa5bbf2d3448a874f35f2c580ff, type: 2}
+  isCarried: 0
+  collided: 0
   gravity: 20
   isObjectGravity: 0
 --- !u!114 &4670910206704881012

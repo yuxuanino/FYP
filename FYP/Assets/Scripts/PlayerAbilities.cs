@@ -21,10 +21,16 @@ public class PlayerAbilities : MonoBehaviour
     PlayerTPS thePlayerTPS;
     Outline outline;
 
+    public bool pickupCollided;
+
     // Start is called before the first frame update
     void Awake()
     {
         
+    }
+    void Update()
+    {
+        pickupCollided = carriedObject.GetComponent<Pickupable>().collided;
     }
     public void Init()
     {
@@ -78,7 +84,7 @@ public class PlayerAbilities : MonoBehaviour
     }
 
     protected void Carry(GameObject o)
-    {
+    {   
         if (!thePlayerTPS.throwMode)
         {
             o.transform.position = Vector3.Lerp(o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * currentHoldDistance, Time.deltaTime * smooth);
@@ -147,7 +153,7 @@ public class PlayerAbilities : MonoBehaviour
                 carriedObject = p.gameObject;
                 outline = carriedObject.GetComponent<Outline>();
                 outline.enabled = true;
-
+                carriedObject.GetComponent<Pickupable>().isCarried = true;
                 //Turns off gravity for carried object.
                 p.isObjectGravity = false;
                 p.gameObject.GetComponent<Rigidbody>().useGravity = false;
@@ -162,6 +168,7 @@ public class PlayerAbilities : MonoBehaviour
     //Applies a force to the carriedObject and throws it.
     protected void ThrowObject()
     {
+        carriedObject.GetComponent<Pickupable>().isCarried = false;
         //Turn gravity on again.
         carriedObject.gameObject.GetComponent<Pickupable>().isObjectGravity = true;
         carriedObject.gameObject.GetComponent<Rigidbody>().useGravity = true;
@@ -179,6 +186,7 @@ public class PlayerAbilities : MonoBehaviour
     //Drops the carriedObject.
     protected void DropObject()
     {
+        carriedObject.GetComponent<Pickupable>().isCarried = false;
         carriedObject.GetComponent<Pickupable>().Transparency(false);
         carriedObject.gameObject.GetComponent<Pickupable>().isObjectGravity = true;
         carriedObject.GetComponent<Rigidbody>().useGravity = true;
