@@ -11,7 +11,7 @@ Material:
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: EFFECT_BUMP _DETAIL_MAP _DETAIL_MULX2 _GLOSSYREFLECTIONS_OFF _HEIGHTMAP
     _MASKMAP _METALLICGLOSSMAP _METALLICSPECGLOSSMAP _NORMALMAP _NORMALMAP_TANGENT_SPACE
-    _OCCLUSIONMAP _PARALLAXMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A _SPECULARHIGHLIGHTS_OFF
+    _OCCLUSIONMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 1
@@ -179,7 +179,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: 34ca7013c12602f4b96a58de6e16f9ce, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RimTex:

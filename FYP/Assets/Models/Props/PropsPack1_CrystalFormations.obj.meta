@@ -3,7 +3,102 @@ guid: 9163ee25d6d06114dac821b94209fc3b
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalShapeA020Mat
+    second: {fileID: 2100000, guid: de559fc2c082e9a48a779331fde92e8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalShapeAB001Mat
+    second: {fileID: 2100000, guid: de559fc2c082e9a48a779331fde92e8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalShapeB037Mat
+    second: {fileID: 2100000, guid: de559fc2c082e9a48a779331fde92e8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalShapeC025Mat
+    second: {fileID: 2100000, guid: de559fc2c082e9a48a779331fde92e8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalShapeD095Mat
+    second: {fileID: 2100000, guid: de559fc2c082e9a48a779331fde92e8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalShapeE010Mat
+    second: {fileID: 2100000, guid: de559fc2c082e9a48a779331fde92e8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalShapeF062Mat
+    second: {fileID: 2100000, guid: de559fc2c082e9a48a779331fde92e8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalShapeG062Mat
+    second: {fileID: 2100000, guid: de559fc2c082e9a48a779331fde92e8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalShapeH062Mat
+    second: {fileID: 2100000, guid: de559fc2c082e9a48a779331fde92e8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalShapeI062Mat
+    second: {fileID: 2100000, guid: de559fc2c082e9a48a779331fde92e8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalShapeJ037Mat
+    second: {fileID: 2100000, guid: de559fc2c082e9a48a779331fde92e8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalShapeK001Mat
+    second: {fileID: 2100000, guid: de559fc2c082e9a48a779331fde92e8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalShapeL046Mat
+    second: {fileID: 2100000, guid: de559fc2c082e9a48a779331fde92e8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalShapeM037Mat
+    second: {fileID: 2100000, guid: de559fc2c082e9a48a779331fde92e8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalShapeN037Mat
+    second: {fileID: 2100000, guid: de559fc2c082e9a48a779331fde92e8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalShapeO118Mat
+    second: {fileID: 2100000, guid: de559fc2c082e9a48a779331fde92e8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalShapeP036Mat
+    second: {fileID: 2100000, guid: de559fc2c082e9a48a779331fde92e8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FormationShapeH023Mat
+    second: {fileID: 2100000, guid: de559fc2c082e9a48a779331fde92e8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Object029Mat
+    second: {fileID: 2100000, guid: de559fc2c082e9a48a779331fde92e8c, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
