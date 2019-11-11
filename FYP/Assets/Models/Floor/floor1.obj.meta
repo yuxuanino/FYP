@@ -1,9 +1,14 @@
 fileFormatVersion: 2
 guid: 08bf3a4eed40c784ca50945d6a9d167c
 ModelImporter:
-  serializedVersion: 25
+  serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Box2077Mat
+    second: {fileID: 2100000, guid: c647378777b54ba4da092e9b6878a426, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -38,6 +43,7 @@ ModelImporter:
     meshCompression: 0
     addColliders: 1
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
