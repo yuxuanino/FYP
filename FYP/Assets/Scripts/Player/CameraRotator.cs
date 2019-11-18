@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraRotator : MonoBehaviour
 {
 
+
     public static CameraRotator instance;
 
     private void Awake()

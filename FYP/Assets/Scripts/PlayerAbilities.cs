@@ -62,11 +62,11 @@ public class PlayerAbilities : MonoBehaviour
 
             if(hit.collider.GetComponent<MovingPlatform>() != null)
             {
-                hit.collider.GetComponent<MovingPlatform>().SetStasis(5f);
+                hit.collider.GetComponent<MovingPlatform>().SetStasis(60f);
             }
             if(hit.collider.GetComponent<RotatingInteractable>() != null)
             {
-                hit.collider.GetComponent<RotatingInteractable>().SetStasis(5f);
+                hit.collider.GetComponent<RotatingInteractable>().SetStasis(60f);
             }
             if(hit.collider.GetComponent<DrawBridge>() != null)
             {

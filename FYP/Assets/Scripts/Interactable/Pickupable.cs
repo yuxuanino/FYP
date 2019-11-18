@@ -124,6 +124,12 @@ public class Pickupable : MonoBehaviour {
         {
             StartCoroutine("Reset");
         }
+
+        if(other.tag == "AntiBox")
+        {
+
+            StartCoroutine("Reset");
+        }
     }
     void OnTriggerStay(Collider other)
     {
@@ -146,7 +152,7 @@ public class Pickupable : MonoBehaviour {
         myRB.velocity = Vector3.zero;
         GetComponent<Renderer>().material = fadeMaterial;
 
-        yield return new WaitForSeconds(resetDelay);
+        yield return new WaitForSeconds(resetDelay);// Whats the reason for this line?
 
         carryable = true;
         transform.position = startPosition;

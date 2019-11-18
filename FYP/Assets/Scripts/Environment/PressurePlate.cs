@@ -11,6 +11,7 @@ public class PressurePlate : MonoBehaviour
     
     private Vector3 positionA;
     private Vector3 positionB;
+    public float distance = 0.35f;
 
     AudioSource aS;
     public AudioClip pressurePlateSound;
@@ -33,7 +34,7 @@ public class PressurePlate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        positionB = new Vector3(positionA.x, positionA.y - 0.15f, positionA.z);
+        positionB = new Vector3(positionA.x, positionA.y - distance, positionA.z);
         if (!pressed)
         {
             transform.position = Vector3.Lerp(transform.position, positionA, Time.deltaTime / time);

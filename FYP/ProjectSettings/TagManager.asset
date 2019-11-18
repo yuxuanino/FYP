@@ -11,6 +11,7 @@ TagManager:
   - Ground
   - Hazard
   - Spikes
+  - AntiBox
   layers:
   - Default
   - TransparentFX
