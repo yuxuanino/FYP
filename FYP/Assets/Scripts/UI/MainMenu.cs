@@ -9,22 +9,19 @@ public class MainMenu : MonoBehaviour
     public GameObject controlsStuff;
     public GameObject soundStuff;
     public GameObject graphicsStuff;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //settingsMenu.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Animator anim;
 
     public void StartButton()
     {
-        SceneManager.LoadScene(1);
+        StartCoroutine(GoToLoadingScene());
+        anim = gameObject.GetComponent<Animator>();
+    }
+
+    public IEnumerator GoToLoadingScene()
+    {
+        anim.SetTrigger("Fade");
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("LoadingScene");
     }
 
     public void SettingsButton()
