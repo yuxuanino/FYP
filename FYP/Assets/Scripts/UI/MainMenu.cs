@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartButton()
     {
-        StartCoroutine(GoToLoadingScene());
+        //StartCoroutine(GoToLoadingScene());
         anim = gameObject.GetComponent<Animator>();
     }
 
