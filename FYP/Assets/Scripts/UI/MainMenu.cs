@@ -27,6 +27,7 @@ public class MainMenu : MonoBehaviour
         anim.SetTrigger("Fade");
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene("LoadingScene");
+
     }
 
     public void SettingsButton()
