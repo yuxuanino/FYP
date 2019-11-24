@@ -11,6 +11,11 @@ public class MainMenu : MonoBehaviour
     public GameObject graphicsStuff;
     public Animator anim;
 
+    public void Start()
+    {
+        anim.SetTrigger("FadeToMM");
+    }
+
     public void StartButton()
     {
         StartCoroutine(GoToLoadingScene());

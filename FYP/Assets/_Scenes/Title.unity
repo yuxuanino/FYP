@@ -543,7 +543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 567a91e00a43e6548937056a36a62639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textShade: {fileID: 0}
+  textShade: {fileID: 1293132945}
   controlsWhite: {fileID: 0}
   soundWhite: {fileID: 0}
   graphicsWhite: {fileID: 0}
