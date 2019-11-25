@@ -55,7 +55,8 @@ public class PlayerTPS : PlayerAbilities
     public GameObject walkCamera;       //Camera Position when walking !throwing.
     public GameObject zoomInCamera;     //Camera Position when it hits a wall. (Prevent seeing through walls/floor)
     public GameObject camReverseCheck;  //Check from this position to walkCamera Position if there is any object in between.(Prevent seeing through walls/floor)
-    public float camSwitchSpeed = 4;    //Speed which camera changes from Throw to Walk mode.
+    public float camSwitchSpeed = 4f;    //Speed which camera changes from Throw to Walk mode.
+    public float camFollowSpeed = 20f;
     public Vector3 currentRotation;
     private Vector3 rotationSmoothVelocity;
     public float rotationSmoothTime = 0.1f;
@@ -197,22 +198,22 @@ public class PlayerTPS : PlayerAbilities
         {
             if (!throwMode)
             {
-                mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, walkCamera.transform.position, camSwitchSpeed * Time.deltaTime);
+                mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, walkCamera.transform.position, camFollowSpeed * Time.deltaTime);
             }
             else
             {
-                mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, throwCamera.transform.position, camSwitchSpeed * Time.deltaTime);
+                mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, throwCamera.transform.position, camFollowSpeed * Time.deltaTime);
             }
         }
         else
         {
             if (!throwMode)
             {
-                mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, zoomInCamera.transform.position, camSwitchSpeed * Time.deltaTime);
+                mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, zoomInCamera.transform.position, camFollowSpeed * Time.deltaTime);
             }
             else
             {
-                mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, throwCamera.transform.position, camSwitchSpeed * Time.deltaTime);
+                mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, throwCamera.transform.position, camFollowSpeed * Time.deltaTime);
             }
         }
 
