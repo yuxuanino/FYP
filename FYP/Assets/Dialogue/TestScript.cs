@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TestScript : MonoBehaviour
 {
     public DialogueBase dialogue;
+
     public GameObject triggerStart;
 
     public void TriggerDialogue()

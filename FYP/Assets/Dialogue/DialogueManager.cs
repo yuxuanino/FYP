@@ -20,6 +20,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     public GameObject dialogueBox;
+    public GameObject loadTutorial;
 
     public Text dialogueName;
     public Text dialogueText;
@@ -112,7 +113,8 @@ public class DialogueManager : MonoBehaviour
     public void EndofDialogue()
     {
         dialogueBox.SetActive(false);
-        OptionsLogic();
+        loadTutorial.SetActive(true);
+        //OptionsLogic();
     }
 
     private void OptionsLogic()
