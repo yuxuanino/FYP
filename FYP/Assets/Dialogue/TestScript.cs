@@ -1,24 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TestScript : MonoBehaviour
 {
     public DialogueBase dialogue;
+    public GameObject triggerStart;
 
     public void TriggerDialogue()
     {
         DialogueManager.instance.EnqueueDialogue(dialogue);
+        triggerStart.SetActive(false);
     }
 
-    private void Update()
+    /*private void Update()
     {
         //Change this to trigger instead of GetKeyDown
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetMouseButtonDown(0))
         {
             TriggerDialogue();
         }
-    }
+    }*/
+
 
     /*private void OnTriggerEnter(Collider other)
     {

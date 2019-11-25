@@ -44,6 +44,11 @@ public class MainMenu : MonoBehaviour
         settingsMenu.SetActive(false);
     }
 
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     //Settings
     public void Controls()
     {
