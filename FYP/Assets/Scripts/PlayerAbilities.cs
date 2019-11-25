@@ -23,10 +23,12 @@ public class PlayerAbilities : MonoBehaviour
 
     public bool pickupCollided;
 
+    private Rigidbody rb;
+
     // Start is called before the first frame update
     void Awake()
     {
-        
+        rb.GetComponent<Rigidbody>();
     }
     void Update()
     {
@@ -87,7 +89,8 @@ public class PlayerAbilities : MonoBehaviour
     {   
         if (!thePlayerTPS.throwMode)
         {
-            o.transform.position = Vector3.Lerp(o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * currentHoldDistance, Time.deltaTime * smooth);
+            //o.transform.position = Vector3.Lerp(o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * currentHoldDistance, Time.deltaTime * smooth);
+            o.GetComponent<Rigidbody>().velocity = ((mainCamera.transform.position + mainCamera.transform.forward * currentHoldDistance) - o.transform.position) * smooth;
 
             //Raycast down to show if it is over PressurePlate. Helpful when far away.
             RaycastHit hit;
