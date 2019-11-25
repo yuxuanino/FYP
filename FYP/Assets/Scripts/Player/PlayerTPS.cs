@@ -55,14 +55,18 @@ public class PlayerTPS : PlayerAbilities
     public GameObject walkCamera;       //Camera Position when walking !throwing.
     public GameObject zoomInCamera;     //Camera Position when it hits a wall. (Prevent seeing through walls/floor)
     public GameObject camReverseCheck;  //Check from this position to walkCamera Position if there is any object in between.(Prevent seeing through walls/floor)
-    public float camSwitchSpeed = 4f;    //Speed which camera changes from Throw to Walk mode.
-    public float camFollowSpeed = 20f;
+    public float camSwitchSpeed = 4f;   //Speed which camera changes from Throw to Walk mode.
+    public float camFollowSpeed = 22f;
     public Vector3 currentRotation;
     private Vector3 rotationSmoothVelocity;
     public float rotationSmoothTime = 0.1f;
     private bool cameraBlocked;
 
-  
+    private float timer = 4f;
+    private float tTimer = 4f;
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -196,23 +200,37 @@ public class PlayerTPS : PlayerAbilities
         //Camera=====================================
         if (!cameraBlocked)
         {
-            if (!throwMode)
+
+            tTimer -= Time.deltaTime;
+            if (!throwMode) //Camera not blocked.
             {
+                if (tTimer <= 0)
+                {
+                    camFollowSpeed = 24f; //Requires timer or check if in postiiton to change into this spd.
+                    tTimer = timer;
+                }
                 mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, walkCamera.transform.position, camFollowSpeed * Time.deltaTime);
             }
             else
             {
+                camFollowSpeed = 4f;
                 mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, throwCamera.transform.position, camFollowSpeed * Time.deltaTime);
             }
         }
         else
         {
-            if (!throwMode)
+            if (!throwMode) //Camera blocked.
             {
-                mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, zoomInCamera.transform.position, camFollowSpeed * Time.deltaTime);
+                if (tTimer <= 0)
+                {
+                    camFollowSpeed = 24f; //Requires timer or check if in postiiton to change into this spd.
+                    tTimer = timer;
+                }
+                mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, zoomInCamera.transform.position, camFollowSpeed * Time.deltaTime); //Blocked view.
             }
             else
             {
+                camFollowSpeed = 4f;
                 mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, throwCamera.transform.position, camFollowSpeed * Time.deltaTime);
             }
         }
