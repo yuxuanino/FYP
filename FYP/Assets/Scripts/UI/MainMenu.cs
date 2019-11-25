@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     public GameObject controlsStuff;
     public GameObject soundStuff;
     public GameObject graphicsStuff;
-    public Animator anim;
+    //public Animator anim;
 
     /*public void Start()
     {
@@ -26,6 +26,11 @@ public class MainMenu : MonoBehaviour
     public void SettingsButton()
     {
         settingsMenu.SetActive(true);
+    }
+
+    public void CreditsButton()
+    {
+        SceneManager.LoadScene("Credits");
     }
 
     public void Quit()

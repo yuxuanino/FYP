@@ -3226,7 +3226,6 @@ MonoBehaviour:
   controlsStuff: {fileID: 949475320}
   soundStuff: {fileID: 1342454772}
   graphicsStuff: {fileID: 215366282}
-  anim: {fileID: 1934199061}
 --- !u!224 &881186913 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8919805275858672592, guid: efc072948b14cdb4f8b47a9fa8c8399c,
@@ -6811,7 +6810,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1869886334}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 866101994}
+        m_MethodName: CreditsButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1869886334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6990,7 +7000,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1934199058
 RectTransform:
   m_ObjectHideFlags: 0
