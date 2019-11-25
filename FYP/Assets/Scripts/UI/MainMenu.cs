@@ -11,24 +11,17 @@ public class MainMenu : MonoBehaviour
     public GameObject graphicsStuff;
     public Animator anim;
 
-    public void Start()
+    /*public void Start()
     {
         anim.SetTrigger("FadeToMM");
+        //anim = gameObject.GetComponent<Animator>();
     }
 
     public void StartButton()
     {
-        //StartCoroutine(GoToLoadingScene());
-        anim = gameObject.GetComponent<Animator>();
-    }
-
-    public IEnumerator GoToLoadingScene()
-    {
         anim.SetTrigger("Fade");
-        yield return new WaitForSeconds(1);
-        SceneManager.LoadScene("LoadingScene");
-
-    }
+        //Refer to LevelLoader script afterwards
+    }*/
 
     public void SettingsButton()
     {

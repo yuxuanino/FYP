@@ -9,16 +9,27 @@ public class LevelLoader : MonoBehaviour
     public Slider slider;
     //public Text progressText;
 
+    public Animator anim;
+
     public void LoadLevel (int sceneIndex)
     {
+        anim.SetTrigger("Fade");
         StartCoroutine(LoadAsynchronously(sceneIndex));
     }
 
     IEnumerator LoadAsynchronously (int sceneIndex)
     {
+        yield return new WaitForSeconds(1);
+
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
 
         loadingScreen.SetActive(true);
+
+        while (operation.progress == .9f)
+        {
+            anim.SetTrigger("Fade");
+            yield return new WaitForSeconds(1);
+        }
 
         while (!operation.isDone)
         {
@@ -26,8 +37,6 @@ public class LevelLoader : MonoBehaviour
 
             slider.value = progress;
             //progressText.text = progress * 100f + "%";
-
-            yield return null;
         }
     }
 }
