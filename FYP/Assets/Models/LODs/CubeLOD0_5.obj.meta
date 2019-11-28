@@ -14,6 +14,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: LOD0_5Mat
     second: {fileID: 2100000, guid: e4ee5e9c52117f94cb2a2061d525b250, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LOD1Mat
+    second: {fileID: 2100000, guid: e4ee5e9c52117f94cb2a2061d525b250, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
