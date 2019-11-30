@@ -7,6 +7,8 @@ public class PlayerAbilities : MonoBehaviour
     protected GameObject mainCamera;
     protected bool carrying;
     protected GameObject carriedObject;
+    protected RaycastHit stasisHit;
+    public float stasisDuration = 60f;
     public float holdDistance = 7.5f;
     public float currentHoldDistance;
     public float throwHoldDistance = 4.0f;
@@ -47,34 +49,32 @@ public class PlayerAbilities : MonoBehaviour
         
         //Sends out a raycast from the main camera.
         Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
-        RaycastHit hit;
         int layer_mask = 1 << 8;
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layer_mask))
+        if (Physics.Raycast(ray, out stasisHit, Mathf.Infinity, layer_mask))
         {
             //Object must have this component to be Stasis.
-                if (hit.collider.GetComponent<Pickupable>() != null)
+            if (stasisHit.collider.GetComponent<Pickupable>())
             {
-                
-                hit.collider.GetComponent<Pickupable>().SetStasis(60f);
+                stasisHit.collider.GetComponent<Pickupable>().SetStasis(stasisDuration);
                 if (carrying)
-                    {
-                        DropObject();
-                    } 
+                {
+                    DropObject();
+                }
             }
 
-            if(hit.collider.GetComponent<MovingPlatform>() != null)
+            if (stasisHit.collider.GetComponent<MovingPlatform>())
             {
-                hit.collider.GetComponent<MovingPlatform>().SetStasis(60f);
+                stasisHit.collider.GetComponent<MovingPlatform>().SetStasis(stasisDuration);
             }
-            if(hit.collider.GetComponent<RotatingInteractable>() != null)
+            if (stasisHit.collider.GetComponent<RotatingInteractable>())
             {
-                hit.collider.GetComponent<RotatingInteractable>().SetStasis(60f);
+                stasisHit.collider.GetComponent<RotatingInteractable>().SetStasis(stasisDuration);
             }
-            if(hit.collider.GetComponent<DrawBridge>() != null)
+            if (stasisHit.collider.GetComponent<DrawBridge>())
             {
                 print("wat");
-                Debug.Log("Hit = " + hit.transform.name);
-                hit.collider.GetComponent<DrawBridge>().SetStasis(5f);
+                Debug.Log("Hit = " + stasisHit.transform.name);
+                stasisHit.collider.GetComponent<DrawBridge>().SetStasis(stasisDuration);
             }
         }
     }
