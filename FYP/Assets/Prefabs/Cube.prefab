@@ -157,8 +157,8 @@ LODGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 559765836090566531}
   serializedVersion: 2
-  m_LocalReferencePoint: {x: -0.05379781, y: -0.051719725, z: -0.0029982626}
-  m_Size: 1.0675992
+  m_LocalReferencePoint: {x: -0.0537979, y: -0.051719636, z: -0.0029983819}
+  m_Size: 1.0676003
   m_FadeMode: 1
   m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
@@ -183,7 +183,7 @@ LODGroup:
     - renderer: {fileID: 7256312856358330097}
     - renderer: {fileID: 8832746232651661}
     - renderer: {fileID: 7184209501071887504}
-  - screenRelativeHeight: 0.03095905
+  - screenRelativeHeight: 0.0055987183
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 5074833341608666025}
@@ -393,7 +393,7 @@ PrefabInstance:
     - target: {fileID: 506013532313421905, guid: 6f16321ea94957d42a34cc17ba5b432a,
         type: 3}
       propertyPath: m_ScaleInLightmap
-      value: 0.6
+      value: 1.4387175
       objectReference: {fileID: 0}
     - target: {fileID: 352580601839935948, guid: 6f16321ea94957d42a34cc17ba5b432a,
         type: 3}
@@ -404,17 +404,17 @@ PrefabInstance:
     - target: {fileID: 127888471275070286, guid: 6f16321ea94957d42a34cc17ba5b432a,
         type: 3}
       propertyPath: m_ScaleInLightmap
-      value: 0.6
+      value: 1.4387175
       objectReference: {fileID: 0}
     - target: {fileID: 2148130723683753787, guid: 6f16321ea94957d42a34cc17ba5b432a,
         type: 3}
       propertyPath: m_ScaleInLightmap
-      value: 0.6
+      value: 1.4387175
       objectReference: {fileID: 0}
     - target: {fileID: 2843413364437289337, guid: 6f16321ea94957d42a34cc17ba5b432a,
         type: 3}
       propertyPath: m_ScaleInLightmap
-      value: 0.6
+      value: 1.4387175
       objectReference: {fileID: 0}
     - target: {fileID: 2951090049193981663, guid: 6f16321ea94957d42a34cc17ba5b432a,
         type: 3}
@@ -449,17 +449,17 @@ PrefabInstance:
     - target: {fileID: 7253515110124346188, guid: 6f16321ea94957d42a34cc17ba5b432a,
         type: 3}
       propertyPath: m_ScaleInLightmap
-      value: 0.6
+      value: 1.4387175
       objectReference: {fileID: 0}
     - target: {fileID: 7181345767998949677, guid: 6f16321ea94957d42a34cc17ba5b432a,
         type: 3}
       propertyPath: m_ScaleInLightmap
-      value: 0.6
+      value: 1.4387175
       objectReference: {fileID: 0}
     - target: {fileID: 7045772128732981550, guid: 6f16321ea94957d42a34cc17ba5b432a,
         type: 3}
       propertyPath: m_ScaleInLightmap
-      value: 0.6
+      value: 1.4387175
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f16321ea94957d42a34cc17ba5b432a, type: 3}
@@ -578,12 +578,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3878972381788190699, guid: 2bed902ec189c184197cd0298968cd9e,
+        type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3528050270122685801, guid: 2bed902ec189c184197cd0298968cd9e,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 7643709492327051040, guid: ca383c9fc884bb24388a885beb276715,
         type: 3}
+    - target: {fileID: 3681412969090768116, guid: 2bed902ec189c184197cd0298968cd9e,
+        type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016576895794482078, guid: 2bed902ec189c184197cd0298968cd9e,
+        type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398205319969824220, guid: 2bed902ec189c184197cd0298968cd9e,
+        type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2082591523615761018, guid: 2bed902ec189c184197cd0298968cd9e,
         type: 3}
       propertyPath: m_Mesh
@@ -614,6 +634,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7643709492327051040, guid: ca383c9fc884bb24388a885beb276715,
         type: 3}
+    - target: {fileID: 6184890742717349259, guid: 2bed902ec189c184197cd0298968cd9e,
+        type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6321922317193305480, guid: 2bed902ec189c184197cd0298968cd9e,
+        type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5817261728770887657, guid: 2bed902ec189c184197cd0298968cd9e,
+        type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bed902ec189c184197cd0298968cd9e, type: 3}
 --- !u!4 &1422757171811136904 stripped
@@ -784,7 +819,7 @@ PrefabInstance:
     - target: {fileID: 7737286373165872972, guid: 942c707607c23794e91495015e175219,
         type: 3}
       propertyPath: m_ScaleInLightmap
-      value: 1.2
+      value: 2.2334127
       objectReference: {fileID: 0}
     - target: {fileID: 8062494782133515280, guid: 942c707607c23794e91495015e175219,
         type: 3}
@@ -795,7 +830,7 @@ PrefabInstance:
     - target: {fileID: 6926905641186924657, guid: 942c707607c23794e91495015e175219,
         type: 3}
       propertyPath: m_ScaleInLightmap
-      value: 1.2
+      value: 2.2334127
       objectReference: {fileID: 0}
     - target: {fileID: 7075045505557516392, guid: 942c707607c23794e91495015e175219,
         type: 3}
@@ -812,12 +847,12 @@ PrefabInstance:
     - target: {fileID: 3371683181638534366, guid: 942c707607c23794e91495015e175219,
         type: 3}
       propertyPath: m_ScaleInLightmap
-      value: 1.2
+      value: 2.2334127
       objectReference: {fileID: 0}
     - target: {fileID: 3612232230197105375, guid: 942c707607c23794e91495015e175219,
         type: 3}
       propertyPath: m_ScaleInLightmap
-      value: 1.2
+      value: 2.2334127
       objectReference: {fileID: 0}
     - target: {fileID: 84432434040558380, guid: 942c707607c23794e91495015e175219,
         type: 3}
@@ -834,17 +869,17 @@ PrefabInstance:
     - target: {fileID: 231891461456629493, guid: 942c707607c23794e91495015e175219,
         type: 3}
       propertyPath: m_ScaleInLightmap
-      value: 1.2
+      value: 2.2334127
       objectReference: {fileID: 0}
     - target: {fileID: 337928426628684621, guid: 942c707607c23794e91495015e175219,
         type: 3}
       propertyPath: m_ScaleInLightmap
-      value: 1.2
+      value: 2.2334127
       objectReference: {fileID: 0}
     - target: {fileID: 1302436303153937146, guid: 942c707607c23794e91495015e175219,
         type: 3}
       propertyPath: m_ScaleInLightmap
-      value: 1.2
+      value: 2.2334127
       objectReference: {fileID: 0}
     - target: {fileID: 1649816160172837968, guid: 942c707607c23794e91495015e175219,
         type: 3}

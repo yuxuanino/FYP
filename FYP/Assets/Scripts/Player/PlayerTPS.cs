@@ -154,9 +154,16 @@ public class PlayerTPS : PlayerAbilities
 
             if (carrying)
             {
+                if (Physics.Linecast(mainCamera.transform.position, carriedObject.transform.position, LayerMask.NameToLayer("Stasis")))
+                {
+                    DropObject();
+                }
+
                 Carry(carriedObject);
+
                 if (Input.GetButton("Throw"))
                 {
+
                     if (!throwMode)
                     {
                         carriedObject.GetComponent<Pickupable>().Transparency(true);
@@ -405,7 +412,7 @@ public class PlayerTPS : PlayerAbilities
             safeSpot = hit.point + new Vector3(0, 1f, 0);
         }
 
-        else if (hit.collider.tag != "Ground") return;    
+        else return;    
     }
 }
 
