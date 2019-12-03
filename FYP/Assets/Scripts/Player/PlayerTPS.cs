@@ -23,6 +23,11 @@ public class PlayerTPS : PlayerAbilities
 
     LayerMask playerLayer;
 
+    //UI
+    public GameObject stasisIndicator;
+    public GameObject telekinesisIndicator;
+    Coroutine stasisIndicatorCoroutine;
+
     //Player direction
     public float turnSmoothTime = 0.2f;
     private float turnSmoothVelocity;
@@ -137,7 +142,14 @@ public class PlayerTPS : PlayerAbilities
                 currentHoldDistance = holdDistance;
                 if (carrying) DropObject();
 
-                else Pickup();
+                else
+                {
+                    Pickup();
+                    StopCoroutine("StasisTimer");
+                    stasisIndicatorCoroutine = null;
+                    stasisIndicator.SetActive(false);
+                }
+
             }
 
             if (carrying)
@@ -149,6 +161,7 @@ public class PlayerTPS : PlayerAbilities
                     {
                         carriedObject.GetComponent<Pickupable>().Transparency(true);
                         throwMode = true;
+                        telekinesisIndicator.SetActive(true);
 
                     }
                     print("Throw Mode");
@@ -162,6 +175,7 @@ public class PlayerTPS : PlayerAbilities
                 {
                     carriedObject.GetComponent<Pickupable>().Transparency(false);
                     throwMode = false;
+                    telekinesisIndicator.SetActive(false);
                     if (currentChargeTime >= 1f)
                     {
                         ThrowObject();
@@ -179,6 +193,21 @@ public class PlayerTPS : PlayerAbilities
             if (Input.GetKeyDown(KeyCode.F))
             {
                 CastStasis();
+                if (stasisHit.collider)
+                {
+                    if (stasisIndicatorCoroutine == null)
+                    {
+                        stasisIndicatorCoroutine = StartCoroutine(StasisTimer(stasisDuration));
+                    }
+
+                    if (stasisIndicatorCoroutine != null)
+                    {
+                        stasisIndicatorCoroutine = null;
+                        stasisIndicatorCoroutine = StartCoroutine(StasisTimer(stasisDuration));
+                    }
+                }
+
+                else return;
             }
             if (Input.GetKeyDown(KeyCode.G))
             {
@@ -337,6 +366,14 @@ public class PlayerTPS : PlayerAbilities
             // We apply gravity manually for more tuning control
             rb.AddForce(new Vector3(0, -gravity * rb.mass, 0));
         }
+    }
+
+    IEnumerator StasisTimer(float time)
+    {
+        stasisIndicator.SetActive(true);
+        yield return new WaitForSeconds(time);
+        stasisIndicator.SetActive(false);
+        stasisIndicatorCoroutine = null;
     }
 
     void GroundCheck()
