@@ -61,6 +61,8 @@ public class DialogueManager : MonoBehaviour
     //Take out information
     public void DequeueDialogue()
     {
+        Debug.Log("Sentence number" + dialogueInfo.Count);
+
         if (isCurrentlyTyping == true)
         {
             CompleteText();

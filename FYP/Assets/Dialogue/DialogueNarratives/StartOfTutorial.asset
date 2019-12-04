@@ -13,19 +13,19 @@ MonoBehaviour:
   m_Name: StartOfTutorial
   m_EditorClassIdentifier: 
   dialogueInfo:
-  - myName: Leica
-    portrait: {fileID: 0}
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
     myText: A bit longer... I'm almost there. It better be worth the trouble, this
       place was hard to find to begin with.
-  - myName: Leica
-    portrait: {fileID: 0}
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
     myText: But, I must go on! I must get that VIP card!
   - myName: 
-    portrait: {fileID: 0}
+    portrait: {fileID: 21300000, guid: 5afd9d83ff6cf3044bfdff9e611c4741, type: 3}
     myText: The wind was howling, the chilling gales were like needles pricking the
       bone.
   - myName: 
-    portrait: {fileID: 0}
+    portrait: {fileID: 21300000, guid: 5afd9d83ff6cf3044bfdff9e611c4741, type: 3}
     myText: Leica drew her scarf and shivered.
   - myName: 
     portrait: {fileID: 0}
@@ -34,12 +34,12 @@ MonoBehaviour:
     portrait: {fileID: 0}
     myText: Clouds stretched as far as the eye could see, and a few mountains just
       about poked its summit through the mist.
-  - myName: Leica
-    portrait: {fileID: 0}
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
     myText: Maybe I've bitten off more than I could chew.
-  - myName: Leica
-    portrait: {fileID: 0}
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
     myText: Tier A huh? This feels way more daunting than the ruins I've raided before.
-  - myName: Leica
-    portrait: {fileID: 0}
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
     myText: But no second thoughts! I've just have to press on.
