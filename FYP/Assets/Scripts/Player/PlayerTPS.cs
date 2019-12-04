@@ -71,7 +71,7 @@ public class PlayerTPS : PlayerAbilities
 
     //Check moving to add audio
     //public bool isMoving; Im sorry im tired
-    public GameObject runningAudio;
+    AudioSource runningAudio;
 
 
     // Start is called before the first frame update
@@ -87,7 +87,7 @@ public class PlayerTPS : PlayerAbilities
         mainCamera = GameObject.FindWithTag("MainCamera");
         cameraT = Camera.main.transform;
         throwMode = false;
-        runningAudio.SetActive(false);
+        runningAudio = GetComponent<AudioSource>();
     }
 
     void Awake()
@@ -106,16 +106,6 @@ public class PlayerTPS : PlayerAbilities
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            runningAudio.SetActive(true);
-        }
-
-        else
-        {
-            runningAudio.SetActive(false);
-        }
-
         //If box collide with other object, you wont be able to scroll and increase/decrease hold distance
         if (carriedObject != null)
         {
@@ -334,6 +324,7 @@ public class PlayerTPS : PlayerAbilities
         anim.SetFloat("inputV", inputV);
         anim.SetFloat("inputH", inputH);
         anim.SetBool("jump", jump);
+        anim.SetBool("walkingBackwards", Input.GetAxis("Vertical") < 0);
     }
 
     // Update is called once per frame
@@ -384,6 +375,17 @@ public class PlayerTPS : PlayerAbilities
 
             // We apply gravity manually for more tuning control
             rb.AddForce(new Vector3(0, -gravity * rb.mass, 0));
+        }
+
+
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S)) && isGrounded)
+        {
+            runningAudio.enabled = true;
+        }
+
+        else
+        {
+            runningAudio.enabled = false;
         }
     }
 
