@@ -27,17 +27,19 @@ public class PressurePlate : MonoBehaviour
         aS = GetComponent<AudioSource>();
         anim = GetComponent<Animation>();
 
-        positionA = transform.position;
+        positionA = transform.localPosition;
+ 
         theOutline = GetComponent<Outline>();
     }
 
     // Update is called once per frame
     void Update()
     {
+  
         positionB = new Vector3(positionA.x, positionA.y - distance, positionA.z);
         if (!pressed)
         {
-            transform.position = Vector3.Lerp(transform.position, positionA, Time.deltaTime / time);
+            transform.localPosition = Vector3.Lerp(transform.localPosition, positionA, Time.deltaTime / time);
         }
 
         //For Telekinesis Carry object to check if it is hover above this PressurePlate. (Shows outline when hover above)
@@ -59,7 +61,7 @@ public class PressurePlate : MonoBehaviour
         {
             theOutline.enabled = true;
             pressed = true;
-            transform.position = Vector3.Lerp(transform.position, positionB, Time.deltaTime / time);
+            transform.localPosition = Vector3.Lerp(transform.localPosition, positionB, Time.deltaTime / time);
             if (aS != null && pressurePlateSound != null)
             {
                 if (soundPlayed == false)
