@@ -13,6 +13,7 @@ public class TestScript : MonoBehaviour
     {
         DialogueManager.instance.EnqueueDialogue(dialogue);
         triggerStart.SetActive(false);
+        //Destroy(triggerStart);
     }
 
     /*private void Update()
