@@ -69,7 +69,9 @@ public class PlayerTPS : PlayerAbilities
     private float timer = 4f;
     private float tTimer = 4f;
 
-
+    //Check moving to add audio
+    //public bool isMoving; Im sorry im tired
+    public GameObject runningAudio;
 
 
     // Start is called before the first frame update
@@ -85,6 +87,7 @@ public class PlayerTPS : PlayerAbilities
         mainCamera = GameObject.FindWithTag("MainCamera");
         cameraT = Camera.main.transform;
         throwMode = false;
+        runningAudio.SetActive(false);
     }
 
     void Awake()
@@ -103,6 +106,16 @@ public class PlayerTPS : PlayerAbilities
 
     void Update()
     {
+        if (Input.GetKey(KeyCode.W))
+        {
+            runningAudio.SetActive(true);
+        }
+
+        else
+        {
+            runningAudio.SetActive(false);
+        }
+
         //If box collide with other object, you wont be able to scroll and increase/decrease hold distance
         if (carriedObject != null)
         {
@@ -193,7 +206,6 @@ public class PlayerTPS : PlayerAbilities
                         mainCamera.GetComponent<Cam>().currentRotation = new Vector3(pitch, yaw);
                     }
                 }
-                               
             }
 
             if (Input.GetKeyDown(KeyCode.F))
@@ -351,6 +363,7 @@ public class PlayerTPS : PlayerAbilities
                 {
                     jump = true;
                     rb.velocity = new Vector3(velocity.x, CalculateJumpVerticalSpeed(), velocity.z);
+                    //isMoving = false;
                 }
             }
 
