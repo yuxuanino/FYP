@@ -103,7 +103,7 @@ public class Player360Movement : PlayerAbilities
                     if (!throwMode)
                     {
                         //Calls the transparency function and makes the carriedObject seethrough.
-                        carriedObject.GetComponent<Pickupable>().Transparency(true);
+                        carriedObject.GetComponent<Pickupable>().PickUpEffects(true);
                         throwMode = true;
                         /*
                         transform.rotation = Quaternion.LookRotation(mainCamera.transform.forward);
@@ -125,7 +125,7 @@ public class Player360Movement : PlayerAbilities
                 else if (Input.GetButtonUp("Throw"))
                 {
                     //Calls the Transparency function in Pickupable and makes the carriedObject solid again.
-                    carriedObject.GetComponent<Pickupable>().Transparency(false);
+                    carriedObject.GetComponent<Pickupable>().PickUpEffects(false);
                     throwMode = false;
                     if (currentChargeTime >= 1f)
                     {

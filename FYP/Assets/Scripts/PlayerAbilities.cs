@@ -25,20 +25,14 @@ public class PlayerAbilities : MonoBehaviour
 
     public bool pickupCollided;
 
-    private Rigidbody rb;
+    protected Rigidbody rb;
 
-    // Start is called before the first frame update
-    void Awake()
-    {
-        rb.GetComponent<Rigidbody>();
-    }
     void Update()
     {
         pickupCollided = carriedObject.GetComponent<Pickupable>().collided;
     }
     public void Init()
     {
-        thePlayer = gameObject.GetComponent<Player360Movement>();
         thePlayerTPS = gameObject.GetComponent<PlayerTPS>();
     }
 
@@ -142,6 +136,7 @@ public class PlayerAbilities : MonoBehaviour
         {
             //Object must have this component to be picked up.
             Pickupable p = hit.collider.GetComponent<Pickupable>();
+            p.PickUpEffects(true);
             //p.isStasis = false;
             //p.myRB.isKinematic = false;
             if (p != null && p.carryable)
@@ -190,7 +185,7 @@ public class PlayerAbilities : MonoBehaviour
     protected void DropObject()
     {
         carriedObject.GetComponent<Pickupable>().isCarried = false;
-        carriedObject.GetComponent<Pickupable>().Transparency(false);
+        carriedObject.GetComponent<Pickupable>().PickUpEffects(false);
         carriedObject.gameObject.GetComponent<Pickupable>().isObjectGravity = true;
         carriedObject.GetComponent<Rigidbody>().useGravity = true;
         carriedObject.GetComponent<Rigidbody>().velocity = new Vector3 (0, 0, 0);

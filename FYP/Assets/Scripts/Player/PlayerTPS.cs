@@ -34,7 +34,6 @@ public class PlayerTPS : PlayerAbilities
     private Transform cameraT;
     float targetRotation;
     CursorLockMode cursorMode;
-    Rigidbody rb;
 
     //Player ThrowMode camera view.
     public float speedH = 2.0f;
@@ -76,8 +75,6 @@ public class PlayerTPS : PlayerAbilities
     // Start is called before the first frame update
     void Start()
     {
-        base.Init();
-
         canMove = true;
         Cursor.lockState = cursorMode = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -92,6 +89,8 @@ public class PlayerTPS : PlayerAbilities
 
     void Awake()
     {
+        base.Init();
+
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         rb.useGravity = false;
@@ -160,13 +159,13 @@ public class PlayerTPS : PlayerAbilities
                 }
 
                 Carry(carriedObject);
+                
 
                 if (Input.GetButton("Throw"))
                 {
 
                     if (!throwMode)
                     {
-                        carriedObject.GetComponent<Pickupable>().Transparency(true);
                         throwMode = true;
                         telekinesisIndicator.SetActive(true);
 
@@ -180,7 +179,7 @@ public class PlayerTPS : PlayerAbilities
                 }
                 else if (Input.GetButtonUp("Throw"))
                 {
-                    carriedObject.GetComponent<Pickupable>().Transparency(false);
+                    carriedObject.GetComponent<Pickupable>().PickUpEffects(false);
                     throwMode = false;
                     telekinesisIndicator.SetActive(false);
                     if (currentChargeTime >= 1f)

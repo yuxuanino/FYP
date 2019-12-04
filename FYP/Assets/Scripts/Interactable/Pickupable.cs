@@ -15,6 +15,7 @@ public class Pickupable : MonoBehaviour {
     bool hideCube;
 
     public GameObject stasisEffect;
+    public GameObject telekinesisEffect;
     public Vector3 currentPosition;
     Vector3 startPosition;
 
@@ -100,16 +101,20 @@ public class Pickupable : MonoBehaviour {
         stasisCoroutine = null;
     }
 
-    public void Transparency(bool pickedUp){
+    public void PickUpEffects(bool pickedUp){
         Renderer cR = GetComponent<Renderer>();
 
-        if (pickedUp == true)
+        if (pickedUp)
         {
             cR.material = fadeMaterial;
+            telekinesisEffect.SetActive(true);
         }
-
-        else if (pickedUp == false) cR.material = baseMaterial;
+        else
+        {
+            cR.material = baseMaterial;
+            telekinesisEffect.SetActive(false);
         }
+    }
 
     IEnumerator StasisEnum(float duration)
     {
@@ -142,7 +147,6 @@ public class Pickupable : MonoBehaviour {
     {
         collided = false;
     }
-    
 
     IEnumerator Reset()
     {
