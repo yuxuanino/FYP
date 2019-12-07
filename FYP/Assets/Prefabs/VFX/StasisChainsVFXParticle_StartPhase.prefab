@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861893086201434567}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -65.756, y: 15862.76, z: 196.629}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 861893088155970667}
@@ -4811,7 +4811,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861893086237041146}
   serializedVersion: 6
-  lengthInSec: 7.3
+  lengthInSec: 3.2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -11575,7 +11575,7 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.009723738
+          time: 0.0041199476
           value: 1
           inSlope: -0.05692712
           outSlope: -296.5636
@@ -11584,7 +11584,7 @@ ParticleSystem:
           inWeight: 1
           outWeight: 0.071025506
         - serializedVersion: 3
-          time: 0.014006369
+          time: 0.0056025907
           value: 0
           inSlope: Infinity
           outSlope: Infinity
@@ -14940,7 +14940,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 10, y: 7, z: -11, w: 5}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -17542,7 +17542,7 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.009723738
+          time: 0.0041199476
           value: 1
           inSlope: -0.05692712
           outSlope: -296.5636
@@ -17551,7 +17551,7 @@ ParticleSystem:
           inWeight: 1
           outWeight: 0.071025506
         - serializedVersion: 3
-          time: 0.014006369
+          time: 0.0056025907
           value: 0
           inSlope: Infinity
           outSlope: Infinity
@@ -20858,7 +20858,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861893086736145871}
   serializedVersion: 6
-  lengthInSec: 7.3
+  lengthInSec: 3.2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -28169,7 +28169,7 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.009723738
+          time: 0.0041199476
           value: 1
           inSlope: -0.05692712
           outSlope: -296.5636
@@ -28178,7 +28178,7 @@ ParticleSystem:
           inWeight: 1
           outWeight: 0.071025506
         - serializedVersion: 3
-          time: 0.014006369
+          time: 0.0056025907
           value: 0
           inSlope: Infinity
           outSlope: Infinity
@@ -32952,7 +32952,7 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.009723738
+          time: 0.0041199476
           value: 1
           inSlope: -0.05692712
           outSlope: -296.5636
@@ -32961,7 +32961,7 @@ ParticleSystem:
           inWeight: 1
           outWeight: 0.071025506
         - serializedVersion: 3
-          time: 0.014006369
+          time: 0.0056025907
           value: 0
           inSlope: Infinity
           outSlope: Infinity
@@ -37733,7 +37733,7 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.009723738
+          time: 0.0041199476
           value: 1
           inSlope: -0.05692712
           outSlope: -296.5636
@@ -37742,7 +37742,7 @@ ParticleSystem:
           inWeight: 1
           outWeight: 0.071025506
         - serializedVersion: 3
-          time: 0.014006369
+          time: 0.0056025907
           value: 0
           inSlope: Infinity
           outSlope: Infinity
@@ -42513,7 +42513,7 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.009723738
+          time: 0.0041199476
           value: 1
           inSlope: -0.05692712
           outSlope: -296.5636
@@ -42522,7 +42522,7 @@ ParticleSystem:
           inWeight: 1
           outWeight: 0.071025506
         - serializedVersion: 3
-          time: 0.014006369
+          time: 0.0056025907
           value: 0
           inSlope: Infinity
           outSlope: Infinity
@@ -50053,7 +50053,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861893087218134479}
   serializedVersion: 6
-  lengthInSec: 7.3
+  lengthInSec: 3.2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -54824,7 +54824,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861893087386161356}
   serializedVersion: 6
-  lengthInSec: 7.3
+  lengthInSec: 3.2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -62135,7 +62135,7 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.009723738
+          time: 0.0041199476
           value: 1
           inSlope: -0.05692712
           outSlope: -296.5636
@@ -62144,7 +62144,7 @@ ParticleSystem:
           inWeight: 1
           outWeight: 0.071025506
         - serializedVersion: 3
-          time: 0.014006369
+          time: 0.0056025907
           value: 0
           inSlope: Infinity
           outSlope: Infinity
@@ -66919,7 +66919,7 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.009723738
+          time: 0.0041199476
           value: 1
           inSlope: -0.05692712
           outSlope: -296.5636
@@ -66928,7 +66928,7 @@ ParticleSystem:
           inWeight: 1
           outWeight: 0.071025506
         - serializedVersion: 3
-          time: 0.014006369
+          time: 0.0056025907
           value: 0
           inSlope: Infinity
           outSlope: Infinity
@@ -69688,7 +69688,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861893087639184452}
   serializedVersion: 6
-  lengthInSec: 7.3
+  lengthInSec: 3.2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -74459,7 +74459,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861893087664743578}
   serializedVersion: 6
-  lengthInSec: 7.3
+  lengthInSec: 3.2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -81241,7 +81241,7 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.009723738
+          time: 0.0041199476
           value: 1
           inSlope: -0.05692712
           outSlope: -296.5636
@@ -81250,7 +81250,7 @@ ParticleSystem:
           inWeight: 1
           outWeight: 0.071025506
         - serializedVersion: 3
-          time: 0.014006369
+          time: 0.0056025907
           value: 0
           inSlope: Infinity
           outSlope: Infinity
@@ -86021,7 +86021,7 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.009723738
+          time: 0.0041199476
           value: 1
           inSlope: -0.05692712
           outSlope: -296.5636
@@ -86030,7 +86030,7 @@ ParticleSystem:
           inWeight: 1
           outWeight: 0.071025506
         - serializedVersion: 3
-          time: 0.014006369
+          time: 0.0056025907
           value: 0
           inSlope: Infinity
           outSlope: Infinity
@@ -88790,7 +88790,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861893087785033426}
   serializedVersion: 6
-  lengthInSec: 7.3
+  lengthInSec: 3.2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -93562,7 +93562,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861893087788220245}
   serializedVersion: 6
-  lengthInSec: 7.3
+  lengthInSec: 3.2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -100326,7 +100326,7 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.009723738
+          time: 0.0041199476
           value: 1
           inSlope: -0.05692712
           outSlope: -296.5636
@@ -100335,7 +100335,7 @@ ParticleSystem:
           inWeight: 1
           outWeight: 0.071025506
         - serializedVersion: 3
-          time: 0.014006369
+          time: 0.0056025907
           value: 0
           inSlope: Infinity
           outSlope: Infinity
@@ -105110,7 +105110,7 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.009723738
+          time: 0.0041199476
           value: 1
           inSlope: -0.05692712
           outSlope: -296.5636
@@ -105119,7 +105119,7 @@ ParticleSystem:
           inWeight: 1
           outWeight: 0.071025506
         - serializedVersion: 3
-          time: 0.014006369
+          time: 0.0056025907
           value: 0
           inSlope: Infinity
           outSlope: Infinity
@@ -107879,7 +107879,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861893087974004193}
   serializedVersion: 6
-  lengthInSec: 7.3
+  lengthInSec: 3.2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -112650,7 +112650,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861893088009377650}
   serializedVersion: 6
-  lengthInSec: 7.3
+  lengthInSec: 3.2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -117424,7 +117424,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861893088101598848}
   serializedVersion: 6
-  lengthInSec: 7.3
+  lengthInSec: 3.2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -122198,7 +122198,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861893088155970668}
   serializedVersion: 6
-  lengthInSec: 7.3
+  lengthInSec: 3.2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0

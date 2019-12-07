@@ -82,8 +82,8 @@ public class Pickupable : MonoBehaviour {
         if (stasisEffect != null)
         {
             stasisEffect.SetActive(true); //New
-            var go = Instantiate(stasisEffect, transform.position, Quaternion.identity);
-            Destroy(go, 1f);
+            //var go = Instantiate(stasisEffect, transform.position, Quaternion.identity); //Commented
+            //Destroy(go, 1f); //Commented
         }
 
         else
@@ -123,6 +123,7 @@ public class Pickupable : MonoBehaviour {
         isStasis = true;
         yield return new WaitForSeconds(duration);
         isStasis = false;
+        stasisEffect.SetActive(false); //New
     }
 
     void OnTriggerEnter(Collider other)
