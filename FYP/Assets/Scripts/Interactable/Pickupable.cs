@@ -81,6 +81,7 @@ public class Pickupable : MonoBehaviour {
     {
         if (stasisEffect != null)
         {
+            stasisEffect.SetActive(true); //New
             var go = Instantiate(stasisEffect, transform.position, Quaternion.identity);
             Destroy(go, 1f);
         }
@@ -95,6 +96,7 @@ public class Pickupable : MonoBehaviour {
 
     public void CancelStasis()
     {
+        stasisEffect.SetActive(false); //New
         isStasis = false;
         myRB.isKinematic = false;
         StopCoroutine("StasisEnum");
