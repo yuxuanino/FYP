@@ -12,7 +12,17 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: CrystalA014Mat
+    second: {fileID: 2100000, guid: 22e94f22019364d4da74b1db85d94c81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: CrystalB042Mat
+    second: {fileID: 2100000, guid: 22e94f22019364d4da74b1db85d94c81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalB044Mat
     second: {fileID: 2100000, guid: 22e94f22019364d4da74b1db85d94c81, type: 2}
   - first:
       type: UnityEngine:Material
@@ -22,7 +32,17 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: CrystalC089Mat
+    second: {fileID: 2100000, guid: 22e94f22019364d4da74b1db85d94c81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: CrystalD191Mat
+    second: {fileID: 2100000, guid: 22e94f22019364d4da74b1db85d94c81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalD193Mat
     second: {fileID: 2100000, guid: 22e94f22019364d4da74b1db85d94c81, type: 2}
   - first:
       type: UnityEngine:Material
@@ -32,7 +52,17 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: CrystalE004Mat
+    second: {fileID: 2100000, guid: 22e94f22019364d4da74b1db85d94c81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: CrystalF002Mat
+    second: {fileID: 2100000, guid: 22e94f22019364d4da74b1db85d94c81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrystalF004Mat
     second: {fileID: 2100000, guid: 22e94f22019364d4da74b1db85d94c81, type: 2}
   materials:
     importMaterials: 1
