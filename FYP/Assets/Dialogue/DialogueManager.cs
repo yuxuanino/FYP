@@ -17,6 +17,7 @@ public class DialogueManager : MonoBehaviour
         {
             instance = this;
         }
+
     }
 
     public GameObject dialogueBox;
@@ -25,6 +26,7 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueName;
     public Text dialogueText;
     public Image dialoguePortrait;
+    public GameObject diamond;
     private float delay = 0.001f;
 
     //Options stuff
@@ -67,6 +69,7 @@ public class DialogueManager : MonoBehaviour
         {
             CompleteText();
             StopAllCoroutines();  //Theres only 1 coroutine lol
+            diamond.SetActive(false);
             isCurrentlyTyping = false;
             return; //Don't want to deque the dialogue
         }
@@ -109,6 +112,7 @@ public class DialogueManager : MonoBehaviour
     private void CompleteText()
     {
         dialogueText.text = completeText;
+        diamond.SetActive(true);
     }
 
     //When dialogue ends, dialogue will be disabled
@@ -127,7 +131,7 @@ public class DialogueManager : MonoBehaviour
         //}
         //else
         //{
-            inDialogue = false;  //Can't open dialogue while in options mode
+            //inDialogue = false;  //Can't open dialogue while in options mode
         //}
     }
 

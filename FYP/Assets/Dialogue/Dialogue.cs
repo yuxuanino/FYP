@@ -15,9 +15,12 @@ public class Dialogue : MonoBehaviour
     private bool continueDialogue;  //For skipping dialogue
     //public Animator anim;
 
+    //public Sprite diamond;
+
     void Start()
     {
         StartCoroutine(Type());
+        //diamond = GetComponent<Sprite>();
     }
 
     void Update()
@@ -35,6 +38,7 @@ public class Dialogue : MonoBehaviour
         if(continueDialogue == true)
         {
             StopCoroutine(Type());
+
         }
     }
 
