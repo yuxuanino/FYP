@@ -69,8 +69,8 @@ public class DialogueManager : MonoBehaviour
         {
             CompleteText();
             StopAllCoroutines();  //Theres only 1 coroutine lol
-            diamond.SetActive(false);
             isCurrentlyTyping = false;
+            diamond.SetActive(true);
             return; //Don't want to deque the dialogue
         }
 
@@ -96,6 +96,7 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeText(DialogueBase.Info info)
     {
         isCurrentlyTyping = true;
+        diamond.SetActive(false);
 
         //Text is set to empty
         //dialogueText.text = "";
@@ -107,12 +108,12 @@ public class DialogueManager : MonoBehaviour
             //yield return null;
         }
         isCurrentlyTyping = false;
+        diamond.SetActive(true);
     }
 
     private void CompleteText()
     {
         dialogueText.text = completeText;
-        diamond.SetActive(true);
     }
 
     //When dialogue ends, dialogue will be disabled
