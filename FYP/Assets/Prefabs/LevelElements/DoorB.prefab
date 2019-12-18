@@ -166,6 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1800863459725049500}
   - component: {fileID: 424851062702082794}
+  - component: {fileID: 7173307751488019496}
   m_Layer: 0
   m_Name: DoorB
   m_TagString: Untagged
@@ -217,6 +218,19 @@ LODGroup:
     renderers:
     - renderer: {fileID: 973039093428755981}
   m_Enabled: 1
+--- !u!65 &7173307751488019496
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6306445428996977029}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20.83456, y: 31.661297, z: 3.970675}
+  m_Center: {x: 0.011499405, y: -0.023796082, z: -0.04552436}
 --- !u!1 &8957633492791747944
 GameObject:
   m_ObjectHideFlags: 0
