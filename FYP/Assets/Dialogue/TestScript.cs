@@ -9,12 +9,20 @@ public class TestScript : MonoBehaviour
 
     public GameObject triggerStart;
 
-    public void TriggerDialogue()
+    private void OnTriggerEnter(Collider other)
     {
-        DialogueManager.instance.EnqueueDialogue(dialogue);
+        if (other.tag == "Player")
+        {
+            DialogueManager.instance.EnqueueDialogue(dialogue);
+            triggerStart.SetActive(false);
+        }
+    }
+
+    /*public void TriggerDialogue()
+    {
         triggerStart.SetActive(false);
         //Destroy(triggerStart);
-    }
+    }*/
 
     /*private void Update()
     {

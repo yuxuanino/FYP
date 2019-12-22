@@ -38,7 +38,6 @@ public class Dialogue : MonoBehaviour
         if(continueDialogue == true)
         {
             StopCoroutine(Type());
-
         }
     }
 
