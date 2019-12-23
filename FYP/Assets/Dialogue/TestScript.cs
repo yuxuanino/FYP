@@ -9,6 +9,11 @@ public class TestScript : MonoBehaviour
 
     public GameObject triggerStart;
 
+    private void Start()
+    {
+        var boxCollider = gameObject.AddComponent<BoxCollider>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
