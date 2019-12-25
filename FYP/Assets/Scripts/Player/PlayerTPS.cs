@@ -54,6 +54,9 @@ public class PlayerTPS : PlayerAbilities
     private float inputV;
     private bool jump;
 
+    //Dialogue
+    public TestScript dialogueTS;
+
     //Camera
     public GameObject throwCamera;      //Camera Position when throwing.
     public GameObject walkCamera;       //Camera Position when walking !throwing.
@@ -88,6 +91,8 @@ public class PlayerTPS : PlayerAbilities
         cameraT = Camera.main.transform;
         throwMode = false;
         runningAudio = GetComponent<AudioSource>();
+
+        dialogueTS = GetComponent<TestScript>();
     }
 
     void Awake()

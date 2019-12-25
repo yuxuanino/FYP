@@ -41,6 +41,8 @@ public class Player360Movement : PlayerAbilities
     private float inputV;
     private bool jump;
 
+    //Dialogue
+    public TestScript dialogueTS;
 
     void Start()
     {
@@ -52,6 +54,8 @@ public class Player360Movement : PlayerAbilities
         mainCamera = GameObject.FindWithTag("MainCamera");
         cameraT = Camera.main.transform;
         throwMode = false;
+
+        dialogueTS = GetComponent<TestScript>();
     }
 
 

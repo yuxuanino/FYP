@@ -47,7 +47,7 @@ public class Dialogue : MonoBehaviour
 
         while (!continueDialogue)
         {
-            if(Input.GetKeyDown(KeyCode.Space))
+            if(Input.GetKeyDown(KeyCode.F))
             {
                 continueDialogue = true;
             }
@@ -68,19 +68,22 @@ public class Dialogue : MonoBehaviour
 
     public void NextSentence()  //Continue to next sentence of dialogue
     {
-        continueButton.SetActive(false);
+        //continueButton.SetActive(false);
 
-        if (index < sentences.Length - 1)
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            index++;
-            textDisplay.text = "";
-            StartCoroutine(Type());
-        }
+            if (index < sentences.Length - 1)
+            {
+                index++;
+                textDisplay.text = "";
+                StartCoroutine(Type());
+            }
 
-        else
-        {
-            textDisplay.text = "";
-            continueButton.SetActive(false);
+            else
+            {
+                textDisplay.text = "";
+                continueButton.SetActive(false);
+            }
         }
     }
 }
