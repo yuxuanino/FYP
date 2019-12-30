@@ -6,8 +6,12 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
+    private TestScript DialogueTS;
+
     private void Awake()
     {
+        DialogueTS = FindObjectOfType<TestScript>();
+
         if(instance != null)
         {
             Debug.LogWarning("Fix this shiiii" + gameObject.name);
@@ -21,7 +25,6 @@ public class DialogueManager : MonoBehaviour
     }
 
     public GameObject dialogueBox;
-    //public GameObject loadTutorial;
 
     public Text dialogueName;
     public Text dialogueText;
@@ -29,13 +32,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject diamond;
     private float delay = 0.001f;
 
-    //Options stuff
-    //private bool isDialogueOption;
-    //public GameObject dialogueOptionUI;
     public bool inDialogue;
-    //public GameObject[] optionButtons;
-    //private int optionsAmount;
-    //public Text questionText;
 
     private bool isCurrentlyTyping;
     private string completeText;
@@ -45,12 +42,8 @@ public class DialogueManager : MonoBehaviour
     //Add information
     public void EnqueueDialogue(DialogueBase db)
     {
-
-        //if (inDialogue) return;
         dialogueBox.SetActive(true);
         dialogueInfo.Clear();
-
-        //OptionsParser(db);
 
         foreach(DialogueBase.Info info in db.dialogueInfo)
         {
@@ -77,6 +70,7 @@ public class DialogueManager : MonoBehaviour
         //Detects if we have no more dialogue and return
         if (dialogueInfo.Count == 0)
         {
+            
             EndofDialogue();
             return;
         }
@@ -120,24 +114,6 @@ public class DialogueManager : MonoBehaviour
     public void EndofDialogue()
     {
         dialogueBox.SetActive(false);
-        //loadTutorial.SetActive(true);
-        //OptionsLogic();
     }
 
-    private void OptionsLogic()
-    {
-        //if (isDialogueOption == true)
-        //{
-        //    dialogueOptionUI.SetActive(true);
-        //}
-        //else
-        //{
-            //inDialogue = false;  //Can't open dialogue while in options mode
-        //}
-    }
-
-    /*private void OptionsParser(DialogueBase db)
-    {
-
-    }*/
 }
