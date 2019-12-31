@@ -26,7 +26,7 @@ public class Dialogue : MonoBehaviour
     void Update()
     {
 
-        if(textDisplay.text == sentences[index])  //If sentence is completed, continue button will appear
+        if (textDisplay.text == sentences[index])  //If sentence is completed, continue button will appear
         {
             continueButton.SetActive(true);
         }
@@ -43,11 +43,10 @@ public class Dialogue : MonoBehaviour
 
         while (!continueDialogue)
         {
-            //if (Input.GetKeyDown("space"))
-            //{
+            if (Input.GetMouseButtonDown(0))
+            {
                 continueDialogue = true;
-                Debug.Log("Next sentence alr");
-            //}
+            }
         }
 
         foreach (char letter in sentences[index].ToCharArray())
@@ -59,23 +58,19 @@ public class Dialogue : MonoBehaviour
 
     public void NextSentence()  //Continue to next sentence of dialogue
     {
+        continueButton.SetActive(false);
 
-        //if (Input.GetKeyDown("space"))
-        //{
-            if (index < sentences.Length - 1)
-            {
-                index++;
-                textDisplay.text = "";
-                StartCoroutine(Type());
+        if (index < sentences.Length - 1)
+        {
+            index++;
+            textDisplay.text = "";
+            StartCoroutine(Type());
+        }
 
-                Debug.Log("Next sentence ya");
-            }
-
-            else
-            {
-                textDisplay.text = "";
-                continueButton.SetActive(false);
-            }
-        //}
+        else
+        {
+            textDisplay.text = "";
+            continueButton.SetActive(false);
+        }
     }
 }

@@ -20,8 +20,6 @@ public class TestScript : MonoBehaviour
         dialogueIsActive = false;
         var boxCollider = gameObject.AddComponent<BoxCollider>();
         Playertps = FindObjectOfType<PlayerTPS>();
-
-        Debug.Log("Dialogue is shit");
     }
 
     private void OnTriggerEnter(Collider other)
