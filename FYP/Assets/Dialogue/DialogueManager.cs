@@ -30,6 +30,7 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
     public Image dialoguePortrait;
     public GameObject diamond;
+    public GameObject nextLineButton;
     private float delay = 0.001f;
 
     public bool inDialogue;
@@ -114,6 +115,7 @@ public class DialogueManager : MonoBehaviour
     public void EndofDialogue()
     {
         dialogueBox.SetActive(false);
+        nextLineButton.SetActive(false);
     }
 
 }
