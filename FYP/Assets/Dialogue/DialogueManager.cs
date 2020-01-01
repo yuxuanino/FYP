@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
-    private TestScript DialogueTS;
+    public GameObject Player;
 
     private void Awake()
     {
-        DialogueTS = FindObjectOfType<TestScript>();
+        //DialogueTS = FindObjectOfType<TestScript>();
 
         if(instance != null)
         {
@@ -37,6 +37,7 @@ public class DialogueManager : MonoBehaviour
 
     private bool isCurrentlyTyping;
     private string completeText;
+    CursorLockMode cursorMode;
 
     public Queue<DialogueBase.Info> dialogueInfo = new Queue<DialogueBase.Info>();  //Fifo Collection
 
@@ -71,7 +72,6 @@ public class DialogueManager : MonoBehaviour
         //Detects if we have no more dialogue and return
         if (dialogueInfo.Count == 0)
         {
-            
             EndofDialogue();
             return;
         }
@@ -100,7 +100,6 @@ public class DialogueManager : MonoBehaviour
         {
             yield return new WaitForSeconds(delay);
             dialogueText.text += c;
-            //yield return null;
         }
         isCurrentlyTyping = false;
         diamond.SetActive(true);
@@ -116,6 +115,13 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueBox.SetActive(false);
         nextLineButton.SetActive(false);
+
+        Player.SetActive(true);
+        Cursor.lockState = cursorMode = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        Debug.Log("EndOfDialogue");
+        
     }
 
 }
