@@ -114,8 +114,7 @@ public class PlayerTPS : PlayerAbilities
         //If box collide with other object, you wont be able to scroll and increase/decrease hold distance
         if (carriedObject != null)
         {
-            if (!carriedObject.GetComponent<Pickupable>().collided)
-            {
+
                 //Increase or decrease of Telekinesis Hold distance
                 if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
                 {
@@ -128,12 +127,7 @@ public class PlayerTPS : PlayerAbilities
                         currentHoldDistance -= 1.0f;
                     }
                 }
-            }else{
-                if (currentHoldDistance >= holdDistance)
-                {
-                    currentHoldDistance -= 0.2f;
-                }
-            }     
+
         }else{}
  
         if (!throwMode)
