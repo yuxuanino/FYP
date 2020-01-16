@@ -8,44 +8,32 @@ public class SettingsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
 
-    public Dropdown resolutionDropdown;
-
     Resolution[] resolutions;
 
-    void Start()
+    int resolutionI;
+    Resolution resolution;
+
+    public GameObject[] resolutionSelection;
+    public GameObject[] fullScreenYesNoNextBack;
+
+    private bool isFullScreen;
+
+    public void MouseSensitivity(float mouseSensitivity) 
     {
-        resolutions = Screen.resolutions;
-
-        resolutionDropdown.ClearOptions();
-
-        List<string> options = new List<string>();
-
-        int currentResolutionIndex = 0;
-        for (int i = 0; i < resolutions.Length; i++)
-        {
-            string option = resolutions[i].width + " x " + resolutions[i].height;
-            options.Add(option);
-
-            if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
-            {
-                currentResolutionIndex = i;
-            }
-        }
-
-        resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = currentResolutionIndex;
-        resolutionDropdown.RefreshShownValue();
+        Debug.Log("sensitivity = " + mouseSensitivity);
     }
 
-    public void SetResolution (int resolutionIndex)
+
+    public void SetMVolume (float mVolume)
     {
-        Resolution resolution = resolutions[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        Debug.Log("mVolume = " + mVolume);
+        audioMixer.SetFloat("mVolume", mVolume);
     }
 
-    public void SetVolume (float volume)
+    public void SetSFXVolume(float sfxVolume)
     {
-        audioMixer.SetFloat("volume", volume);
+        Debug.Log("sfxVolume = " + sfxVolume);
+        audioMixer.SetFloat("sfxVolume", sfxVolume);
     }
 
     public void SetQuality (int qualityIndex)
@@ -53,8 +41,118 @@ public class SettingsMenu : MonoBehaviour
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 
-    public void SetFullscreen (bool isFullscreen)
+    //Setting screen resolution
+    public void IncreaseResolution()
     {
-        Screen.fullScreen = isFullscreen;
+        if (resolutionI <= 7) {
+            resolutionI++;
+        }
+        Debug.Log("RI = " + resolutionI);
+        Resolutions();
+    }
+    public void DecreaseResolution()
+    {
+        if (resolutionI >= 1)
+        {
+            resolutionI--;
+        }
+        Debug.Log("RI = " + resolutionI);
+        Resolutions();
+    }
+
+    public void Apply()
+    {
+        
+        //Apply resolution
+        //resolution = resolutions[resolutionI];        
+        Screen.SetResolution(resolution.width, resolution.height , Screen.fullScreen );
+        Debug.Log("Width = " + resolution.width + ", Height = " + resolution.height);
+
+        //Apply fullscreen
+        Screen.fullScreen = isFullScreen;
+    }
+
+    void Resolutions()
+    {
+        //Set image of resolutions off to all, except the chosen resolution.
+        for(int i = 0; i < resolutionSelection.Length; i++)
+        {
+            if(i != resolutionI )
+            {
+                 resolutionSelection[i].SetActive(false);
+            }
+            if ( i == resolutionI)
+            {
+                resolutionSelection[i].SetActive(true);
+            }
+        }
+
+        switch (resolutionI)
+        {
+            case 0:
+                resolution.width = 640; resolution.height = 480;
+                //resolutionSelection[0].SetActive(true);
+                break;
+
+            case 1:
+                resolution.width = 800; resolution.height = 600;
+                //resolutionSelection[1].SetActive(true);
+                break;
+
+            case 2:
+                resolution.width = 960; resolution.height = 720;
+                //resolutionSelection[2].SetActive(true);
+                break;
+
+            case 3:
+                resolution.width = 1024; resolution.height = 768;
+                //resolutionSelection[3].SetActive(true);
+                break;
+
+            case 4:
+                resolution.width = 1280; resolution.height = 960;
+                //resolutionSelection[4].SetActive(true);
+                break;
+
+            case 5:
+                resolution.width = 1440; resolution.height = 1080;
+                //resolutionSelection[5].SetActive(true);
+                break;
+
+            case 6:
+                resolution.width = 1600; resolution.height = 1200;
+                //resolutionSelection[6].SetActive(true);
+                break;
+
+            case 7:
+                resolution.width = 1920; resolution.height = 1080;
+                //resolutionSelection[7].SetActive(true);
+                break;
+
+            case 8:
+                resolution.width = 1920; resolution.height = 1440;
+               //resolutionSelection[8].SetActive(true);
+                break;
+        }
+    }
+
+    public void OffFullscreen()
+    {
+        isFullScreen = false;
+        fullScreenYesNoNextBack[0].SetActive(false);
+        fullScreenYesNoNextBack[1].SetActive(true);
+
+        fullScreenYesNoNextBack[2].SetActive(true);
+        fullScreenYesNoNextBack[3].SetActive(false);
+    }
+
+    public void OnFullscreen()
+    {
+        isFullScreen = true;
+        fullScreenYesNoNextBack[0].SetActive(true);
+        fullScreenYesNoNextBack[1].SetActive(false);
+
+        fullScreenYesNoNextBack[2].SetActive(false);
+        fullScreenYesNoNextBack[3].SetActive(true);
     }
 }

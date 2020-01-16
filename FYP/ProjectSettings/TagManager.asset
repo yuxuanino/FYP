@@ -12,6 +12,11 @@ TagManager:
   - Hazard
   - Spikes
   - AntiBox
+  - OtherButton
+  - ControlsButton
+  - StartButton
+  - SoundButton
+  - GraphicsButton
   layers:
   - Default
   - TransparentFX
@@ -48,4 +53,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Canvas
+    uniqueID: 774804281
+    locked: 0
+  - name: UiText
+    uniqueID: 4188796215
     locked: 0
