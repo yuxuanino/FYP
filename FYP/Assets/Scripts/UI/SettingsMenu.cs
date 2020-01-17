@@ -18,6 +18,19 @@ public class SettingsMenu : MonoBehaviour
 
     private bool isFullScreen;
 
+    //SetSliders to Player's pref
+    public Slider masterVolumeSlider;
+    public Slider sfxVolumeSlider;
+    public Slider mouseSensitivitySlider;
+
+    private void Start()
+    {
+        //Get current slider value from PlayerPref.
+        masterVolumeSlider.value = PlayerPrefs.GetFloat("mVolumePref");
+        sfxVolumeSlider.value = PlayerPrefs.GetFloat("sfxVolumePref");
+        mouseSensitivitySlider.value = PlayerPrefs.GetFloat("mouseSensPref");
+    }
+
     public void MouseSensitivity(float mouseSensitivity) 
     {
         Debug.Log("sensitivity = " + mouseSensitivity);
@@ -27,13 +40,13 @@ public class SettingsMenu : MonoBehaviour
     public void SetMVolume (float mVolume)
     {
         Debug.Log("mVolume = " + mVolume);
-        audioMixer.SetFloat("mVolume", mVolume);
+        audioMixer.SetFloat("mVolume", Mathf.Log10(mVolume) * 20);
     }
 
     public void SetSFXVolume(float sfxVolume)
     {
         Debug.Log("sfxVolume = " + sfxVolume);
-        audioMixer.SetFloat("sfxVolume", sfxVolume);
+        audioMixer.SetFloat("sfxVolume", Mathf.Log10(sfxVolume) * 20);
     }
 
     public void SetQuality (int qualityIndex)
@@ -70,6 +83,11 @@ public class SettingsMenu : MonoBehaviour
 
         //Apply fullscreen
         Screen.fullScreen = isFullScreen;
+
+        //Apply settings to PlayerPref.
+        PlayerPrefs.SetFloat("mVolumePref", masterVolumeSlider.value);
+        PlayerPrefs.SetFloat("sfxVolumePref", sfxVolumeSlider.value);
+        PlayerPrefs.SetFloat("mouseSensPref", mouseSensitivitySlider.value);
     }
 
     void Resolutions()
@@ -91,47 +109,38 @@ public class SettingsMenu : MonoBehaviour
         {
             case 0:
                 resolution.width = 640; resolution.height = 480;
-                //resolutionSelection[0].SetActive(true);
                 break;
 
             case 1:
                 resolution.width = 800; resolution.height = 600;
-                //resolutionSelection[1].SetActive(true);
                 break;
 
             case 2:
                 resolution.width = 960; resolution.height = 720;
-                //resolutionSelection[2].SetActive(true);
                 break;
 
             case 3:
                 resolution.width = 1024; resolution.height = 768;
-                //resolutionSelection[3].SetActive(true);
                 break;
 
             case 4:
                 resolution.width = 1280; resolution.height = 960;
-                //resolutionSelection[4].SetActive(true);
                 break;
 
             case 5:
                 resolution.width = 1440; resolution.height = 1080;
-                //resolutionSelection[5].SetActive(true);
                 break;
 
             case 6:
                 resolution.width = 1600; resolution.height = 1200;
-                //resolutionSelection[6].SetActive(true);
                 break;
 
             case 7:
                 resolution.width = 1920; resolution.height = 1080;
-                //resolutionSelection[7].SetActive(true);
                 break;
 
             case 8:
                 resolution.width = 1920; resolution.height = 1440;
-               //resolutionSelection[8].SetActive(true);
                 break;
         }
     }
