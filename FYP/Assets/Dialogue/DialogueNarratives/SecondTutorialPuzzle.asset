@@ -13,20 +13,25 @@ MonoBehaviour:
   m_Name: SecondTutorialPuzzle
   m_EditorClassIdentifier: 
   dialogueInfo:
-  - myName: Leica
-    portrait: {fileID: 0}
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
+    diamond: {fileID: 0}
     myText: These cubes are strange... Whoever made them must not have heard of a
       lock and key.
-  - myName: Leica
-    portrait: {fileID: 0}
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
+    diamond: {fileID: 0}
     myText: At least they've made it big enough for me to stand on.
-  - myName: Leica
-    portrait: {fileID: 0}
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
+    diamond: {fileID: 0}
     myText: Must be a pain lugging this around just to open a gate.
-  - myName: Leica
-    portrait: {fileID: 0}
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
+    diamond: {fileID: 0}
     myText: Imagine dragging this around at the end of the day just to unlock your
       front door!
-  - myName: Leica
-    portrait: {fileID: 0}
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
+    diamond: {fileID: 0}
     myText: I think I'd rather leave it open and hope for the best. Heh.
