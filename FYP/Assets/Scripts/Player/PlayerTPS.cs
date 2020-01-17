@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerTPS : PlayerAbilities
 {
@@ -24,8 +25,8 @@ public class PlayerTPS : PlayerAbilities
     LayerMask playerLayer;
 
     //UI
-    public GameObject stasisIndicator;
-    public GameObject telekinesisIndicator;
+    public Image stasisIndicator;
+    public Image throwIndicator;
     Coroutine stasisIndicatorCoroutine;
 
     //Player direction
@@ -147,8 +148,9 @@ public class PlayerTPS : PlayerAbilities
                 {
                     Pickup();
                     StopCoroutine("StasisTimer");
+                    StopCoroutine("StasisMeter");
                     stasisIndicatorCoroutine = null;
-                    stasisIndicator.SetActive(false);
+                    stasisIndicator.fillAmount = 0;
                 }
 
             }
@@ -161,7 +163,6 @@ public class PlayerTPS : PlayerAbilities
                 }
 
                 Carry(carriedObject);
-                
 
                 if (Input.GetButton("Throw"))
                 {
@@ -169,7 +170,7 @@ public class PlayerTPS : PlayerAbilities
                     if (!throwMode)
                     {
                         throwMode = true;
-                        telekinesisIndicator.SetActive(true);
+
 
                     }
                     print("Throw Mode");
@@ -177,13 +178,14 @@ public class PlayerTPS : PlayerAbilities
                     {
                         currentChargeTime += Time.deltaTime;
                         Debug.Log("Current Charge Time = " + currentChargeTime);
+                        throwIndicator.fillAmount = currentChargeTime / chargeDuration;
                     }
                 }
                 else if (Input.GetButtonUp("Throw"))
                 {
                     carriedObject.GetComponent<Pickupable>().PickUpEffects(false);
                     throwMode = false;
-                    telekinesisIndicator.SetActive(false);
+                    throwIndicator.fillAmount = 0f;
                     if (currentChargeTime >= 1f)
                     {
                         ThrowObject();
@@ -390,10 +392,21 @@ public class PlayerTPS : PlayerAbilities
 
     IEnumerator StasisTimer(float time)
     {
-        stasisIndicator.SetActive(true);
+        stasisIndicator.fillAmount = 1;
+        StopCoroutine("StasisMeter");
+        StartCoroutine(StasisMeter(time));
         yield return new WaitForSeconds(time);
-        stasisIndicator.SetActive(false);
         stasisIndicatorCoroutine = null;
+    }
+
+    IEnumerator StasisMeter(float timeLeft)
+    {
+        while (timeLeft > 0 && stasisIndicatorCoroutine != null)
+        {
+            yield return new WaitForSeconds(1);
+            --timeLeft;
+            stasisIndicator.fillAmount = timeLeft / stasisDuration;
+        }
     }
 
     void GroundCheck()
