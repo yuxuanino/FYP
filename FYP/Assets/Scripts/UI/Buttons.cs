@@ -9,6 +9,11 @@ public class Buttons : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public Sprite soundWhite;
     public Sprite graphicsWhite;
 
+    public void Start()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     //Detect if the Cursor starts to pass over the GameObject
     public void OnPointerEnter(PointerEventData pointerEventData)
     {

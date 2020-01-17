@@ -115,9 +115,9 @@ public class DialogueManager : MonoBehaviour
     public void EndofDialogue()
     {
         dialogueBox.SetActive(false);
-        Box1.SetActive(false);
         nextLineButton.SetActive(false);
 
+        Box1.SetActive(true);
         Player.SetActive(true);
         Cursor.lockState = cursorMode = CursorLockMode.Locked;
         Cursor.visible = false;

@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
 
     /*public void Start()
     {
-        anim.SetTrigger("FadeToMM");
+        //anim.SetTrigger("FadeToMM");
         //anim = gameObject.GetComponent<Animator>();
     }
 
