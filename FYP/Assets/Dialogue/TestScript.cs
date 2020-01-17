@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TestScript : MonoBehaviour
 {
     public DialogueBase dialogue;
-    public DialogueManager dialogueM;
+    private DialogueManager dialogueM;
     public bool dialogueIsActive;
 
     CursorLockMode cursorMode;
@@ -21,10 +21,11 @@ public class TestScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.tag == "Player")
+        if (other.tag == "Player" || other.tag == "Box")
         {
             //Stop player's movements
             dialogueM.Player.SetActive(false);
+            dialogueM.Box1.SetActive(false);
 
             //Start dialogue
             DialogueManager.instance.EnqueueDialogue(dialogue);

@@ -7,6 +7,7 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
     public GameObject Player;
+    public GameObject Box1;
 
     private void Awake()
     {
@@ -114,6 +115,7 @@ public class DialogueManager : MonoBehaviour
     public void EndofDialogue()
     {
         dialogueBox.SetActive(false);
+        Box1.SetActive(false);
         nextLineButton.SetActive(false);
 
         Player.SetActive(true);
