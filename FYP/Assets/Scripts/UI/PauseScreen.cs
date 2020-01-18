@@ -6,7 +6,13 @@ using UnityEngine.SceneManagement;
 public class PauseScreen : MonoBehaviour
 {
     public GameObject pauseScreen;
+    public GameObject settingScreen;
     private PlayerController pC;
+
+    //Settings
+    public GameObject controlSetting;
+    public GameObject soundSetting;
+    public GameObject graphicSetting;
 
     // Start is called before the first frame update
     void Start()
@@ -57,7 +63,7 @@ public class PauseScreen : MonoBehaviour
         //Disable scripts that still work while timescale is set to 0
         pC.canMove = false;
     }
-    private void ContinueGame()
+    public void ContinueGame()
     {
         Time.timeScale = 1;
         pauseScreen.SetActive(false);
@@ -67,4 +73,23 @@ public class PauseScreen : MonoBehaviour
         //enable the scripts again
     }
 
+    public void Setting()
+    {
+        settingScreen.SetActive(true);
+    }
+
+
+    //Buttons to get respective settings. ( Control, Sound, Graphic )
+    public void ControlBtn()
+    {
+        controlSetting.SetActive(true);
+    }
+    public void SoundBtn()
+    {
+        soundSetting.SetActive(true);
+    }
+    public void GraphicBtn()
+    {
+        graphicSetting.SetActive(true);
+    }
 }
