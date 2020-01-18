@@ -9,6 +9,10 @@ public class MainMenu : MonoBehaviour
     public GameObject controlsStuff;
     public GameObject soundStuff;
     public GameObject graphicsStuff;
+
+
+    public GameObject applyBtn;
+    public GameObject resetToDefaultBtn;
     //public Animator anim;
 
     /*public void Start()
@@ -55,6 +59,8 @@ public class MainMenu : MonoBehaviour
         controlsStuff.SetActive(true);
         soundStuff.SetActive(false);
         graphicsStuff.SetActive(false);
+        applyBtn.SetActive(true);
+        resetToDefaultBtn.SetActive(true);
     }
 
     public void Sound()
@@ -62,6 +68,8 @@ public class MainMenu : MonoBehaviour
         controlsStuff.SetActive(false);
         soundStuff.SetActive(true);
         graphicsStuff.SetActive(false);
+        applyBtn.SetActive(true);
+        resetToDefaultBtn.SetActive(true);
     }
 
     public void Graphics()
@@ -69,5 +77,7 @@ public class MainMenu : MonoBehaviour
         controlsStuff.SetActive(false);
         soundStuff.SetActive(false);
         graphicsStuff.SetActive(true);
+        applyBtn.SetActive(true);
+        resetToDefaultBtn.SetActive(true);
     }
 }

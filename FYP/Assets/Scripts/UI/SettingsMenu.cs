@@ -22,13 +22,16 @@ public class SettingsMenu : MonoBehaviour
     public Slider masterVolumeSlider;
     public Slider sfxVolumeSlider;
     public Slider mouseSensitivitySlider;
+    
 
     private void Start()
     {
-        //Get current slider value from PlayerPref.
-        masterVolumeSlider.value = PlayerPrefs.GetFloat("mVolumePref");
-        sfxVolumeSlider.value = PlayerPrefs.GetFloat("sfxVolumePref");
-        mouseSensitivitySlider.value = PlayerPrefs.GetFloat("mouseSensPref");
+        //Get current slider value from existing PlayerPref.
+        masterVolumeSlider.value = PlayerPrefs.GetFloat("mVolumePref",1);
+        sfxVolumeSlider.value = PlayerPrefs.GetFloat("sfxVolumePref",1);
+        mouseSensitivitySlider.value = PlayerPrefs.GetFloat("mouseSensPref",.5f);
+        resolutionI = PlayerPrefs.GetInt("resolutionPref", 7);
+
     }
 
     public void MouseSensitivity(float mouseSensitivity) 
@@ -88,8 +91,19 @@ public class SettingsMenu : MonoBehaviour
         PlayerPrefs.SetFloat("mVolumePref", masterVolumeSlider.value);
         PlayerPrefs.SetFloat("sfxVolumePref", sfxVolumeSlider.value);
         PlayerPrefs.SetFloat("mouseSensPref", mouseSensitivitySlider.value);
+
+        PlayerPrefs.SetInt("resolutionPref", resolutionI);
     }
 
+    public void ResetToDefault()
+    {
+        PlayerPrefs.SetFloat("mVolumePref", 1);
+        PlayerPrefs.SetFloat("sfxVolumePref", 1);
+        PlayerPrefs.SetFloat("mouseSensPref", 0.5f);
+
+        PlayerPrefs.SetInt("resolutionPref", 7);
+
+    }
     void Resolutions()
     {
         //Set image of resolutions off to all, except the chosen resolution.

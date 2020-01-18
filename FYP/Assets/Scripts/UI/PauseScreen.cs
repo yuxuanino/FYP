@@ -14,6 +14,10 @@ public class PauseScreen : MonoBehaviour
     public GameObject soundSetting;
     public GameObject graphicSetting;
 
+    public GameObject applyBtn;
+
+    public GameObject resetToDefaultBtn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -83,13 +87,30 @@ public class PauseScreen : MonoBehaviour
     public void ControlBtn()
     {
         controlSetting.SetActive(true);
+        soundSetting.SetActive(false);
+        graphicSetting.SetActive(false);
+        applyBtn.SetActive(true);
+        resetToDefaultBtn.SetActive(true);
     }
     public void SoundBtn()
     {
+        controlSetting.SetActive(false);
         soundSetting.SetActive(true);
+        graphicSetting.SetActive(false);
+        applyBtn.SetActive(true);
+        resetToDefaultBtn.SetActive(true);
     }
     public void GraphicBtn()
     {
+        controlSetting.SetActive(false);
+        soundSetting.SetActive(false);
         graphicSetting.SetActive(true);
+        applyBtn.SetActive(true);
+        resetToDefaultBtn.SetActive(true);
+    }
+
+    public void Back()
+    {
+        settingScreen.SetActive(false);
     }
 }
