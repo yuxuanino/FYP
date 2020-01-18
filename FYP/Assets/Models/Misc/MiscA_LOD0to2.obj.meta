@@ -3,7 +3,97 @@ guid: f6f91b63114406746a5a7da257c7ee39
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CampfireRockMat
+    second: {fileID: 2100000, guid: edc540708fdf7bc4dabf92e1d96c53f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CampfireRock_LOD0Mat
+    second: {fileID: 2100000, guid: edc540708fdf7bc4dabf92e1d96c53f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CampfireRock_LOD2Mat
+    second: {fileID: 2100000, guid: edc540708fdf7bc4dabf92e1d96c53f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CampfireStickMat
+    second: {fileID: 2100000, guid: edc540708fdf7bc4dabf92e1d96c53f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CampfireStick_LOD0Mat
+    second: {fileID: 2100000, guid: edc540708fdf7bc4dabf92e1d96c53f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CampfireStick_LOD2Mat
+    second: {fileID: 2100000, guid: edc540708fdf7bc4dabf92e1d96c53f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChainAMat
+    second: {fileID: 2100000, guid: edc540708fdf7bc4dabf92e1d96c53f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChainA_LOD0Mat
+    second: {fileID: 2100000, guid: edc540708fdf7bc4dabf92e1d96c53f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChainA_LOD2Mat
+    second: {fileID: 2100000, guid: edc540708fdf7bc4dabf92e1d96c53f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SignPostBoardMat
+    second: {fileID: 2100000, guid: edc540708fdf7bc4dabf92e1d96c53f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SignPostBoard_LOD0Mat
+    second: {fileID: 2100000, guid: edc540708fdf7bc4dabf92e1d96c53f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SignPostBoard_LOD2Mat
+    second: {fileID: 2100000, guid: edc540708fdf7bc4dabf92e1d96c53f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SignPostPostMat
+    second: {fileID: 2100000, guid: edc540708fdf7bc4dabf92e1d96c53f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SignPostPost_LOD0Mat
+    second: {fileID: 2100000, guid: edc540708fdf7bc4dabf92e1d96c53f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SignPostPost_LOD2Mat
+    second: {fileID: 2100000, guid: edc540708fdf7bc4dabf92e1d96c53f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TorchMat
+    second: {fileID: 2100000, guid: edc540708fdf7bc4dabf92e1d96c53f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Torch_LOD0Mat
+    second: {fileID: 2100000, guid: edc540708fdf7bc4dabf92e1d96c53f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Torch_LOD2Mat
+    second: {fileID: 2100000, guid: edc540708fdf7bc4dabf92e1d96c53f0, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
