@@ -8,6 +8,8 @@ public class DialogueManager : MonoBehaviour
     public static DialogueManager instance;
     public GameObject Player;
     public GameObject Box1;
+    public GameObject Box2;
+    public GameObject scribbleAudio;
 
     private void Awake()
     {
@@ -67,6 +69,7 @@ public class DialogueManager : MonoBehaviour
             StopAllCoroutines();  //Theres only 1 coroutine lol
             isCurrentlyTyping = false;
             diamond.SetActive(true);
+            scribbleAudio.SetActive(false);
             return; //Don't want to deque the dialogue
         }
 
@@ -93,6 +96,7 @@ public class DialogueManager : MonoBehaviour
     {
         isCurrentlyTyping = true;
         diamond.SetActive(false);
+        scribbleAudio.SetActive(true);
 
         //Text is set to empty
         //dialogueText.text = "";
@@ -104,6 +108,7 @@ public class DialogueManager : MonoBehaviour
         }
         isCurrentlyTyping = false;
         diamond.SetActive(true);
+        scribbleAudio.SetActive(false);
     }
 
     private void CompleteText()
@@ -118,6 +123,7 @@ public class DialogueManager : MonoBehaviour
         nextLineButton.SetActive(false);
 
         Box1.SetActive(true);
+        Box2.SetActive(true);
         Player.SetActive(true);
         Cursor.lockState = cursorMode = CursorLockMode.Locked;
         Cursor.visible = false;
