@@ -32,7 +32,7 @@ MonoBehaviour:
     portrait: {fileID: 7292478582145647226, guid: bcee804a625f71048b07160cdfac0508,
       type: 3}
     diamond: {fileID: 0}
-    myText: Leica drew her scarf and shivered.
+    myText: Raika drew her scarf and shivered.
   - myName: 
     portrait: {fileID: 7292478582145647226, guid: bcee804a625f71048b07160cdfac0508,
       type: 3}
