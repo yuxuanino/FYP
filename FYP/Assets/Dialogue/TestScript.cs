@@ -26,6 +26,7 @@ public class TestScript : MonoBehaviour
             //Stop player's movements
             dialogueM.Player.SetActive(false);
             dialogueM.Box1.SetActive(false);
+            dialogueM.Box2.SetActive(false);
 
             //Start dialogue
             DialogueManager.instance.EnqueueDialogue(dialogue);

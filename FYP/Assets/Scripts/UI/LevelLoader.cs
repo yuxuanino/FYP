@@ -7,13 +7,30 @@ public class LevelLoader : MonoBehaviour
 {
     public GameObject loadingScreen;
     public Slider slider;
+    public AudioSource mainMenuMusic;
+    public float fadeOutTime = 0.3f;
+    bool fadeOut;
     //public Text progressText;
 
     //public Animator anim;
 
+    void Awake()
+    {
+        fadeOut = false;
+    }
+
+    void Update()
+    {
+        if (mainMenuMusic.volume != 0 && fadeOut)
+        {
+            mainMenuMusic.volume -= Time.deltaTime / fadeOutTime;
+        }
+    }
+
     public void LoadLevel (int sceneIndex)
     {
         //anim.SetTrigger("Fade");
+        fadeOut = true;
         loadingScreen.SetActive(true);
         StartCoroutine(LoadAsynchronously(sceneIndex));
     }
