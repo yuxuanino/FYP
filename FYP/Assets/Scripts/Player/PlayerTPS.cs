@@ -8,7 +8,6 @@ public class PlayerTPS : PlayerAbilities
     public float speed = 6.0f;
     public float gravity = 10.0f;
     public float maxVelocityChange = 10.0f;
-    public bool canJump = true;
     public float jumpHeight = 1.3f;
     public float groundCheckDistance = 0.1f;
 
@@ -74,8 +73,8 @@ public class PlayerTPS : PlayerAbilities
     private float tTimer = 4f;
 
     //Check moving to add audio
-    //public bool isMoving; Im sorry im tired
     AudioSource runningAudio;
+    public AudioClip jumpClip;
 
 
     // Start is called before the first frame update
@@ -351,7 +350,7 @@ public class PlayerTPS : PlayerAbilities
                 rb.AddForce(velocityChange, ForceMode.VelocityChange);
 
                 // Jump
-                if (canJump && Input.GetButton("Jump"))
+                if (isGrounded && Input.GetButton("Jump") && !jump)
                 {
                     jump = true;
                     rb.velocity = new Vector3(velocity.x, CalculateJumpVerticalSpeed(), velocity.z);
@@ -381,12 +380,17 @@ public class PlayerTPS : PlayerAbilities
 
         if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S)) && isGrounded)
         {
-            runningAudio.enabled = true;
+            if (!runningAudio.isPlaying)
+            {
+                runningAudio.pitch = Random.Range(0.9f, 1.1f);
+                runningAudio.Play();
+            }
         }
 
-        else
+        if (Input.GetButton("Jump") && isGrounded)
         {
-            runningAudio.enabled = false;
+            runningAudio.pitch = Random.Range(0.9f, 1.1f);
+            runningAudio.PlayOneShot(jumpClip);
         }
     }
 

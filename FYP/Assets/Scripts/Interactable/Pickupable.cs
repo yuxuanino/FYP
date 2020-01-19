@@ -19,6 +19,9 @@ public class Pickupable : MonoBehaviour {
     public Vector3 currentPosition;
     Vector3 startPosition;
 
+    AudioSource aS;
+    AudioClip sFX;
+
     public float resetHeight = -200f;
     public float resetDelay = 1.5f;
 
@@ -39,6 +42,8 @@ public class Pickupable : MonoBehaviour {
         startPosition = transform.position;
         myRB = GetComponent<Rigidbody>();
         baseMaterial = GetComponent<Renderer>().material;
+        aS = GetComponent<AudioSource>();
+        sFX = aS.clip;
     }
 
 
@@ -81,9 +86,8 @@ public class Pickupable : MonoBehaviour {
     {
         if (stasisEffect != null)
         {
-            stasisEffect.SetActive(true); //New
-            //var go = Instantiate(stasisEffect, transform.position, Quaternion.identity); //Commented
-            //Destroy(go, 1f); //Commented
+            stasisEffect.SetActive(true);
+            aS.PlayOneShot(sFX);
         }
 
         else

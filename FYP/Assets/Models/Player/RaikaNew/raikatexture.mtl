@@ -1,0 +1,296 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 16.01.2020 16:31:33
+
+newmtl Braids
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\user\Desktop\FYP\RaikaUVs\Braids.png
+	map_Kd C:\Users\user\Desktop\FYP\RaikaUVs\Braids.png
+
+newmtl scarf
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\user\Desktop\FYP\RaikaUVs\Scarf.png
+	map_Kd C:\Users\user\Desktop\FYP\RaikaUVs\Scarf.png
+
+newmtl outercoat
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\user\Desktop\FYP\RaikaUVs\Outercoatp.png
+	map_Kd C:\Users\user\Desktop\FYP\RaikaUVs\Outercoatp.png
+
+newmtl scarftail
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\user\Desktop\FYP\RaikaUVs\Scarftail.png
+	map_Kd C:\Users\user\Desktop\FYP\RaikaUVs\Scarftail.png
+
+newmtl innercoat
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\user\Desktop\FYP\RaikaUVs\InnerCoat.png
+	map_Kd C:\Users\user\Desktop\FYP\RaikaUVs\InnerCoat.png
+
+newmtl hairfront
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\user\Desktop\FYP\RaikaUVs\HairFront.png
+	map_Kd C:\Users\user\Desktop\FYP\RaikaUVs\HairFront.png
+
+newmtl hairback
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\user\Desktop\FYP\RaikaUVs\HairBack.png
+	map_Kd C:\Users\user\Desktop\FYP\RaikaUVs\HairBack.png
+
+newmtl hairside
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\user\Desktop\FYP\RaikaUVs\HairSide.png
+	map_Kd C:\Users\user\Desktop\FYP\RaikaUVs\HairSide.png
+
+newmtl skirt
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\user\Desktop\FYP\RaikaUVs\Skirt.png
+	map_Kd C:\Users\user\Desktop\FYP\RaikaUVs\Skirt.png
+
+newmtl legs
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\user\Desktop\FYP\RaikaUVs\Legs.png
+	map_Kd C:\Users\user\Desktop\FYP\RaikaUVs\Legs.png
+
+newmtl bootright
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\user\Desktop\FYP\RaikaUVs\BootRight.png
+	map_Kd C:\Users\user\Desktop\FYP\RaikaUVs\BootRight.png
+
+newmtl Material__18
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\user\Desktop\FYP\RaikaUVs\Pantsu.png
+	map_Kd C:\Users\user\Desktop\FYP\RaikaUVs\Pantsu.png
+
+newmtl body
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\user\Desktop\FYP\RaikaUVs\BodyMisc.png
+	map_Kd C:\Users\user\Desktop\FYP\RaikaUVs\BodyMisc.png
+
+newmtl bracelet
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\user\Desktop\FYP\RaikaUVs\Bracelets.png
+	map_Kd C:\Users\user\Desktop\FYP\RaikaUVs\Bracelets.png
+
+newmtl armsleeve
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\user\Desktop\FYP\RaikaUVs\Armsleeve.png
+	map_Kd C:\Users\user\Desktop\FYP\RaikaUVs\Armsleeve.png
+
+newmtl leftarmstrap
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\user\Desktop\FYP\RaikaUVs\leftarmstrap.png
+	map_Kd C:\Users\user\Desktop\FYP\RaikaUVs\leftarmstrap.png
+
+newmtl glove
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\user\Desktop\FYP\RaikaUVs\Glove.png
+	map_Kd C:\Users\user\Desktop\FYP\RaikaUVs\Glove.png
+
+newmtl eyes
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\user\Desktop\FYP\RaikaUVs\Eyes.png
+	map_Kd C:\Users\user\Desktop\FYP\RaikaUVs\Eyes.png
+
+newmtl coatflap
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\user\Desktop\FYP\RaikaUVs\CoatFlap.png
+	map_Kd C:\Users\user\Desktop\FYP\RaikaUVs\CoatFlap.png
+
+newmtl head
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\user\Desktop\FYP\RaikaUVs\Head.png
+	map_Kd C:\Users\user\Desktop\FYP\RaikaUVs\Head.png
+
+newmtl bootleft
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\user\Desktop\FYP\RaikaUVs\BootLeft.png
+	map_Kd C:\Users\user\Desktop\FYP\RaikaUVs\BootLeft.png
