@@ -6,7 +6,17 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #36'
+    second: {fileID: 2100000, guid: 340284d122a557544b46522079afd092, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pillar_Low_defaultMat
+    second: {fileID: 2100000, guid: c0877738d7d0cf1458828113f7529810, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
