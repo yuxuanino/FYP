@@ -7,7 +7,7 @@ public class PauseScreen : MonoBehaviour
 {
     public GameObject pauseScreen;
     public GameObject settingScreen;
-    private PlayerController pC;
+    private PlayerTPS pC;
 
     //Settings
     public GameObject controlSetting;
@@ -21,7 +21,7 @@ public class PauseScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pC = FindObjectOfType<PlayerController>();
+        pC = FindObjectOfType<PlayerTPS>();
     }
 
     // Update is called once per frame
@@ -69,8 +69,10 @@ public class PauseScreen : MonoBehaviour
     }
     public void ContinueGame()
     {
+        Debug.Log("wat");
         Time.timeScale = 1;
         pauseScreen.SetActive(false);
+        settingScreen.SetActive(false);
         pC.canMove = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
