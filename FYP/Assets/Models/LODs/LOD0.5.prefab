@@ -516,7 +516,6 @@ GameObject:
   - component: {fileID: 1152797186222746851}
   - component: {fileID: 2676564213611040531}
   - component: {fileID: 5851422049384170731}
-  - component: {fileID: 126654182608132082}
   m_Layer: 0
   m_Name: CrystalF005
   m_TagString: Untagged
@@ -584,17 +583,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &126654182608132082
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7958609989241454137}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 2782403180312679606, guid: 966bde041bb3457488de68aced1d7402, type: 3}

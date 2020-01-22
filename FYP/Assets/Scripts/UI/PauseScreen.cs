@@ -69,7 +69,6 @@ public class PauseScreen : MonoBehaviour
     }
     public void ContinueGame()
     {
-        Debug.Log("wat");
         Time.timeScale = 1;
         pauseScreen.SetActive(false);
         settingScreen.SetActive(false);

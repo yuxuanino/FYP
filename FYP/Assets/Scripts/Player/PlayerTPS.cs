@@ -146,10 +146,13 @@ public class PlayerTPS : PlayerAbilities
                 else
                 {
                     Pickup();
-                    StopCoroutine("StasisTimer");
-                    StopCoroutine("StasisMeter");
-                    stasisIndicatorCoroutine = null;
-                    stasisIndicator.fillAmount = 0;
+                    if (carriedObject != null)
+                    {
+                        StopCoroutine("StasisTimer");
+                        StopCoroutine("StasisMeter");
+                        stasisIndicatorCoroutine = null;
+                        stasisIndicator.fillAmount = 0;
+                    }
                 }
 
             }
@@ -385,6 +388,7 @@ public class PlayerTPS : PlayerAbilities
                 runningAudio.pitch = Random.Range(0.9f, 1.1f);
                 runningAudio.Play();
             }
+
         }
 
         if (Input.GetButton("Jump") && isGrounded)
@@ -398,14 +402,14 @@ public class PlayerTPS : PlayerAbilities
     {
         stasisIndicator.fillAmount = 1;
         StopCoroutine("StasisMeter");
-        StartCoroutine(StasisMeter(time));
+        StartCoroutine("StasisMeter", time);
         yield return new WaitForSeconds(time);
         stasisIndicatorCoroutine = null;
     }
 
     IEnumerator StasisMeter(float timeLeft)
     {
-        while (timeLeft > 0 && stasisIndicatorCoroutine != null)
+        while (timeLeft > 0)
         {
             yield return new WaitForSeconds(1);
             --timeLeft;
