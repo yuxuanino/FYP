@@ -4,6 +4,13 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
+//All PlayerPref
+// mVolumePref      (Master Volume)         float
+// sfxVolumePref    (SFX Volume)            float   
+// mouseSensPref    (Mouse sensitivity)     float
+// resolutionPref   (Resolution)            int
+// fullscreenPref   (Fullscreen)            int     1 = True
+
 public class SettingsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
@@ -14,15 +21,20 @@ public class SettingsMenu : MonoBehaviour
     Resolution resolution;
 
     public GameObject[] resolutionSelection;
-    public GameObject[] fullScreenYesNoNextBack;
+    public GameObject[] fullScreenNoYesNextBack;
 
-    private bool isFullScreen;
+    private int isFullScreen = 1;
 
     //SetSliders to Player's pref
     public Slider masterVolumeSlider;
     public Slider sfxVolumeSlider;
     public Slider mouseSensitivitySlider;
     
+    bool resolutionChanged;
+    bool fullScreenChanged;
+    bool masterChanged;
+    bool sfxChanged;
+    bool mouseChanged;
 
     private void Start()
     {
@@ -31,35 +43,59 @@ public class SettingsMenu : MonoBehaviour
         sfxVolumeSlider.value = PlayerPrefs.GetFloat("sfxVolumePref",1);
         mouseSensitivitySlider.value = PlayerPrefs.GetFloat("mouseSensPref",.5f);
         resolutionI = PlayerPrefs.GetInt("resolutionPref", 7);
+        resolutionSelection[resolutionI].SetActive(true);
+
+        isFullScreen = PlayerPrefs.GetInt("fullscreenPref", 1);
+        fullScreenNoYesNextBack[isFullScreen].SetActive(true);
+        if(isFullScreen == 1)
+        {
+            fullScreenNoYesNextBack[2].SetActive(false);
+            fullScreenNoYesNextBack[3].SetActive(true);
+        }else if(isFullScreen == 0)
+        {
+            fullScreenNoYesNextBack[2].SetActive(true);
+            fullScreenNoYesNextBack[3].SetActive(false);
+        }
+        Debug.Log("isFullScreen = " + isFullScreen);
+
+
+
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+
 
     }
 
     public void MouseSensitivity(float mouseSensitivity) 
     {
+        mouseChanged = true;
         Debug.Log("sensitivity = " + mouseSensitivity);
     }
 
 
     public void SetMVolume (float mVolume)
     {
+        masterChanged = true;
         Debug.Log("mVolume = " + mVolume);
         audioMixer.SetFloat("mVolume", Mathf.Log10(mVolume) * 20);
     }
 
     public void SetSFXVolume(float sfxVolume)
     {
+        sfxChanged = true;
         Debug.Log("sfxVolume = " + sfxVolume);
         audioMixer.SetFloat("sfxVolume", Mathf.Log10(sfxVolume) * 20);
     }
 
     public void SetQuality (int qualityIndex)
     {
+        
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 
     //Setting screen resolution
     public void IncreaseResolution()
     {
+        resolutionChanged = true;
         if (resolutionI <= 7) {
             resolutionI++;
         }
@@ -68,6 +104,7 @@ public class SettingsMenu : MonoBehaviour
     }
     public void DecreaseResolution()
     {
+        resolutionChanged = true;
         if (resolutionI >= 1)
         {
             resolutionI--;
@@ -78,21 +115,48 @@ public class SettingsMenu : MonoBehaviour
 
     public void Apply()
     {
-        
+
         //Apply resolution
-        //resolution = resolutions[resolutionI];        
-        Screen.SetResolution(resolution.width, resolution.height , Screen.fullScreen );
-        Debug.Log("Width = " + resolution.width + ", Height = " + resolution.height);
+        //resolution = resolutions[resolutionI];     
+        if (fullScreenChanged)
+        {
+            //Apply fullscreen
 
-        //Apply fullscreen
-        Screen.fullScreen = isFullScreen;
+            if(isFullScreen == 1)
+            {
+                Screen.fullScreen = true;
+            }
+            else
+            {
+                Screen.fullScreen = false;
 
+            }
+            PlayerPrefs.SetInt("fullscreenPref", isFullScreen);
+            fullScreenChanged = false;
+        }
         //Apply settings to PlayerPref.
-        PlayerPrefs.SetFloat("mVolumePref", masterVolumeSlider.value);
-        PlayerPrefs.SetFloat("sfxVolumePref", sfxVolumeSlider.value);
-        PlayerPrefs.SetFloat("mouseSensPref", mouseSensitivitySlider.value);
-
-        PlayerPrefs.SetInt("resolutionPref", resolutionI);
+        if (masterChanged)
+        {
+            PlayerPrefs.SetFloat("mVolumePref", masterVolumeSlider.value);
+            masterChanged = false;
+        }
+        if (sfxChanged)
+        {
+            PlayerPrefs.SetFloat("sfxVolumePref", sfxVolumeSlider.value);
+            sfxChanged = false;
+        }
+        if (mouseChanged)
+        {
+            PlayerPrefs.SetFloat("mouseSensPref", mouseSensitivitySlider.value);
+            mouseChanged = false;
+        }
+        if (resolutionChanged)
+        {
+            PlayerPrefs.SetInt("resolutionPref", resolutionI);
+            Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+            Debug.Log("Width = " + resolution.width + ", Height = " + resolution.height);
+            resolutionChanged = false;
+        }
     }
 
     public void ResetToDefault()
@@ -161,21 +225,28 @@ public class SettingsMenu : MonoBehaviour
 
     public void OffFullscreen()
     {
-        isFullScreen = false;
-        fullScreenYesNoNextBack[0].SetActive(false);
-        fullScreenYesNoNextBack[1].SetActive(true);
+        isFullScreen = 0;
+        fullScreenNoYesNextBack[1].SetActive(false);
+        fullScreenNoYesNextBack[0].SetActive(true);
 
-        fullScreenYesNoNextBack[2].SetActive(true);
-        fullScreenYesNoNextBack[3].SetActive(false);
+        fullScreenNoYesNextBack[2].SetActive(true);
+        fullScreenNoYesNextBack[3].SetActive(false);
+        fullScreenChanged = true;
     }
 
     public void OnFullscreen()
     {
-        isFullScreen = true;
-        fullScreenYesNoNextBack[0].SetActive(true);
-        fullScreenYesNoNextBack[1].SetActive(false);
+        isFullScreen = 1;
+        fullScreenNoYesNextBack[1].SetActive(true);
+        fullScreenNoYesNextBack[0].SetActive(false);
 
-        fullScreenYesNoNextBack[2].SetActive(false);
-        fullScreenYesNoNextBack[3].SetActive(true);
+        fullScreenNoYesNextBack[2].SetActive(false);
+        fullScreenNoYesNextBack[3].SetActive(true);
+        fullScreenChanged = true;
+    }
+
+    public void DeletePref()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }
