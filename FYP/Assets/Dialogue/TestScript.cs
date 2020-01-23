@@ -21,7 +21,7 @@ public class TestScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.tag == "Player" || other.tag == "Box")
+        if (other.tag == "Player")
         {
             //Stop player's movements
             dialogueM.Player.SetActive(false);
@@ -36,10 +36,9 @@ public class TestScript : MonoBehaviour
 
             dialogueIsActive = true;
 
-            //Debug.Log("Triggered");
+            Destroy(GetComponent<BoxCollider>());
         }
 
-        Destroy(GetComponent<BoxCollider>());
         dialogueIsActive = true;
     }
 }
