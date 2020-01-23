@@ -11,19 +11,23 @@ public class DialogueManager : MonoBehaviour
     public GameObject Box2;
     public GameObject scribbleAudio;
 
+    public TestScript TS;
+
     private void Awake()
     {
         //DialogueTS = FindObjectOfType<TestScript>();
 
         if(instance != null)
         {
-            Debug.LogWarning("Fix this shiiii" + gameObject.name);
+            //Debug.LogWarning("Fix this shiiii" + gameObject.name);
         }
 
         else
         {
             instance = this;
         }
+
+        TS = FindObjectOfType<TestScript>();
 
     }
 
@@ -61,7 +65,7 @@ public class DialogueManager : MonoBehaviour
     //Take out information
     public void DequeueDialogue()
     {
-        Debug.Log("Sentence number" + dialogueInfo.Count);
+        //Debug.Log("Sentence number" + dialogueInfo.Count);
 
         if (isCurrentlyTyping == true)
         {
@@ -125,10 +129,13 @@ public class DialogueManager : MonoBehaviour
         Box1.SetActive(true);
         Box2.SetActive(true);
         Player.SetActive(true);
+
+        TS.dialogueIsActive = false;
+
         Cursor.lockState = cursorMode = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        Debug.Log("EndOfDialogue");
+        //Debug.Log("EndOfDialogue");
         
     }
 

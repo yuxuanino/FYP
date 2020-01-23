@@ -18,10 +18,13 @@ public class PauseScreen : MonoBehaviour
 
     public GameObject resetToDefaultBtn;
 
+    public TestScript TS;
+
     // Start is called before the first frame update
     void Start()
     {
         pC = FindObjectOfType<PlayerTPS>();
+        TS = FindObjectOfType<TestScript>();
     }
 
     // Update is called once per frame
@@ -73,8 +76,13 @@ public class PauseScreen : MonoBehaviour
         pauseScreen.SetActive(false);
         settingScreen.SetActive(false);
         pC.canMove = true;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+
+        if (TS.dialogueIsActive == false)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
         //enable the scripts again
     }
 

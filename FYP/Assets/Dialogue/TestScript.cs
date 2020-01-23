@@ -36,10 +36,10 @@ public class TestScript : MonoBehaviour
 
             dialogueIsActive = true;
 
-            Debug.Log("Triggered");
+            //Debug.Log("Triggered");
         }
 
         Destroy(GetComponent<BoxCollider>());
+        dialogueIsActive = true;
     }
-
 }
