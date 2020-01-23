@@ -5,11 +5,13 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 
 //All PlayerPref
-// mVolumePref      (Master Volume)         float
-// sfxVolumePref    (SFX Volume)            float   
-// mouseSensPref    (Mouse sensitivity)     float
-// resolutionPref   (Resolution)            int
-// fullscreenPref   (Fullscreen)            int     1 = True
+// mVolumePref          (Master Volume)         float
+// sfxVolumePref        (SFX Volume)            float   
+// mouseSensPref        (Mouse sensitivity)     float
+// resolutionPref       (Resolution I)          int
+// resolutionWidthPref  (Resolution width)      int
+// resolutionHeightPref (Resolution height)     int
+// fullscreenPref       (Fullscreen)            int     1 = True
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -36,33 +38,61 @@ public class SettingsMenu : MonoBehaviour
     bool sfxChanged;
     bool mouseChanged;
 
+    private void Awake()
+    {
+        resolutionI = PlayerPrefs.GetInt("resolutionPref", 7);
+
+        resolution.width = PlayerPrefs.GetInt("resolutionWidthPref", 1920);
+        resolution.height = PlayerPrefs.GetInt("resolutionHeightPref", 1080);
+        isFullScreen = PlayerPrefs.GetInt("fullscreenPref", 1);
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+
+        fullScreenNoYesNextBack[isFullScreen].SetActive(true);
+        if (isFullScreen == 1)
+        {
+            Screen.fullScreen = true;
+        }
+        else if (isFullScreen == 0)
+        {
+            Screen.fullScreen = false;
+        }
+
+        mouseSensitivitySlider.value = PlayerPrefs.GetFloat("mouseSensPref", .5f);
+        //masterVolumeSlider.value = PlayerPrefs.GetFloat("mVolumePref", 1);
+        audioMixer.SetFloat("mVolume", PlayerPrefs.GetFloat("mVolumePref", 1));
+        //sfxVolumeSlider.value = PlayerPrefs.GetFloat("sfxVolumePref", 1);
+        audioMixer.SetFloat("sfxVolume", PlayerPrefs.GetFloat("mVolumePref", 1));
+
+    }
+
     private void Start()
     {
         //Get current slider value from existing PlayerPref.
         masterVolumeSlider.value = PlayerPrefs.GetFloat("mVolumePref",1);
         sfxVolumeSlider.value = PlayerPrefs.GetFloat("sfxVolumePref",1);
         mouseSensitivitySlider.value = PlayerPrefs.GetFloat("mouseSensPref",.5f);
+
         resolutionI = PlayerPrefs.GetInt("resolutionPref", 7);
         resolutionSelection[resolutionI].SetActive(true);
+        resolution.width = PlayerPrefs.GetInt("resolutionWidthPref", 1920);
+        resolution.height = PlayerPrefs.GetInt("resolutionHeightPref", 1080);
+        Debug.Log("Width = " + resolution.width + " Height = " + resolution.height);
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+
 
         isFullScreen = PlayerPrefs.GetInt("fullscreenPref", 1);
         fullScreenNoYesNextBack[isFullScreen].SetActive(true);
         if(isFullScreen == 1)
         {
+            Screen.fullScreen = true;
             fullScreenNoYesNextBack[2].SetActive(false);
             fullScreenNoYesNextBack[3].SetActive(true);
         }else if(isFullScreen == 0)
         {
+            Screen.fullScreen = false;
             fullScreenNoYesNextBack[2].SetActive(true);
             fullScreenNoYesNextBack[3].SetActive(false);
         }
-        Debug.Log("isFullScreen = " + isFullScreen);
-
-
-
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-
-
     }
 
     public void MouseSensitivity(float mouseSensitivity) 
@@ -77,6 +107,7 @@ public class SettingsMenu : MonoBehaviour
         masterChanged = true;
         Debug.Log("mVolume = " + mVolume);
         audioMixer.SetFloat("mVolume", Mathf.Log10(mVolume) * 20);
+       
     }
 
     public void SetSFXVolume(float sfxVolume)
@@ -153,6 +184,8 @@ public class SettingsMenu : MonoBehaviour
         if (resolutionChanged)
         {
             PlayerPrefs.SetInt("resolutionPref", resolutionI);
+            PlayerPrefs.SetInt("resolutionWidthPref", resolution.width);
+            PlayerPrefs.SetInt("resolutionHeightPref", resolution.height);
             Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
             Debug.Log("Width = " + resolution.width + ", Height = " + resolution.height);
             resolutionChanged = false;
@@ -166,6 +199,10 @@ public class SettingsMenu : MonoBehaviour
         PlayerPrefs.SetFloat("mouseSensPref", 0.5f);
 
         PlayerPrefs.SetInt("resolutionPref", 7);
+        resolution.width = 1920;
+        resolution.height = 1080;
+
+        isFullScreen = 1;
 
     }
     void Resolutions()
