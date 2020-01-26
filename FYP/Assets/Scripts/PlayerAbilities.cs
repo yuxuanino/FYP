@@ -198,4 +198,28 @@ public class PlayerAbilities : MonoBehaviour
         carrying = false;
         thePlayerTPS.currentChargeTime = 0f;
     }
+
+    protected void CrankInteraction()
+    {
+        int x = Screen.width / 2;
+        int y = Screen.height / 2;
+
+        //Sends out a raycast from the main camera.
+        Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
+        RaycastHit hit;
+
+        Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
+        Debug.DrawRay(transform.position, forward, Color.green);
+
+        int layer_mask = 1 << 11;
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layer_mask))
+        {
+            thePlayerTPS.CameraLocked = true;
+            float rotX = Input.GetAxis("Mouse X") * 8 * Mathf.Deg2Rad;
+            float rotY = Input.GetAxis("Mouse Y") * 20 * Mathf.Deg2Rad;
+
+            hit.transform.RotateAround(new Vector3(0,0,1), -rotX);
+            //hit.transform.RotateAround(Vector3.up, -rotY);  
+        }
+    }
 }

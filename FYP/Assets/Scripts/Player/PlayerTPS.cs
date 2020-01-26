@@ -38,6 +38,9 @@ public class PlayerTPS : PlayerAbilities
     //Player ThrowMode camera view.
     public float speedH = 2.0f;
     public float speedV = 2.0f;
+    private float speedHTemp;        
+    private float speedVTemp;
+
     private float yaw = 0.0f;
     private float pitch = 0.0f;
     public float cameraMaxY = 90f;      //Camera highest angle.
@@ -68,6 +71,7 @@ public class PlayerTPS : PlayerAbilities
     private Vector3 rotationSmoothVelocity;
     public float rotationSmoothTime = 0.1f;
     private bool cameraBlocked;
+    public bool CameraLocked;          //When true camera won't move.
 
     private float timer = 4f;
     private float tTimer = 4f;
@@ -93,6 +97,9 @@ public class PlayerTPS : PlayerAbilities
         runningAudio = GetComponent<AudioSource>();
 
         dialogueTS = GetComponent<TestScript>();
+
+        speedHTemp = speedH;
+        speedVTemp = speedV;
     }
 
     void Awake()
@@ -111,6 +118,13 @@ public class PlayerTPS : PlayerAbilities
 
     void Update()
     {
+        if (Input.GetKey(KeyCode.G))
+        {
+            CrankInteraction();
+        }else
+        {
+            CameraLocked = false;
+        }
         //If box collide with other object, you wont be able to scroll and increase/decrease hold distance
         if (carriedObject != null)
         {
@@ -142,7 +156,7 @@ public class PlayerTPS : PlayerAbilities
                 throwMode = false;
                 currentHoldDistance = holdDistance;
                 if (carrying) DropObject();
-
+                
                 else
                 {
                     Pickup();
@@ -319,6 +333,16 @@ public class PlayerTPS : PlayerAbilities
             {
                 cameraBlocked = false;
             }
+        }
+
+        if (CameraLocked)
+        {
+            speedH = 0f;
+            speedV = 0f;
+        }else
+        {
+            speedH = speedHTemp;
+            speedV = speedVTemp;
         }
 
             //Animations===================================
