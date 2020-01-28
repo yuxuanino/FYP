@@ -16,8 +16,8 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
-  m_IsActive: 1
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 0
 --- !u!4 &365476138311754508
 Transform:
   m_ObjectHideFlags: 0
@@ -94,8 +94,8 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
-  m_IsActive: 1
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 0
 --- !u!4 &4743822349854350441
 Transform:
   m_ObjectHideFlags: 0
@@ -173,7 +173,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &277413052955345959
 Transform:
@@ -264,7 +264,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5256084428193073109
 Transform:
@@ -291,22 +291,20 @@ LODGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7694384482884507232}
   serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0.000002026558, z: 0.0000036358833}
-  m_Size: 2.8359056
+  m_LocalReferencePoint: {x: 0.0000019073486, y: 0, z: 0.0000076293945}
+  m_Size: 2.835895
   m_FadeMode: 1
   m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.91312253
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 1191158757515790512}
-  - screenRelativeHeight: 0.49929744
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 6267299690520887399}
-  - screenRelativeHeight: 0.05382451
+  - screenRelativeHeight: 0.040975016
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 1894763573449851958}
+  - screenRelativeHeight: 0.021867342
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.010516955
+    fadeTransitionWidth: 0
+    renderers: []
   m_Enabled: 1
