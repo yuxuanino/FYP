@@ -56,6 +56,7 @@ public class PlayerTPS : PlayerAbilities
     private float inputH;
     private float inputV;
     private bool jump;
+    private bool telekinesis;
 
     //Dialogue
     public TestScript dialogueTS;
@@ -118,9 +119,10 @@ public class PlayerTPS : PlayerAbilities
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.G))
+        if (Input.GetAxisRaw("Interact") == 1)
         {
             CrankInteraction();
+            anim.SetBool("Telekinesis", true);
         }else
         {
             CameraLocked = false;
@@ -173,8 +175,10 @@ public class PlayerTPS : PlayerAbilities
 
             if (carrying)
             {
+                anim.SetBool("Telekinesis", true);
                 if (Physics.Linecast(mainCamera.transform.position, carriedObject.transform.position, LayerMask.NameToLayer("Stasis")))
                 {
+                    
                     DropObject();
                 }
 
@@ -352,6 +356,11 @@ public class PlayerTPS : PlayerAbilities
         anim.SetFloat("inputH", inputH);
         anim.SetBool("jump", jump);
         anim.SetBool("walkingBackwards", Input.GetAxis("Vertical") < 0);
+
+        if (!carrying && Input.GetAxisRaw("Interact") == 0)
+        {
+            anim.SetBool("Telekinesis", false);
+        }
     }
 
     // Update is called once per frame
