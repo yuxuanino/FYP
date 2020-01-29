@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9e7193323e598b83fedb98d7d00a437717be8aec3fa7bc319d0f330912f9fd06
-size 998
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2797fd7df100ca4dad57346503e4e28, type: 3}
+  m_Name: FinishTutorial_RuinGatesOpen
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - myName: Leica
+    portrait: {fileID: 0}
+    myText: Whoa. I can see the ruins now. That was a grand entrance, if only they've
+      rolled out the red carpet for me.
+  - myName: Leica
+    portrait: {fileID: 0}
+    myText: Maybe this expedition will go smoother than I thought!
+  - myName: Leica
+    portrait: {fileID: 0}
+    myText: What if...? The reason why this place is A tier is because no one could
+      move the cubes so they all gave up and left!
+  - myName: Leica
+    portrait: {fileID: 0}
+    myText: This place is mine!

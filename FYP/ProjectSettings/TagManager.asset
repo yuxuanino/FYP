@@ -1,3 +1,62 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1235cf64f469707f9fac8c8b3c34c4ffc1a7a942e9927928e3fe71cf63df3612
-size 702
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Box
+  - PressurePlate
+  - PlatformPoint
+  - Reset
+  - Ground
+  - Hazard
+  - Spikes
+  - AntiBox
+  - OtherButton
+  - ControlsButton
+  - StartButton
+  - SoundButton
+  - GraphicsButton
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Stasis
+  - Player
+  - PostProcessing
+  - Crank
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Canvas
+    uniqueID: 774804281
+    locked: 0
+  - name: UiText
+    uniqueID: 4188796215
+    locked: 0

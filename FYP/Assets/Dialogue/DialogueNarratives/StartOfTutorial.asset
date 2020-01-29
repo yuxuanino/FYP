@@ -1,3 +1,58 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8351c4f9f13565412304f666ba7397a9279c7038dcfe1d77ed6c87a16a669270
-size 2388
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2797fd7df100ca4dad57346503e4e28, type: 3}
+  m_Name: StartOfTutorial
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
+    diamond: {fileID: 0}
+    myText: A bit longer... I'm almost there. It better be worth the trouble, this
+      place was hard to find to begin with.
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
+    diamond: {fileID: 0}
+    myText: But, I must go on! I must get that VIP card!
+  - myName: 
+    portrait: {fileID: 7292478582145647226, guid: bcee804a625f71048b07160cdfac0508,
+      type: 3}
+    diamond: {fileID: 0}
+    myText: The wind was howling, the chilling gales were like needles pricking the
+      bone.
+  - myName: 
+    portrait: {fileID: 7292478582145647226, guid: bcee804a625f71048b07160cdfac0508,
+      type: 3}
+    diamond: {fileID: 0}
+    myText: Raika drew her scarf and shivered.
+  - myName: 
+    portrait: {fileID: 7292478582145647226, guid: bcee804a625f71048b07160cdfac0508,
+      type: 3}
+    diamond: {fileID: 0}
+    myText: She glaced to the left; a harrowing sight of nothingness.
+  - myName: 
+    portrait: {fileID: 7292478582145647226, guid: bcee804a625f71048b07160cdfac0508,
+      type: 3}
+    diamond: {fileID: 0}
+    myText: Clouds stretched as far as the eye could see, and a few mountains just
+      about poked its summit through the mist.
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
+    diamond: {fileID: 0}
+    myText: Maybe I've bitten off more than I could chew.
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
+    diamond: {fileID: 0}
+    myText: Tier A huh? This feels way more daunting than the ruins I've raided before.
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
+    diamond: {fileID: 0}
+    myText: But no second thoughts! I've just have to press on.
