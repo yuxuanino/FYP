@@ -1,19 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!64 &5475759720818166094
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9193310092732129583}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4148775546006397268, guid: 0861030e603bbd346acd6eb354d89699, type: 3}
 --- !u!1 &4645885723374322454
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,12 +164,26 @@ MeshRenderer:
   m_StitchLightmapSeams: 1
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 1000
+  m_AutoUVMaxDistance: 20
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &5475759720818166094
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9193310092732129583}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4148775546006397268, guid: 0861030e603bbd346acd6eb354d89699, type: 3}
 --- !u!1001 &1762224096224216595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -265,6 +265,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ScaleInLightmap
       value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4664080436586448635, guid: 0861030e603bbd346acd6eb354d89699,
+        type: 3}
+      propertyPath: m_AutoUVMaxDistance
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0861030e603bbd346acd6eb354d89699, type: 3}
@@ -352,6 +357,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ScaleInLightmap
       value: 0.0005
+      objectReference: {fileID: 0}
+    - target: {fileID: -1289711642434745777, guid: fc7cc53a298e40f438014d3f9e558ea4,
+        type: 3}
+      propertyPath: m_AutoUVMaxDistance
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: fc7cc53a298e40f438014d3f9e558ea4,
         type: 3}
