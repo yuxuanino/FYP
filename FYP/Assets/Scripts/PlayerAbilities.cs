@@ -150,7 +150,7 @@ public class PlayerAbilities : MonoBehaviour
                 carrying = true;
                 carriedObject = p.gameObject;
                 outline = carriedObject.GetComponent<Outline>();
-                outline.enabled = true;
+                outline.enabled = false;
                 carriedObject.GetComponent<Pickupable>().isCarried = true;
                 //Turns off gravity for carried object.
                 p.isObjectGravity = false;
@@ -173,7 +173,7 @@ public class PlayerAbilities : MonoBehaviour
         //carriedObject.gameObject.GetComponent<Rigidbody>().isKinematic = false;
         carriedObject.GetComponent<Rigidbody>().AddForce(mainCamera.transform.forward * (thePlayerTPS.currentChargeTime * throwForce), ForceMode.Impulse);
         Physics.IgnoreCollision(GetComponentInParent<Collider>(), carriedObject.GetComponent<Collider>(), false);
-        outline.enabled = false;
+        outline.enabled = true;
         outline = null;
         carriedObject = null;
         carrying = false;
@@ -192,7 +192,7 @@ public class PlayerAbilities : MonoBehaviour
         carriedObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         //carriedObject.gameObject.GetComponent<Rigidbody>().isKinematic = false;
         Physics.IgnoreCollision(GetComponentInParent<Collider>(), carriedObject.GetComponent<Collider>(), false);
-        outline.enabled = false;
+        outline.enabled = true;
         outline = null;
         carriedObject = null;
         carrying = false;
