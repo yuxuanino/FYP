@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5309051497038747493
 Transform:
   m_ObjectHideFlags: 0
@@ -283,8 +283,8 @@ LODGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6651002632963861084}
   serializedVersion: 2
-  m_LocalReferencePoint: {x: 153.4032, y: 72.43759, z: -94.04141}
-  m_Size: 5.395813
+  m_LocalReferencePoint: {x: 99.090004, y: 65.76003, z: -94.04004}
+  m_Size: 5.3958282
   m_FadeMode: 1
   m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
@@ -292,7 +292,7 @@ LODGroup:
   - screenRelativeHeight: 0.8439655
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 318133792746170408}
+    - renderer: {fileID: 9016347279335907178}
   - screenRelativeHeight: 0.41303307
     fadeTransitionWidth: 0
     renderers:
@@ -405,6 +405,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 955051309039207070, guid: 26a1a3fea94d36248b377527ff80f831,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2680498030990618436, guid: 26a1a3fea94d36248b377527ff80f831,
         type: 3}
       propertyPath: m_ScaleInLightmap
@@ -430,6 +435,21 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 5265293693086558519, guid: 26a1a3fea94d36248b377527ff80f831,
+        type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265293693086558519, guid: 26a1a3fea94d36248b377527ff80f831,
+        type: 3}
+      propertyPath: m_Size
+      value: 5.2089605
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265293693086558519, guid: 26a1a3fea94d36248b377527ff80f831,
+        type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[0].renderer
+      value: 
+      objectReference: {fileID: 2126815928351497330}
     - target: {fileID: 5265293693086558520, guid: 26a1a3fea94d36248b377527ff80f831,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -510,6 +530,12 @@ PrefabInstance:
 --- !u!4 &2000018769217790882 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5265293693086558520, guid: 26a1a3fea94d36248b377527ff80f831,
+    type: 3}
+  m_PrefabInstance: {fileID: 5968231367644826266}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &2126815928351497330 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5715240684774545128, guid: 26a1a3fea94d36248b377527ff80f831,
     type: 3}
   m_PrefabInstance: {fileID: 5968231367644826266}
   m_PrefabAsset: {fileID: 0}

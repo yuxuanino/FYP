@@ -95,7 +95,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5473642529177181133
 Transform:
   m_ObjectHideFlags: 0
@@ -199,21 +199,21 @@ LODGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6306445428996977029}
   serializedVersion: 2
-  m_LocalReferencePoint: {x: -0.0000038146973, y: 0, z: 0}
-  m_Size: 31.605228
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0.000007927418}
+  m_Size: 31.605225
+  m_FadeMode: 1
+  m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
   m_LODs:
   - screenRelativeHeight: 0.7529322
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 8723261437801198727}
-  - screenRelativeHeight: 0.27912492
+    - renderer: {fileID: 555943422498799862}
+  - screenRelativeHeight: 0.15900001
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 555943422498799862}
-  - screenRelativeHeight: 0.052688282
+  - screenRelativeHeight: 0.041980367
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 973039093428755981}

@@ -71,7 +71,7 @@ MeshCollider:
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 14
-  m_Mesh: {fileID: 4148775546006397268, guid: 0861030e603bbd346acd6eb354d89699, type: 3}
+  m_Mesh: {fileID: 4148775546006397268, guid: bc9057d4b3c477a43a57c52ed13b4f4f, type: 3}
 --- !u!1001 &1762224096224216595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -157,8 +157,14 @@ PrefabInstance:
     - target: {fileID: 4664080436586448635, guid: 0861030e603bbd346acd6eb354d89699,
         type: 3}
       propertyPath: m_AutoUVMaxDistance
-      value: 300
+      value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 8425490265408343891, guid: 0861030e603bbd346acd6eb354d89699,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4148775546006397268, guid: bc9057d4b3c477a43a57c52ed13b4f4f,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0861030e603bbd346acd6eb354d89699, type: 3}
 --- !u!4 &6705325156481215753 stripped
