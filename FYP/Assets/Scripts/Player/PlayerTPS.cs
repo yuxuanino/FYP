@@ -455,7 +455,7 @@ public class PlayerTPS : PlayerAbilities
         RaycastHit hit;
         Vector3 dir = new Vector3(0, -1);
 
-        isGrounded = Physics.SphereCast(pCollider.transform.position + pCollider.center + (Vector3.up * 0.1f), pCollider.height / 2, Vector3.down, out hit, groundCheckDistance);
+        isGrounded = Physics.SphereCast(pCollider.transform.position + pCollider.center + (Vector3.up * 0.125f), pCollider.height / 2, Vector3.down, out hit, groundCheckDistance);
     }
 
     void OnTriggerEnter(Collider other)

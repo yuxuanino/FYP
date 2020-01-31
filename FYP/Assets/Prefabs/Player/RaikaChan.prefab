@@ -311,7 +311,7 @@ MonoBehaviour:
   speed: 10
   gravity: 35
   maxVelocityChange: 10
-  jumpHeight: 5
+  jumpHeight: 4.5
   groundCheckDistance: 0.125
   isGrounded: 0
   canMove: 0
