@@ -33,6 +33,8 @@ public class Pickupable : MonoBehaviour {
     public bool isCarried;
     public bool collided;
 
+    public GameObject indicator; //New
+
     //Object gravity - prevent it being floaty.
     public float gravity = 20f;
     public bool isObjectGravity = false;
@@ -44,6 +46,7 @@ public class Pickupable : MonoBehaviour {
         baseMaterial = GetComponent<Renderer>().material;
         aS = GetComponent<AudioSource>();
         sFX = aS.clip;
+        indicator.SetActive(true); //New
     }
 
 
@@ -87,6 +90,7 @@ public class Pickupable : MonoBehaviour {
         if (stasisEffect != null)
         {
             stasisEffect.SetActive(true);
+            indicator.SetActive(false); //New
             aS.PlayOneShot(sFX);
         }
 
@@ -105,6 +109,7 @@ public class Pickupable : MonoBehaviour {
         myRB.isKinematic = false;
         StopCoroutine("StasisEnum");
         stasisCoroutine = null;
+        indicator.SetActive(true); //New
     }
 
     public void PickUpEffects(bool pickedUp){
@@ -114,17 +119,20 @@ public class Pickupable : MonoBehaviour {
         {
             cR.material = fadeMaterial;
             telekinesisEffect.SetActive(true);
+            indicator.SetActive(false); //New
         }
         else
         {
             cR.material = baseMaterial;
             telekinesisEffect.SetActive(false);
+            indicator.SetActive(true); //New
         }
     }
 
     IEnumerator StasisEnum(float duration)
     {
         isStasis = true;
+        indicator.SetActive(false); //New
         yield return new WaitForSeconds(duration);
         isStasis = false;
         stasisEffect.SetActive(false); //New
@@ -169,6 +177,7 @@ public class Pickupable : MonoBehaviour {
         transform.position = startPosition;
         myRB.useGravity = true;
         GetComponent<Renderer>().material = baseMaterial;
+        indicator.SetActive(true); //New
     }
 
 }

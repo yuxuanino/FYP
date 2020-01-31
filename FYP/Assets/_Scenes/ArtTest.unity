@@ -10220,11 +10220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: c2a381a3ec516c14c8cacc9adaaf3324, type: 2}
 --- !u!4 &1849546459
 Transform:
   m_ObjectHideFlags: 0
@@ -133610,17 +133605,17 @@ PrefabInstance:
     - target: {fileID: 1041651709622769614, guid: d108453ad9a0e8344b6d6c6a1e8f95a2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.12999725
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1041651709622769614, guid: d108453ad9a0e8344b6d6c6a1e8f95a2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.12011722
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1041651709622769614, guid: d108453ad9a0e8344b6d6c6a1e8f95a2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.16000369
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1041651709622769614, guid: d108453ad9a0e8344b6d6c6a1e8f95a2,
         type: 3}

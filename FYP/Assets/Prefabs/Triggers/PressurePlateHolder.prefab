@@ -196,7 +196,7 @@ Transform:
   m_GameObject: {fileID: 6073658498005638112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 6651002632963861080}
   - {fileID: 2000018769217790882}
@@ -256,7 +256,7 @@ MonoBehaviour:
   distance: 0.2
   pressurePlateSound: {fileID: 8300000, guid: ae581ffc9596ee440887cfdac1c9745d, type: 3}
   hoverAbove: 0
-  theOutline: {fileID: 0}
+  theOutline: {fileID: 6651002632963861061}
 --- !u!114 &6651002632963861061
 MonoBehaviour:
   m_ObjectHideFlags: 0
