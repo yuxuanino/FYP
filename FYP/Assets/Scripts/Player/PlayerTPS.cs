@@ -299,56 +299,6 @@ public class PlayerTPS : PlayerAbilities
             transform.position = safeSpot;
         }
 
-        yaw += speedH * Input.GetAxis("Mouse X");
-        pitch -= speedV * Input.GetAxis("Mouse Y");
-        pitch = Mathf.Clamp(pitch, cameraMinY, cameraMaxY);
-        
-        transform.eulerAngles = new Vector3(0, yaw, 0);                         //Player's Y Rotation
-        mainCamera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
-
-        CameraRotator.RotateCameraRotator(mainCamera.transform.eulerAngles.x, 0f, 0f);
-
-        Vector3 targetDir = walkCamera.transform.position - camReverseCheck.transform.position;
-        Vector3 newDir = Vector3.RotateTowards(-transform.forward, targetDir, 1f, 0.0f);
-        camReverseCheck.transform.rotation = Quaternion.LookRotation(newDir);
-
-        //Camera Raycast.
-        RaycastHit hit;     //Check forward to see if there is object blocking camera view.
-        if (Physics.Raycast(walkCamera.transform.position, walkCamera.transform.forward, out hit))
-        {
-            
-            if (hit.transform.tag != "Player")
-            {
-                cameraBlocked = true;
-            }
-            else
-            {
-                cameraBlocked = false;
-            }
-        }
-        RaycastHit hit2;    //Reverse Check to see if there is object blocking camera view. (Due to camera does not render object if it is in it.)
-        if (Physics.Raycast(camReverseCheck.transform.position, camReverseCheck.transform.forward, out hit2))
-        {
-            if(hit2.transform.tag != "Player")
-            {
-                cameraBlocked = true;
-            }
-            else
-            {
-                cameraBlocked = false;
-            }
-        }
-
-        if (CameraLocked)
-        {
-            speedH = 0f;
-            speedV = 0f;
-        }else
-        {
-            speedH = speedHTemp;
-            speedV = speedVTemp;
-        }
-
             //Animations===================================
             inputH = Input.GetAxis("Horizontal");
         inputV = Input.GetAxis("Vertical");
@@ -429,6 +379,58 @@ public class PlayerTPS : PlayerAbilities
             runningAudio.pitch = Random.Range(0.9f, 1.1f);
             runningAudio.PlayOneShot(jumpClip);
         }
+
+        //Camera code.
+        yaw += speedH * Input.GetAxis("Mouse X");
+        pitch -= speedV * Input.GetAxis("Mouse Y");
+        pitch = Mathf.Clamp(pitch, cameraMinY, cameraMaxY);
+
+        transform.eulerAngles = new Vector3(0, yaw, 0);                         //Player's Y Rotation
+        mainCamera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
+
+        CameraRotator.RotateCameraRotator(mainCamera.transform.eulerAngles.x, 0f, 0f);
+
+        Vector3 targetDir = walkCamera.transform.position - camReverseCheck.transform.position;
+        Vector3 newDir = Vector3.RotateTowards(-transform.forward, targetDir, 1f, 0.0f);
+        camReverseCheck.transform.rotation = Quaternion.LookRotation(newDir);
+
+        //Camera Raycast.
+        RaycastHit hit;     //Check forward to see if there is object blocking camera view.
+        if (Physics.Raycast(walkCamera.transform.position, walkCamera.transform.forward, out hit))
+        {
+
+            if (hit.transform.tag != "Player")
+            {
+                cameraBlocked = true;
+            }
+            else
+            {
+                cameraBlocked = false;
+            }
+        }
+        RaycastHit hit2;    //Reverse Check to see if there is object blocking camera view. (Due to camera does not render object if it is in it.)
+        if (Physics.Raycast(camReverseCheck.transform.position, camReverseCheck.transform.forward, out hit2))
+        {
+            if (hit2.transform.tag != "Player")
+            {
+                cameraBlocked = true;
+            }
+            else
+            {
+                cameraBlocked = false;
+            }
+        }
+
+        if (CameraLocked)
+        {
+            speedH = 0f;
+            speedV = 0f;
+        }
+        else
+        {
+            speedH = speedHTemp;
+            speedV = speedVTemp;
+        }
     }
 
     IEnumerator StasisTimer(float time)
@@ -478,8 +480,6 @@ public class PlayerTPS : PlayerAbilities
         {
             safeSpot = hit.point + new Vector3(0, 1f, 0);
         }
-
-        else return;    
     }
 }
 
