@@ -18,6 +18,9 @@ public class Door : MonoBehaviour
     private bool[] triggersLBool;
     private int triggersLCount;
 
+    public LevelCrystal[] lvlCrystal;
+
+
 
     public Animator doorAnimator;
 
@@ -33,7 +36,7 @@ public class Door : MonoBehaviour
     {
 
 
-        if (allPressurePlateTriggered() && allLaser())
+        if (allPressurePlateTriggered() && allLaser() && LevelCrystal())
         {
             doorAnimator.SetBool("doorOpen", true);
         }
@@ -65,7 +68,18 @@ public class Door : MonoBehaviour
             }
         }
         return true;
+    }
 
+    public bool LevelCrystal()
+    {
+        for (int i = 0; i < lvlCrystal.Length; i++)
+        {
+            if (lvlCrystal[i].lvlCompleted == false)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
 
