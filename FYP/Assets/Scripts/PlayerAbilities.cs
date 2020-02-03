@@ -44,7 +44,16 @@ public class PlayerAbilities : MonoBehaviour
         //Sends out a raycast from the main camera.
         Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
         int layer_mask = 1 << 8;
-        if (Physics.Raycast(ray, out stasisHit, Mathf.Infinity, layer_mask))
+
+        if(carriedObject != null)
+        {
+            Pickupable cubeScript = carriedObject.GetComponent<Pickupable>();
+
+            cubeScript.SetStasis(stasisDuration);
+            DropObject();
+        }
+
+        if (carriedObject == null && Physics.Raycast(ray, out stasisHit, Mathf.Infinity, layer_mask))
         {
             //Object must have this component to be Stasis.
             if (stasisHit.collider.GetComponent<Pickupable>())

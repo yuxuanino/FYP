@@ -410,7 +410,7 @@ public class PlayerTPS : PlayerAbilities
             }
         }
         RaycastHit hit2;    //Reverse Check to see if there is object blocking camera view. (Due to camera does not render object if it is in it.)
-        if (Physics.Raycast(camReverseCheck.transform.position, camReverseCheck.transform.forward, out hit2))
+        if (Physics.SphereCast(camReverseCheck.transform.position, 1f, camReverseCheck.transform.forward, out hit2))
         {
             if (hit2.transform.tag != "Player")
             {

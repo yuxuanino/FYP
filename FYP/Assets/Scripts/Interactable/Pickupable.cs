@@ -99,6 +99,12 @@ public class Pickupable : MonoBehaviour {
             Debug.Log("Missing stasisParticle");
         }
 
+        if(stasisCoroutine != null)
+        {
+            StopCoroutine(stasisCoroutine);
+            stasisCoroutine = null;
+        }
+
         stasisCoroutine = StartCoroutine(StasisEnum(duration));
     }
 
@@ -107,7 +113,7 @@ public class Pickupable : MonoBehaviour {
         stasisEffect.SetActive(false); //New
         isStasis = false;
         myRB.isKinematic = false;
-        StopCoroutine("StasisEnum");
+        StopCoroutine(stasisCoroutine);
         stasisCoroutine = null;
         indicator.SetActive(true); //New
     }
@@ -136,6 +142,7 @@ public class Pickupable : MonoBehaviour {
         yield return new WaitForSeconds(duration);
         isStasis = false;
         stasisEffect.SetActive(false); //New
+        myRB.isKinematic = false;
     }
 
     void OnTriggerEnter(Collider other)
