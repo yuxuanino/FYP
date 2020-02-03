@@ -11,6 +11,9 @@ public class LevelCrystal : MonoBehaviour
 
     public Image bossDoorRune;
 
+    private GameObject playerGO;
+    public Transform hubTP;
+
     void Start()
     {
         
@@ -28,6 +31,8 @@ public class LevelCrystal : MonoBehaviour
         {
             print("wat");
             lvlCompleted = true;
+            //Animation
+            playerGO.transform.position = hubTP.position;
         }
     }
 
@@ -35,7 +40,8 @@ public class LevelCrystal : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            playerInRadius = true; 
+            playerInRadius = true;
+            playerGO = other.transform.gameObject;
         }  
     }
 
