@@ -21,6 +21,9 @@ public class PressurePlate : MonoBehaviour
     public float hoverAbove = 0;
     public Outline theOutline;
 
+    public GameObject Vfx; //new
+    public GameObject ActivatedVfx; //new
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +33,10 @@ public class PressurePlate : MonoBehaviour
         positionA = transform.localPosition;
  
         theOutline = GetComponent<Outline>();
+
+        ActivatedVfx.SetActive(false); //new
+        Vfx.SetActive(true); //new
+
     }
 
     // Update is called once per frame
@@ -61,6 +68,10 @@ public class PressurePlate : MonoBehaviour
         {
             theOutline.enabled = true;
             pressed = true;
+
+            ActivatedVfx.SetActive(true); //new
+            Vfx.SetActive(false); //new
+
             transform.localPosition = Vector3.Lerp(transform.localPosition, positionB, Time.deltaTime / time);
             if (aS != null && pressurePlateSound != null)
             {
@@ -81,6 +92,9 @@ public class PressurePlate : MonoBehaviour
             pressed = false;
 
             if (soundPlayed == true) soundPlayed = false;
+
+            ActivatedVfx.SetActive(false); //new
+            Vfx.SetActive(true); //new
         }
     }
 }
