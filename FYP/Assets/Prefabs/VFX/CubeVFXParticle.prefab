@@ -81,7 +81,7 @@ Light:
   m_Type: 2
   m_Color: {r: 0.043137252, g: 0.8952145, b: 1, a: 1}
   m_Intensity: 1.5
-  m_Range: 10
+  m_Range: 6
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -174,6 +174,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Magic Particle
       objectReference: {fileID: 0}
+    - target: {fileID: 6018925430143990005, guid: eac4f4dcb2444684594c9fd2e325d66f,
+        type: 3}
+      propertyPath: ShapeModule.arc.value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6018925430143990006, guid: eac4f4dcb2444684594c9fd2e325d66f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -229,10 +234,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
-    - target: {fileID: 6018925430143990005, guid: eac4f4dcb2444684594c9fd2e325d66f,
+    - target: {fileID: 6018925430143990006, guid: eac4f4dcb2444684594c9fd2e325d66f,
         type: 3}
-      propertyPath: ShapeModule.arc.value
-      value: 0
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018925430143990006, guid: eac4f4dcb2444684594c9fd2e325d66f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018925430143990006, guid: eac4f4dcb2444684594c9fd2e325d66f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eac4f4dcb2444684594c9fd2e325d66f, type: 3}
@@ -259,6 +274,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Magic Particle (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018925430143990005, guid: eac4f4dcb2444684594c9fd2e325d66f,
+        type: 3}
+      propertyPath: ShapeModule.arc.speed.scalar
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6018925430143990006, guid: eac4f4dcb2444684594c9fd2e325d66f,
         type: 3}
@@ -315,10 +335,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 89.99999
       objectReference: {fileID: 0}
-    - target: {fileID: 6018925430143990005, guid: eac4f4dcb2444684594c9fd2e325d66f,
+    - target: {fileID: 6018925430143990006, guid: eac4f4dcb2444684594c9fd2e325d66f,
         type: 3}
-      propertyPath: ShapeModule.arc.speed.scalar
-      value: -1
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018925430143990006, guid: eac4f4dcb2444684594c9fd2e325d66f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018925430143990006, guid: eac4f4dcb2444684594c9fd2e325d66f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eac4f4dcb2444684594c9fd2e325d66f, type: 3}
