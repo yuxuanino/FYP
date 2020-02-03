@@ -107,6 +107,7 @@ public class PlayerTPS : PlayerAbilities
     {
         base.Init();
 
+        Physics.IgnoreLayerCollision(13, 8, true);
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         rb.useGravity = false;
