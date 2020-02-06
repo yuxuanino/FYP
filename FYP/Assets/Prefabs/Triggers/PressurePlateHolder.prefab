@@ -239,6 +239,7 @@ Transform:
   - {fileID: 7134662655542778456}
   - {fileID: 5330394995399037395}
   - {fileID: 5309051497038747493}
+  - {fileID: 2303069500110981330}
   m_Father: {fileID: 8708931114483732622}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -255,6 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pressed: 0
+  cubeSnapPosition: {fileID: 2303069500110981330}
   distance: 0.2
   pressurePlateSound: {fileID: 8300000, guid: ae581ffc9596ee440887cfdac1c9745d, type: 3}
   hoverAbove: 0
@@ -397,6 +399,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &9014962709225094281
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2303069500110981330}
+  m_Layer: 0
+  m_Name: CubeSnapPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2303069500110981330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9014962709225094281}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 99.09, y: 65.76, z: -92.37}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6651002632963861080}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5585391892562179117
 PrefabInstance:
   m_ObjectHideFlags: 0

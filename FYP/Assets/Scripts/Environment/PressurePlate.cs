@@ -6,9 +6,12 @@ public class PressurePlate : MonoBehaviour
 {
     private Animation anim;
     public bool pressed = true;
+    public Transform cubeSnapPosition;
 
     private float time = 0.7f;
-    
+
+    Rigidbody cubeRB;
+
     private Vector3 positionA;
     private Vector3 positionB;
     public float distance = 0.35f;
@@ -61,6 +64,17 @@ public class PressurePlate : MonoBehaviour
        
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Box")
+        {
+            cubeRB = other.GetComponent<Rigidbody>();
+            Transform pressurePlateTransform = GetComponent<Transform>();
+
+            cubeRB.position = cubeSnapPosition.position;
+            cubeRB.rotation = cubeSnapPosition.rotation;
+        }
+    }
 
     public void OnTriggerStay(Collider other)
     {
