@@ -14,9 +14,6 @@ public class PlayerTPS : PlayerAbilities
     [SerializeField]
     bool isGrounded;
     public bool canMove;
-    private CapsuleCollider pCollider;
-    Vector3 colliderPosition;
-    float colliderRadius;
     Vector3 safeSpot;
     public float sUpdateInterval = 3f;
     public float resetHeight = 15600f;
@@ -111,9 +108,6 @@ public class PlayerTPS : PlayerAbilities
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         rb.useGravity = false;
-        pCollider = GetComponent<CapsuleCollider>();
-        float radius = GetComponent<CapsuleCollider>().radius * 0.9f;
-        colliderPosition = transform.position + Vector3.up * (radius * 0.9f);
         safeSpot = transform.position;
         InvokeRepeating("UpdateSafeSpot", 0, sUpdateInterval);
     }
@@ -458,7 +452,7 @@ public class PlayerTPS : PlayerAbilities
         RaycastHit hit;
         Vector3 dir = new Vector3(0, -1);
 
-        isGrounded = Physics.SphereCast(pCollider.transform.position + pCollider.center + (Vector3.up * 0.125f), pCollider.height / 2, Vector3.down, out hit, groundCheckDistance);
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, out hit, groundCheckDistance);
     }
 
     void OnTriggerEnter(Collider other)
