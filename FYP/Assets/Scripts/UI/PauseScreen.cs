@@ -89,6 +89,7 @@ public class PauseScreen : MonoBehaviour
     public void Setting()
     {
         settingScreen.SetActive(true);
+        pauseScreen.SetActive(false);
     }
 
 
@@ -121,5 +122,6 @@ public class PauseScreen : MonoBehaviour
     public void Back()
     {
         settingScreen.SetActive(false);
+        pauseScreen.SetActive(true);
     }
 }
