@@ -10,17 +10,17 @@ PrefabInstance:
     - target: {fileID: 4285787411424230820, guid: d47f4ef109ebf9c42b285a9b33fcae7e,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 18
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 6379735651267033186, guid: d47f4ef109ebf9c42b285a9b33fcae7e,
         type: 3}
       propertyPath: m_Name
-      value: Spike (58)
+      value: Spike (58) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6379735651267033186, guid: d47f4ef109ebf9c42b285a9b33fcae7e,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 18
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 6793682258954477960, guid: d47f4ef109ebf9c42b285a9b33fcae7e,
         type: 3}

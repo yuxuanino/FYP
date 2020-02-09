@@ -372,7 +372,6 @@ public class PlayerTPS : PlayerAbilities
                 runningAudio.pitch = Random.Range(0.9f, 1.1f);
                 runningAudio.Play();
             }
-
         }
 
         if (Input.GetButton("Jump") && isGrounded)
