@@ -178,7 +178,7 @@ public class Pickupable : MonoBehaviour {
         myRB.velocity = Vector3.zero;
         GetComponent<Renderer>().material = fadeMaterial;
 
-        yield return new WaitForSeconds(resetDelay);// Whats the reason for this line?
+        yield return new WaitForSeconds(resetDelay);// Whats the reason for this line? Lel I think he can't make it run thats why
 
         carryable = true;
         transform.position = startPosition;

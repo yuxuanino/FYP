@@ -75,8 +75,8 @@ public class PlayerAbilities : MonoBehaviour
             }
             if (stasisHit.collider.GetComponent<DrawBridge>())
             {
-                print("wat");
-                Debug.Log("Hit = " + stasisHit.transform.name);
+                //print("wat");
+                //Debug.Log("Hit = " + stasisHit.transform.name);
                 stasisHit.collider.GetComponent<DrawBridge>().SetStasis(stasisDuration);
             }
         }
@@ -97,11 +97,11 @@ public class PlayerAbilities : MonoBehaviour
 
             //Raycast down to show if it is over PressurePlate. Helpful when far away.
             RaycastHit hit;
-            Debug.DrawRay(o.transform.position,-o.transform.up, Color.red);
+            //Debug.DrawRay(o.transform.position,-o.transform.up, Color.red);
             if (Physics.Raycast(o.transform.position, -o.transform.up, out hit))
             {  
                 PressurePlate p = hit.collider.GetComponent<PressurePlate>();
-                Debug.Log(p);
+                //Debug.Log(p);
                 if (p != null)
                 {
                     p.hoverAbove = 0.2f;
@@ -138,7 +138,7 @@ public class PlayerAbilities : MonoBehaviour
         RaycastHit hit;
 
         Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
-        Debug.DrawRay(transform.position, forward, Color.green);
+        //Debug.DrawRay(transform.position, forward, Color.green);
 
         int layer_mask = 1 << 8;
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, layer_mask))
