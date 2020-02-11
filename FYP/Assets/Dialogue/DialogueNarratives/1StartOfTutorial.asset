@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2797fd7df100ca4dad57346503e4e28, type: 3}
-  m_Name: StartOfTutorial
+  m_Name: 1StartOfTutorial
   m_EditorClassIdentifier: 
   dialogueInfo:
   - myName: Raika
@@ -18,20 +18,20 @@ MonoBehaviour:
     myText: "What a trek! I haven\u2019t felt so worked up in ages!"
   - myName: Raika
     portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
-    myText: But, I must go on! I must get that VIP card!
+    myText: "This location better be worth the trouble, I\u2019m already behind schedule
+      just looking for this place."
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
+    myText: No matter, for it is right within my sights now!
   - myName: 
     portrait: {fileID: 7292478582145647226, guid: bcee804a625f71048b07160cdfac0508,
       type: 3}
     myText: The wind was howling, the chilling gales were like needles pricking the
-      bone.
+      bone. Raika drew her scarf and shivered.
   - myName: 
     portrait: {fileID: 7292478582145647226, guid: bcee804a625f71048b07160cdfac0508,
       type: 3}
-    myText: Raika drew her scarf and shivered.
-  - myName: 
-    portrait: {fileID: 7292478582145647226, guid: bcee804a625f71048b07160cdfac0508,
-      type: 3}
-    myText: She glaced to the left; a harrowing sight of nothingness.
+    myText: She glanced to the left, a harrowing sight of nothingness.
   - myName: 
     portrait: {fileID: 7292478582145647226, guid: bcee804a625f71048b07160cdfac0508,
       type: 3}
@@ -45,4 +45,4 @@ MonoBehaviour:
     myText: Tier A huh? This feels way more daunting than the ruins I've raided before.
   - myName: Raika
     portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
-    myText: But no second thoughts! I've just have to press on.
+    myText: "No matter! I\u2019m never one to back down from a challenge."

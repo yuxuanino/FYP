@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2797fd7df100ca4dad57346503e4e28, type: 3}
+  m_Name: FinalTeleportToHub
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
+    myText: "Ow\u2026! This was the worst of them all!"
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
+    myText: "At least\u2026"
+  - myName: Raika
+    portrait: {fileID: 7292478582145647226, guid: bcee804a625f71048b07160cdfac0508,
+      type: 3}
+    myText: The ground around Raika shook as the big door let out a deep rumble and
+      swung apart.
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
+    myText: "I\u2019ve done it!"
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
+    myText: "Now to reap whatever\u2019s waiting for me at the end!"

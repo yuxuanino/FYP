@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2797fd7df100ca4dad57346503e4e28, type: 3}
+  m_Name: InteractionWithFinalTreasure
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
+    myText: This is it huh.
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
+    myText: This was stowed away in the deepest parts of this ruins. Surely, it holds
+      immense power.
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
+    myText: There are things in this world best left alone.
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
+    myText: However...
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
+    myText: '...'
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
+    myText: "A contract\u2019s a contract."
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
+    myText: "As long as I'm getting paid, who cares if it Amenoch\u2019s egg I\u2019m
+      stealing from its nest."
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
+    myText: '...'
+  - myName: 
+    portrait: {fileID: 7292478582145647226, guid: bcee804a625f71048b07160cdfac0508,
+      type: 3}
+    myText: Raika slides the artefact into her coat pocket.
+  - myName: Raika
+    portrait: {fileID: 21300000, guid: 8f4d3d1d1ab2c0c46b86f5dc34bd8fd9, type: 3}
+    myText: "Let\u2019s head back."
