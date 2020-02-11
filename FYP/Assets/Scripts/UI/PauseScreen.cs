@@ -13,12 +13,10 @@ public class PauseScreen : MonoBehaviour
     public GameObject controlSetting;
     public GameObject soundSetting;
     public GameObject graphicSetting;
-
     public GameObject applyBtn;
-
     public GameObject resetToDefaultBtn;
 
-    public TestScript TS;
+    private TestScript TS;
 
     // Start is called before the first frame update
     void Start()
@@ -69,6 +67,7 @@ public class PauseScreen : MonoBehaviour
         Cursor.visible = true;
         //Disable scripts that still work while timescale is set to 0
         pC.canMove = false;
+        TS.UIinst.SetActive(false);
     }
     public void ContinueGame()
     {
@@ -77,7 +76,13 @@ public class PauseScreen : MonoBehaviour
         settingScreen.SetActive(false);
         pC.canMove = true;
 
-        if (TS.dialogueIsActive == false)
+        if (TS.dialogueIsActive == true)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
+        else
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;

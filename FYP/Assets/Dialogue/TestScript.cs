@@ -9,6 +9,7 @@ public class TestScript : MonoBehaviour
     private DialogueManager dialogueM;
     public bool dialogueIsActive;
 
+    public GameObject UIinst;
     CursorLockMode cursorMode;
 
     private void Start()
@@ -20,25 +21,31 @@ public class TestScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
         if (other.tag == "Player")
         {
-            //Stop player's movements
-            dialogueM.Player.SetActive(false);
-            dialogueM.Box1.SetActive(false);
-            dialogueM.Box2.SetActive(false);
+            Debug.Log("Player detected");
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("Press E");
+                //Stop player's movements
+                dialogueM.Player.SetActive(false);
+                dialogueM.Box1.SetActive(false);
+                dialogueM.Box2.SetActive(false);
 
-            //Start dialogue
-            DialogueManager.instance.EnqueueDialogue(dialogue);
-            dialogueM.nextLineButton.SetActive(true);
-            Cursor.lockState = cursorMode = CursorLockMode.None;
-            Cursor.visible = true;
+                //Start dialogue
+                DialogueManager.instance.EnqueueDialogue(dialogue);
+                dialogueM.nextLineButton.SetActive(true);
+                Cursor.lockState = cursorMode = CursorLockMode.None;
+                Cursor.visible = true;
 
-            dialogueIsActive = true;
+                UIinst.SetActive(false);
 
-            Destroy(GetComponent<BoxCollider>());
+                dialogueIsActive = true;
+
+                Destroy(GetComponent<BoxCollider>());
+
+                dialogueIsActive = true;
+            }
         }
-
-        dialogueIsActive = true;
     }
 }
