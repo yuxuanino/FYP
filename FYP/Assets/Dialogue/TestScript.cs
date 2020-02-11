@@ -35,7 +35,6 @@ public class TestScript : MonoBehaviour
             Cursor.visible = true;
 
             UIinst.SetActive(false);
-            Destroy(GetComponent<BoxCollider>());
 
             dialogueIsActive = true;
         }
