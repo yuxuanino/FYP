@@ -14,10 +14,8 @@ public class LevelCrystal : MonoBehaviour
     private GameObject playerGO;
     public Transform hubTP;
 
-    void Start()
-    {
-        
-    }
+    //Dialogue stuff
+    public GameObject firstTeleportD;
 
     // Update is called once per frame
     void Update()
@@ -29,7 +27,7 @@ public class LevelCrystal : MonoBehaviour
 
         if(playerInRadius && Input.GetAxisRaw("Interact") == 1)
         {
-            print("wat");
+            firstTeleportD.SetActive(true);
             lvlCompleted = true;
             //Animation
             playerGO.transform.position = hubTP.position;
@@ -38,7 +36,7 @@ public class LevelCrystal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(CompareTag("Player"))
         {
             playerInRadius = true;
             playerGO = other.transform.gameObject;
@@ -47,7 +45,7 @@ public class LevelCrystal : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if (CompareTag("Player"))
         {
             playerInRadius = false;
         }

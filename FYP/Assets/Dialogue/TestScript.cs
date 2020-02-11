@@ -7,6 +7,7 @@ public class TestScript : MonoBehaviour
 {
     public DialogueBase dialogue;
     private DialogueManager dialogueM;
+    private LevelCrystal lvlCrystal;
     public bool dialogueIsActive;
 
     public GameObject UIinst;
@@ -17,6 +18,7 @@ public class TestScript : MonoBehaviour
         dialogueIsActive = false;
         var boxCollider = gameObject.AddComponent<BoxCollider>();
         dialogueM = FindObjectOfType<DialogueManager>();
+        lvlCrystal = FindObjectOfType<LevelCrystal>();
     }
 
     private void OnTriggerStay(Collider other)
