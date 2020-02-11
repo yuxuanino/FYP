@@ -25,7 +25,6 @@ public class Dialogue : MonoBehaviour
 
     void Update()
     {
-
         if (textDisplay.text == sentences[index])  //If sentence is completed, continue button will appear
         {
             continueButton.SetActive(true);
@@ -40,7 +39,6 @@ public class Dialogue : MonoBehaviour
      IEnumerator Type()
     {
         bool continueDialogue = false;
-
         while (!continueDialogue)
         {
             if (Input.GetMouseButtonDown(0))

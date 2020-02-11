@@ -19,33 +19,25 @@ public class TestScript : MonoBehaviour
         dialogueM = FindObjectOfType<DialogueManager>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Player detected");
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Debug.Log("Press E");
-                //Stop player's movements
-                dialogueM.Player.SetActive(false);
-                dialogueM.Box1.SetActive(false);
-                dialogueM.Box2.SetActive(false);
+            //Stop player's movements
+            dialogueM.Player.SetActive(false);
+            dialogueM.Box1.SetActive(false);
+            dialogueM.Box2.SetActive(false);
 
-                //Start dialogue
-                DialogueManager.instance.EnqueueDialogue(dialogue);
-                dialogueM.nextLineButton.SetActive(true);
-                Cursor.lockState = cursorMode = CursorLockMode.None;
-                Cursor.visible = true;
+            //Start dialogue
+            DialogueManager.instance.EnqueueDialogue(dialogue);
+            dialogueM.nextLineButton.SetActive(true);
+            Cursor.lockState = cursorMode = CursorLockMode.None;
+            Cursor.visible = true;
 
-                UIinst.SetActive(false);
+            UIinst.SetActive(false);
+            Destroy(GetComponent<BoxCollider>());
 
-                dialogueIsActive = true;
-
-                Destroy(GetComponent<BoxCollider>());
-
-                dialogueIsActive = true;
-            }
+            dialogueIsActive = true;
         }
     }
 }

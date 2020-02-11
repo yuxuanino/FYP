@@ -17,15 +17,15 @@ public class DialogueManager : MonoBehaviour
     {
         //DialogueTS = FindObjectOfType<TestScript>();
 
-        if(instance != null)
-        {
+        //if(instance != null)
+        //{
             //Debug.LogWarning("Fix this shiiii" + gameObject.name);
-        }
+        //}
 
-        else
-        {
-            instance = this;
-        }
+        //else
+        //{
+        instance = this;
+        //}
 
         TS = FindObjectOfType<TestScript>();
 
@@ -136,7 +136,5 @@ public class DialogueManager : MonoBehaviour
         Cursor.visible = false;
 
         //Debug.Log("EndOfDialogue");
-        
     }
-
 }
