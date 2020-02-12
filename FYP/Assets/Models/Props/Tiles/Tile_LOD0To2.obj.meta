@@ -3,7 +3,22 @@ guid: cddf6629de74ab145989ca5d0d71237b
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TileLOD0Mat
+    second: {fileID: 2100000, guid: ddb87a11d6502a24c8b08af17dad64ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TileLOD2Mat
+    second: {fileID: 2100000, guid: ddb87a11d6502a24c8b08af17dad64ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TileMat
+    second: {fileID: 2100000, guid: ddb87a11d6502a24c8b08af17dad64ab, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

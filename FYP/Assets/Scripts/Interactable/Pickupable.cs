@@ -114,7 +114,10 @@ public class Pickupable : MonoBehaviour {
         isStasis = false;
         myRB.isKinematic = false;
         StopCoroutine(stasisCoroutine);
-        stasisCoroutine = null;
+        if (stasisCoroutine != null)
+        {
+            stasisCoroutine = null;
+        }
         indicator.SetActive(true); //New
     }
 
@@ -154,8 +157,8 @@ public class Pickupable : MonoBehaviour {
 
         if(other.tag == "AntiBox")
         {
-
-            StartCoroutine("Reset");
+            //transform.position = startPosition; //new
+            StartCoroutine("ResetAntiBox");
         }
     }
     void OnTriggerStay(Collider other)
@@ -177,8 +180,27 @@ public class Pickupable : MonoBehaviour {
         myRB.useGravity = false;
         myRB.velocity = Vector3.zero;
         GetComponent<Renderer>().material = fadeMaterial;
+        bool pickedUp = false; //new
 
         yield return new WaitForSeconds(resetDelay);// Whats the reason for this line? Lel I think he can't make it run thats why
+
+        carryable = true;
+        transform.position = startPosition;
+        myRB.useGravity = true;
+        GetComponent<Renderer>().material = baseMaterial;
+        indicator.SetActive(true); //New
+    }
+
+    IEnumerator ResetAntiBox()
+    {
+        carryable = false;
+        //CancelStasis();
+        myRB.useGravity = false;
+        myRB.velocity = Vector3.zero;
+        GetComponent<Renderer>().material = fadeMaterial;
+        bool pickedUp = false; //new
+
+        yield return new WaitForSeconds(0.1f);
 
         carryable = true;
         transform.position = startPosition;
