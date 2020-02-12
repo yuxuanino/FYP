@@ -12123,7 +12123,7 @@ GameObject:
   - component: {fileID: 1821083231}
   - component: {fileID: 1821083235}
   m_Layer: 11
-  m_Name: Sphere
+  m_Name: Crank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
