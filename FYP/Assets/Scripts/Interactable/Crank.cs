@@ -4,17 +4,45 @@ using UnityEngine;
 
 public class Crank : MonoBehaviour
 {
-    private float originalRotationZ;
+    private Quaternion originalRotation;
+    private Quaternion currentRotation;
 
-    // Start is called before the first frame update
-    void Start()
+    private float angle;
+    public int halfRotation = 0;
+
+    public bool crankTriggered;
+
+    private void Start()
     {
-        originalRotationZ = transform.rotation.z;
+        originalRotation = transform.rotation;
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        //Well depends on rotation it does something.
+        currentRotation = transform.rotation;
+
+        angle = Quaternion.Angle(originalRotation, currentRotation);
+
+        if(angle >= 179)
+        {
+            halfRotation = 1;
+        }
+        if(halfRotation == 1)
+        {
+            if(angle <= 1)
+            {
+                halfRotation = 2;
+            }
+        }
+
+        if(halfRotation == 2)
+        {
+            crankTriggered = true;
+            print("Full rotation");
+        }
+
+
     }
+
 }

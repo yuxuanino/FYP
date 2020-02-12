@@ -11,6 +11,7 @@ public class DrawBridge : MonoBehaviour
     public Laser[] triggersLaser;
     private bool[] triggersBool;
     private int triggersLCount;
+    public Crank[] triggerCrank;
 
     public Animator anim;
 
@@ -35,7 +36,7 @@ public class DrawBridge : MonoBehaviour
     {
         if (!isStasis)
         {
-            if (allPressurePlateTriggered() && allLaser())
+            if (allPressurePlateTriggered() && allLaser() && allCrank())
             {
                 //anim.SetBool("bridgeDraw", true);
                 transform.position = Vector3.MoveTowards(transform.position, point2.transform.position, Time.deltaTime * time);
@@ -65,6 +66,18 @@ public class DrawBridge : MonoBehaviour
         for (int i = 0; i < triggersLaser.Length; i++)
         {
             if (triggersLaser[i].laserDetected == false)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public bool allCrank()
+    {
+        for (int i = 0; i < triggerCrank.Length; i++)
+        {
+            if (triggerCrank[i].crankTriggered == false)
             {
                 return false;
             }
