@@ -75,6 +75,7 @@ public class PauseScreen : MonoBehaviour
         pauseScreen.SetActive(false);
         settingScreen.SetActive(false);
         pC.canMove = true;
+        TS.UIinst.SetActive(true);
 
         if (TS.dialogueIsActive == true)
         {
