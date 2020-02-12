@@ -33,14 +33,20 @@ public class SequenceAnimator : MonoBehaviour
     //}
 
     public GameObject UIControls;
+    Animator anim;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        print("Triggered");
-        if(CompareTag("Player"))
-        {
-            UIControls.SetActive(false);
-            print("Player detected");
-        }
+        anim.SetTrigger("UIControl");
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        UIControls.SetActive(false);
     }
 }
