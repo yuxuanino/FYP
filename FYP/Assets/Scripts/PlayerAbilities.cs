@@ -227,8 +227,9 @@ public class PlayerAbilities : MonoBehaviour
             float rotX = Input.GetAxis("Mouse X") * 8 * Mathf.Deg2Rad;
             float rotY = Input.GetAxis("Mouse Y") * 20 * Mathf.Deg2Rad;
 
-            hit.transform.RotateAround(new Vector3(0,0,1), -rotX);
+            //hit.transform.RotateAround(new Vector3(0,0,1), -rotX);
             //hit.transform.RotateAround(Vector3.up, -rotY);  
+            hit.transform.rotation = Quaternion.Euler(0f, 0f, -rotX * 8) * hit.transform.rotation;
         }
     }
 }
