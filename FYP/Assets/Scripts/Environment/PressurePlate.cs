@@ -66,7 +66,7 @@ public class PressurePlate : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Box")
+        if(other.gameObject.CompareTag("Box"))
         {
             cubeRB = other.GetComponent<Rigidbody>();
             Transform pressurePlateTransform = GetComponent<Transform>();
@@ -78,7 +78,7 @@ public class PressurePlate : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-        if(other.tag == "Box")
+        if(other.gameObject.CompareTag("Box"))
         {
             theOutline.enabled = true;
             pressed = true;
@@ -101,7 +101,7 @@ public class PressurePlate : MonoBehaviour
     }
     public void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Box")
+        if(other.gameObject.CompareTag("Box"))
         {
             pressed = false;
 

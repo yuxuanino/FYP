@@ -21,7 +21,7 @@ public class OneWayCollider : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
             Physics.IgnoreCollision(toggleableCollider, other.GetComponent<CapsuleCollider>(), true); //Allows player to pass through as long as they are on the side with the trigger.
         }

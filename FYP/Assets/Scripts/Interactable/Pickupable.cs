@@ -114,10 +114,7 @@ public class Pickupable : MonoBehaviour {
         isStasis = false;
         myRB.isKinematic = false;
         StopCoroutine(stasisCoroutine);
-        if (stasisCoroutine != null)
-        {
-            stasisCoroutine = null;
-        }
+        stasisCoroutine = null;
         indicator.SetActive(true); //New
     }
 
@@ -150,20 +147,20 @@ public class Pickupable : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Reset")
+        if (other.gameObject.CompareTag("Reset"))
         {
             StartCoroutine("Reset");
         }
 
-        if(other.tag == "AntiBox")
+        if(other.gameObject.CompareTag("AntiBox"))
         {
-            //transform.position = startPosition; //new
-            StartCoroutine("ResetAntiBox");
+
+            StartCoroutine("Reset");
         }
     }
     void OnTriggerStay(Collider other)
     {
-        if(other.tag != "Player" && other.tag != "Spikes" && other.tag != "PressurePlate")
+        if(!other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("Spikes") && !other.gameObject.CompareTag("PressurePlate"))
         {
             collided = true;
         }
@@ -180,27 +177,8 @@ public class Pickupable : MonoBehaviour {
         myRB.useGravity = false;
         myRB.velocity = Vector3.zero;
         GetComponent<Renderer>().material = fadeMaterial;
-        bool pickedUp = false; //new
 
-        yield return new WaitForSeconds(resetDelay);// Whats the reason for this line? Lel I think he can't make it run thats why
-
-        carryable = true;
-        transform.position = startPosition;
-        myRB.useGravity = true;
-        GetComponent<Renderer>().material = baseMaterial;
-        indicator.SetActive(true); //New
-    }
-
-    IEnumerator ResetAntiBox()
-    {
-        carryable = false;
-        //CancelStasis();
-        myRB.useGravity = false;
-        myRB.velocity = Vector3.zero;
-        GetComponent<Renderer>().material = fadeMaterial;
-        bool pickedUp = false; //new
-
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(resetDelay);// It's for the fading particle, dumbass
 
         carryable = true;
         transform.position = startPosition;

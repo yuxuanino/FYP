@@ -220,7 +220,7 @@ public class PlayerTPS : PlayerAbilities
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetButtonDown("Stasis"))
             {
                 CastStasis();
                 if (stasisHit.collider)
@@ -462,7 +462,7 @@ public class PlayerTPS : PlayerAbilities
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Hazard") transform.position = safeSpot;
+        if (other.gameObject.CompareTag("Hazard")) transform.position = safeSpot;
     }
 
     float CalculateJumpVerticalSpeed()
@@ -476,7 +476,7 @@ public class PlayerTPS : PlayerAbilities
     {
         RaycastHit hit;
         Physics.Raycast(transform.position, Vector3.down, out hit, 1f);
-        if (hit.collider.tag == "Ground")
+        if (hit.collider.CompareTag("Ground"))
         {
             safeSpot = hit.point + new Vector3(0, 1f, 0);
         }

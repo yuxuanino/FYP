@@ -129,7 +129,7 @@ MonoBehaviour:
   telekinesisEffect: {fileID: 6348047712486389267}
   currentPosition: {x: 0, y: 0, z: 0}
   resetHeight: -50
-  resetDelay: 1.5
+  resetDelay: 0.1
   baseMaterial: {fileID: 0}
   fadeMaterial: {fileID: 2100000, guid: 7085baa5bbf2d3448a874f35f2c580ff, type: 2}
   isCarried: 0
