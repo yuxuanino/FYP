@@ -113,8 +113,13 @@ public class Pickupable : MonoBehaviour {
         stasisEffect.SetActive(false); //New
         isStasis = false;
         myRB.isKinematic = false;
-        StopCoroutine(stasisCoroutine);
-        stasisCoroutine = null;
+
+        if (stasisCoroutine != null)
+        {
+            StopCoroutine(stasisCoroutine);
+            stasisCoroutine = null;
+        }
+
         indicator.SetActive(true); //New
     }
 
@@ -178,7 +183,7 @@ public class Pickupable : MonoBehaviour {
         myRB.velocity = Vector3.zero;
         GetComponent<Renderer>().material = fadeMaterial;
 
-        yield return new WaitForSeconds(resetDelay);// It's for the fading particle, dumbass
+        yield return new WaitForSeconds(resetDelay);// It's for if you add the fading particle, dumbass
 
         carryable = true;
         transform.position = startPosition;
