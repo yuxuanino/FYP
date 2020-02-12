@@ -27,6 +27,7 @@ public class LevelCrystal : MonoBehaviour
 
         if(playerInRadius && Input.GetAxisRaw("Interact") == 1)
         {
+            print("interacted");
             firstTeleportD.SetActive(true);
             lvlCompleted = true;
             //Animation
@@ -40,12 +41,22 @@ public class LevelCrystal : MonoBehaviour
         {
             playerInRadius = true;
             playerGO = other.transform.gameObject;
-        }  
+        }
+
+        if (other.tag == "Player")
+        {
+            playerInRadius = true;
+            playerGO = other.transform.gameObject;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (CompareTag("Player"))
+        {
+            playerInRadius = false;
+        }
+        if (other.tag == "Player")
         {
             playerInRadius = false;
         }
