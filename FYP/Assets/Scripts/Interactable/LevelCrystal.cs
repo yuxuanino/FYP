@@ -37,7 +37,7 @@ public class LevelCrystal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(CompareTag("Player"))
+        if(other.CompareTag("Player"))
         {
             playerInRadius = true;
             playerGO = other.transform.gameObject;
@@ -52,7 +52,7 @@ public class LevelCrystal : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             playerInRadius = false;
         }

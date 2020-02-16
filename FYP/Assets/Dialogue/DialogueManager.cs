@@ -7,8 +7,8 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
     public GameObject Player;
-    public GameObject Box1;
-    public GameObject Box2;
+    //public GameObject Box1;
+    //public GameObject Box2;
     public GameObject scribbleAudio;
 
     public TestScript TS;
@@ -126,8 +126,8 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(false);
         nextLineButton.SetActive(false);
 
-        Box1.SetActive(true);
-        Box2.SetActive(true);
+        //Box1.SetActive(true);
+        //Box2.SetActive(true);
         Player.SetActive(true);
 
         TS.dialogueIsActive = false;
