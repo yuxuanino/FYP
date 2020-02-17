@@ -25,8 +25,6 @@ public class TestScript : MonoBehaviour
     {
         if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
         {
-            Time.timeScale = 0.0f;
-
             //Stop player's movements
             dialogueM.Player.SetActive(false);
             //dialogueM.Box1.SetActive(false);
