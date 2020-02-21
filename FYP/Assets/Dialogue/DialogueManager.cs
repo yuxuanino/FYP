@@ -7,28 +7,17 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
     public GameObject Player;
-    //public GameObject Box1;
-    //public GameObject Box2;
+    public GameObject Box1;
+    public GameObject Box2;
+    public GameObject Box3;
     public GameObject scribbleAudio;
 
     public TestScript TS;
 
     private void Awake()
     {
-        //DialogueTS = FindObjectOfType<TestScript>();
-
-        //if(instance != null)
-        //{
-            //Debug.LogWarning("Fix this shiiii" + gameObject.name);
-        //}
-
-        //else
-        //{
         instance = this;
-        //}
-
         TS = FindObjectOfType<TestScript>();
-
     }
 
     public GameObject dialogueBox;
@@ -126,15 +115,14 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(false);
         nextLineButton.SetActive(false);
 
-        //Box1.SetActive(true);
-        //Box2.SetActive(true);
+        Box1.SetActive(true);
+        Box2.SetActive(true);
+        Box3.SetActive(true);
         Player.SetActive(true);
 
         TS.dialogueIsActive = false;
 
         Cursor.lockState = cursorMode = CursorLockMode.Locked;
         Cursor.visible = false;
-
-        //Debug.Log("EndOfDialogue");
     }
 }
